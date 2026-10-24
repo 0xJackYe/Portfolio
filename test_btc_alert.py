@@ -41,7 +41,7 @@ class AlertTests(unittest.TestCase):
         self.clock = Clock()
         self.path = Path(self.temp.name) / "state.json"
         self.monitor = BtcAlertMonitor(state_path=self.path, clock=self.clock)
-        self.monitor.configure({"sound": False})
+        self.monitor.configure({"sound": False, 'threshold_pct': 2.5})
         self.trade_id = 0
 
     def tearDown(self):

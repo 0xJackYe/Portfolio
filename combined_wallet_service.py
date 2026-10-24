@@ -202,14 +202,17 @@ class CombinedWalletService:
                 self.last_ledger_attempt = 0
         if not online.get('configured') or not online.get('last_success_at'):
             return False
-        if not self.last_address_refresh or now - self.last_address_refresh >= 300:
+        day = int((now + 28800) // 86400)
+        if (not self.last_address_refresh or now - self.last_address_refresh >= 300
+                or int((self.last_address_refresh + 28800) // 86400) != day):
             try:
                 self.source.refresh()
                 self.offline_error = None
             except Exception:
                 self.offline_error = '离线钱包刷新失败，保留已核验快照。'
             self.last_address_refresh = now
-        if (not self.last_ledger_attempt or now - self.last_ledger_attempt >= 300) and not (self.history_thread and self.history_thread.is_alive()):
+        if (not self.last_ledger_attempt or now - self.last_ledger_attempt >= 300
+                or int((self.last_ledger_attempt + 28800) // 86400) != day) and not (self.history_thread and self.history_thread.is_alive()):
             with self.okx.lock:
                 credentials = dict(self.okx.credentials)
             self.last_ledger_attempt = now

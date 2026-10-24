@@ -355,8 +355,15 @@ def _calculate(onchain, okx, ledger, now_ms):
         if end < period_start:
             unavailable = '快照不属于今天，刷新后计算。' if period == 'today' else '历史快照早于周期起点。'
         rows = [row for row in source_events if period_start <= row['at_ms'] <= end]
-        if not unavailable and any(row['kind'] == 'internal_transfer' for row in rows):
-            unavailable = '内部划转时间未对齐，暂不计算合并盈亏。'
+        internal = [row for row in rows if row['kind'] == 'internal_transfer']
+        # Reconciled account ledgers establish the aggregate transfer amount
+        # without guessing which bill IDs belong together. A closed period
+        # with zero net internal BTC flow must not acquire artificial P&L from
+        # the two account legs having slightly different valuation timestamps.
+        if not unavailable and internal and (
+                {row['account'] for row in internal} != {'trading', 'funding'} or
+                sum((row['delta'] for row in internal), Decimal(0)) != 0):
+            unavailable = '周期边界存在未结清内部划转，暂不计算该周期盈亏。'
         result = _empty_profit(period_start, end, unavailable)
         if not unavailable:
             opening = sum(balances(period_start, before=True))
@@ -365,7 +372,8 @@ def _calculate(onchain, okx, ledger, now_ms):
                 key = currency.lower()
                 opening_value = _valuation(opening, period_start, chain, currency)
                 closing_value = _valuation(closing, end, chain, currency)
-                flow_values = [_valuation(row['delta'], row['at_ms'], chain, currency) for row in rows]
+                flow_values = [_valuation(row['delta'], row['at_ms'], chain, currency)
+                               for row in rows if row['kind'] != 'internal_transfer']
                 error = '缺少期初行情或汇率。' if opening_value is None else '缺少期末行情或汇率。' if closing_value is None else ''
                 if not error and any(value is None for value in flow_values):
                     error = '缺少 BTC 变动时的行情或汇率。'

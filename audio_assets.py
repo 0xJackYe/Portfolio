@@ -21,19 +21,28 @@ GAP_SECONDS = 0.35
 GROUP_COUNT = 5
 FADE_SECONDS = 0.015
 ALERT_SOUND_PATH = Path(__file__).resolve().parent / "terminal" / "audio" / "alert.wav"
+TIER_SOUND_PATHS = {1: ALERT_SOUND_PATH, 2: ALERT_SOUND_PATH.with_name('alert-2.wav'),
+                    3: ALERT_SOUND_PATH.with_name('alert-3.wav')}
 
 
-def alarm_wave_bytes():
+def alarm_wave_bytes(level=1):
     """Return a standard uncompressed, little-endian 16-bit mono RIFF/WAVE."""
-    group_frames = round(SAMPLE_RATE * GROUP_SECONDS)
-    gap_frames = round(SAMPLE_RATE * GAP_SECONDS)
+    if type(level) is not int or level not in TIER_SOUND_PATHS:
+        raise ValueError('invalid alarm sound level')
+    frequencies, seconds, gap, count = {
+        1: ((880, 1320, 880), GROUP_SECONDS, GAP_SECONDS, GROUP_COUNT),
+        2: ((1046, 1568, 1046), .5, .2, 6),
+        3: ((1320, 1980, 1320), .35, .12, 8),
+    }[level]
+    group_frames = round(SAMPLE_RATE * seconds)
+    gap_frames = round(SAMPLE_RATE * gap)
     fade_frames = round(SAMPLE_RATE * FADE_SECONDS)
     samples = bytearray()
-    for group in range(GROUP_COUNT):
+    for group in range(count):
         # Three separately faded tones make the low/high/low pattern clear,
         # while every transition reaches zero to avoid audible clicks.
         boundaries = [round(group_frames * index / 3) for index in range(4)]
-        for tone, frequency in enumerate((880, 1320, 880)):
+        for tone, frequency in enumerate(frequencies):
             tone_frames = boundaries[tone + 1] - boundaries[tone]
             for frame in range(tone_frames):
                 fade_position = min(frame, tone_frames - 1 - frame) / fade_frames
@@ -41,7 +50,7 @@ def alarm_wave_bytes():
                 sample = round(32767 * PEAK_AMPLITUDE * envelope
                                * math.sin(2 * math.pi * frequency * frame / SAMPLE_RATE))
                 samples.extend(struct.pack("<h", sample))
-        if group + 1 < GROUP_COUNT:
+        if group + 1 < count:
             samples.extend(b"\0\0" * gap_frames)
     output = io.BytesIO()
     with wave.open(output, "wb") as sound:
@@ -52,14 +61,14 @@ def alarm_wave_bytes():
     return output.getvalue()
 
 
-def write_alarm_wav(path=ALERT_SOUND_PATH):
+def write_alarm_wav(path=ALERT_SOUND_PATH, level=1):
     """Atomically write the generated asset so readers never see half a WAV."""
     path = Path(path)
     path.parent.mkdir(parents=True, exist_ok=True)
     descriptor, temporary = tempfile.mkstemp(prefix=".alert-", suffix=".wav", dir=str(path.parent))
     try:
         with os.fdopen(descriptor, "wb") as handle:
-            handle.write(alarm_wave_bytes())
+            handle.write(alarm_wave_bytes(level))
         os.replace(temporary, str(path))
     finally:
         if os.path.exists(temporary):
@@ -67,11 +76,11 @@ def write_alarm_wav(path=ALERT_SOUND_PATH):
     return path
 
 
-def ensure_alarm_wav(path=ALERT_SOUND_PATH):
+def ensure_alarm_wav(path=ALERT_SOUND_PATH, level=1):
     """Create a missing bundled asset, then return its path and duration."""
     path = Path(path)
     if not path.exists():
-        write_alarm_wav(path)
+        write_alarm_wav(path, level)
     with wave.open(str(path), "rb") as sound:
         if (sound.getnchannels(), sound.getsampwidth(), sound.getframerate(), sound.getcomptype()) != (
                 1, 2, SAMPLE_RATE, "NONE"):
@@ -80,6 +89,12 @@ def ensure_alarm_wav(path=ALERT_SOUND_PATH):
         if not 0 < duration <= 10:
             raise ValueError("报警音文件时长无效")
     return path, duration
+
+
+def ensure_tier_wav(level):
+    if type(level) is not int or level not in TIER_SOUND_PATHS:
+        raise ValueError('invalid alarm sound level')
+    return ensure_alarm_wav(TIER_SOUND_PATHS[level], level)
 
 
 if __name__ == "__main__":

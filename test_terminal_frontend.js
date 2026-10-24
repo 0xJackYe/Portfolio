@@ -32,6 +32,8 @@ test('Flat price chart remains finite',()=>{const geometry=chartGeometry([{time_
 test('One genuine price can draw without a fabricated series',()=>{const geometry=chartGeometry([{time_ms:now,price:100}]);assert.equal(geometry.points.length,1);assert.equal(geometry.xy.length,1);});
 test('Empty history creates no fake chart',()=>assert.equal(chartGeometry([]),null));
 test('Default 2.5 percent setting is validated numerically',()=>assert.deepEqual(validateSettings({threshold_pct:'2.5',metric:'daily_change',sound:true}),{threshold_pct:2.5,metric:'daily_change',sound:true}));
+test('Three ascending alarm tiers are sent as numeric thresholds',()=>assert.deepEqual(validateSettings({threshold_pct:'2.5',thresholds_pct:['2.5','3.5','5'],metric:'daily_change',sound:true}),{threshold_pct:2.5,thresholds_pct:[2.5,3.5,5],metric:'daily_change',sound:true}));
+test('Invalid, duplicated, descending and mismatched alarm tiers are rejected',()=>{for(const thresholds_pct of [[],[2.5,2.5],[2.5,2],[3.5,5],[2.5,Infinity],[2.5,3.5,5,6]])assert.throws(()=>validateSettings({threshold_pct:2.5,thresholds_pct,metric:'daily_change'}));});
 test('Invalid thresholds and unknown metrics are rejected',()=>{for(const threshold_pct of ['','0',0.09,50.01,Infinity,'<script>'])assert.throws(()=>validateSettings({threshold_pct,metric:'daily_change'}));assert.throws(()=>validateSettings({threshold_pct:2.5,metric:'unknown'}));});
 test('Changing to daily range remains a distinct setting',()=>assert.equal(validateSettings({threshold_pct:2.5,metric:'day_range',sound:false}).metric,'day_range'));
 test('Only recent new market events can notify',()=>{const seen=new Set(['seen']);const alerts=[{id:'seen',kind:'market',at_ms:now},{id:'test',kind:'test',at_ms:now},{id:'old',kind:'market',at_ms:now-31000},{id:'new',kind:'market',at_ms:now-1000}];assert.deepEqual(eligibleNotifications(alerts,seen,now).map(a=>a.id),['new']);assert.equal(seen.size,4);});
@@ -66,6 +68,9 @@ function previewFixture() {
 }
 async function audioTest(name, callback) {await callback();checks++;console.log('PASS '+name);}
 async function checkPreview() {
+  await audioTest('Each preview tier uses its own WAV and cancels the preceding sound',async()=>{
+    const f=previewFixture();for(const level of [1,2,3]){f.preview.start(level);const audio=f.sounds.at(-1);assert.equal(audio.src,level===1?'/audio/alert.wav':`/audio/alert-${level}.wav`);audio.resolve();await Promise.resolve();}assert.equal(f.sounds[0].pauses,1);assert.equal(f.sounds[1].pauses,1);
+  });
   await audioTest('Browser preview calls play synchronously and waits for its promise before claiming playback',async()=>{
     const f=previewFixture();f.preview.start();assert.equal(f.sounds[0].src,'/audio/alert.wav');assert.equal(f.sounds[0].plays,1);assert.equal(f.sounds[0].volume,1);assert.doesNotMatch(f.reports.at(-1).message,/正在通过/);
     f.sounds[0].resolve();await Promise.resolve();assert.equal(f.reports.at(-1).message,'正在试听。');

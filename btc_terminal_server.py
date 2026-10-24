@@ -36,6 +36,8 @@ ROUTES = {
     "/crypto-portfolio.css": STATIC / "crypto-portfolio.css",
     "/wallet.html": WALLET / "wallet.html",
     "/audio/alert.wav": ROOT / "terminal" / "audio" / "alert.wav",
+    "/audio/alert-2.wav": ROOT / "terminal" / "audio" / "alert-2.wav",
+    "/audio/alert-3.wav": ROOT / "terminal" / "audio" / "alert-3.wav",
 }
 OPTIONS_ASSETS = ("styles.css", "anthropic.css", "payoff.css", "portfolio.css", "combo.css",
                   "payoff.js", "portfolio.js", "payoff-ui.js", "portfolio-ui.js", "app.js", "terminal-embed.js",
@@ -465,6 +467,10 @@ class TerminalHandler(BaseHTTPRequestHandler):
                 return
             if path == "/api/terminal/settings":
                 self.server.monitor.configure(body)
+            elif path == '/api/terminal/test' and body:
+                if set(body) != {'sound_level'} or type(body['sound_level']) is not int or body['sound_level'] not in (1, 2, 3):
+                    raise ValueError('请指定 1、2 或 3 档铃声。')
+                self.server.monitor.test_alarm(sound_level=body['sound_level'])
             elif body:
                 raise ValueError("该操作不接受参数。")
             elif path == "/api/terminal/test":
@@ -613,7 +619,7 @@ def main():
             server.portfolio_service = None
     url = "http://127.0.0.1:%s/" % args.port
     print("比特币终端：" + url, flush=True)
-    print("北京时间当日涨跌幅达到 2.5% 时报警，可在网页修改。保持此程序运行及电脑开机联网。", flush=True)
+    print("价格警报按网页中保存的分档阈值触发。保持此程序运行及电脑开机联网。", flush=True)
     if not args.no_browser:
         threading.Timer(0.5, webbrowser.open, args=(url,)).start()
     try:

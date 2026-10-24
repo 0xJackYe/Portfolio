@@ -51,7 +51,7 @@
   }
   function formatValue(value, mode) { return mode === 'btc' ? exact(value)+' BTC' : money(value,mode); }
   function points(history, mode = 'cny', range = 'all', now = Date.now()) {
-    const map = new Map(), cutoff = range === '30' || range === '90' ? now-Number(range)*86400000 : -Infinity;
+    const map = new Map(), cutoff = range==='today'?Math.floor((now+28800000)/86400000)*86400000-28800000:range === '30' || range === '90' ? now-Number(range)*86400000 : -Infinity;
     for (const point of Array.isArray(history) ? history : []) {
       if (!point || typeof point !== 'object' || Array.isArray(point)) continue;
       const time = timestamp(point.timestamp), value = chartNumber(point[mode]);
@@ -106,7 +106,7 @@
   }
   const MARKUP = '<div class="combined-heading"><div><h2 id="combinedTitle">比特币总持有</h2><span id="combinedState" class="combined-state" role="status">正在汇总</span></div><button id="combinedRefresh" type="button" class="text-button">刷新</button></div>'+
     '<p id="combinedMessage" class="combined-message" role="status" hidden></p><div class="combined-overview"><div class="combined-total"><span>欧易 + 离线钱包</span><strong id="combinedBTC">—</strong><small>BTC</small><p><span id="combinedCNY">—</span><span id="combinedUSD">—</span></p></div><div id="combinedSources" class="combined-sources"></div><div class="combined-pnl"><label for="combinedPnlPeriod">价格变动盈亏</label><select id="combinedPnlPeriod" aria-label="合计盈亏时间范围"><option value="today">今日</option><option value="week">近一周</option><option value="month">近一个月</option><option value="days90">近三个月</option></select><strong id="combinedPnl">—</strong><small id="combinedPnlNote">剔除转账 · 含汇率变动</small><small id="combinedPnlDates"></small></div></div>'+
-    '<div id="combinedGoal" class="combined-goal"></div><div class="combined-chart-head"><h3>合计余额走势</h3><div class="combined-controls"><div role="group" aria-label="合计曲线计价"><button id="combinedModeCny" type="button" aria-pressed="true">人民币 CNY</button><button id="combinedModeUsd" type="button" aria-pressed="false">美元 USD</button><button id="combinedModeBtc" type="button" aria-pressed="false">比特币 BTC</button></div><div role="group" aria-label="合计曲线时间范围"><button id="combinedRange30" type="button" aria-pressed="false">30D</button><button id="combinedRange90" type="button" aria-pressed="false">90D</button><button id="combinedRangeAll" type="button" aria-pressed="true">全部</button></div></div></div>'+
+    '<div id="combinedGoal" class="combined-goal"></div><div class="combined-chart-head"><div><h3>合计余额走势</h3><div class="combined-day-pnl"><span>今日当前盈亏</span><strong id="combinedDayPnl">—</strong><small id="combinedDayPnlAt"></small></div></div><div class="combined-controls"><div role="group" aria-label="合计曲线计价"><button id="combinedModeCny" type="button" aria-pressed="true">人民币 CNY</button><button id="combinedModeUsd" type="button" aria-pressed="false">美元 USD</button><button id="combinedModeBtc" type="button" aria-pressed="false">比特币 BTC</button></div><div role="group" aria-label="合计曲线时间范围"><button id="combinedRangeToday" type="button" aria-pressed="false">今日</button><button id="combinedRange30" type="button" aria-pressed="false">30D</button><button id="combinedRange90" type="button" aria-pressed="false">90D</button><button id="combinedRangeAll" type="button" aria-pressed="true">全部</button></div></div></div>'+
     '<div id="combinedChart" class="combined-chart" tabindex="0" aria-label="合计走势，可用左右方向键查看快照"></div><p id="combinedChartReadout" class="combined-readout" aria-live="polite"></p><div class="combined-footer"><span id="combinedCoverage">等待可核实历史</span><span id="combinedUpdated">北京时间</span></div>';
   function mount(options = {}) {
     const root = options.root || globalThis, document = options.document || root.document, panel = document && document.getElementById('combinedWalletPanel');
@@ -126,6 +126,10 @@
       const point=data[selected];node('combinedChartReadout').textContent=beijing(point.time)+' · '+formatValue(point.exact,mode)+' · 北京时间';
     }
     function renderPnl(){
+      const today=state&&state.pnl&&state.pnl.today,unit=mode==='usd'?'usd':'cny',daily=today&&today[unit],dailyNumber=chartNumber(daily);
+      node('combinedDayPnl').textContent=money(daily,unit,true);
+      node('combinedDayPnl').className=dailyNumber===null?'':dailyNumber<0?'negative':'positive';
+      node('combinedDayPnlAt').textContent=today&&today.reason?today.reason:today&&timestamp(today.end_at)!==null?'截至 '+beijing(today.end_at)+' · 北京时间':'';
       const period=node('combinedPnlPeriod').value||'today',pnl=state&&state.pnl&&state.pnl[period];
       const raw=pnl&&pnl[mode],number=chartNumber(raw);
       node('combinedPnl').textContent=mode==='btc'?'—':money(raw,mode,true);
@@ -142,7 +146,7 @@
       node('combinedMessage').textContent=message;node('combinedMessage').hidden=!message;
       node('combinedGoal').innerHTML=renderGoal(total.btc);
       for(const [name,value]of[['Cny','cny'],['Usd','usd'],['Btc','btc']])node('combinedMode'+name).setAttribute('aria-pressed',String(mode===value));
-      for(const [name,value]of[['30','30'],['90','90'],['All','all']])node('combinedRange'+name).setAttribute('aria-pressed',String(range===value));
+      for(const [name,value]of[['Today','today'],['30','30'],['90','90'],['All','all']])node('combinedRange'+name).setAttribute('aria-pressed',String(range===value));
       node('combinedChart').innerHTML=renderChart(state&&state.history,mode,range,now());drawReadout();renderPnl();
       const coverage=state&&state.coverage;
       node('combinedCoverage').textContent=coverage&&typeof coverage.note==='string'?coverage.note:'仅展示可核实的合计历史；余额变化不等于收益。';
@@ -185,7 +189,7 @@
     const events=[[node('combinedRefresh'),'click',load],[node('combinedPnlPeriod'),'change',renderPnl],[node('combinedChart'),'keydown',keyboard],[node('combinedChart'),'pointermove',pointer],[node('combinedChart'),'pointerleave',pointerLeave],
       [document,'visibilitychange',visibility],[root,'hashchange',visibility],[root,'pagehide',pageHide],[root,'pageshow',pageShow]];
     for(const [name,value]of[['Cny','cny'],['Usd','usd'],['Btc','btc']])events.push([node('combinedMode'+name),'click',()=>pickMode(value)]);
-    for(const [name,value]of[['30','30'],['90','90'],['All','all']])events.push([node('combinedRange'+name),'click',()=>pickRange(value)]);
+    for(const [name,value]of[['Today','today'],['30','30'],['90','90'],['All','all']])events.push([node('combinedRange'+name),'click',()=>pickRange(value)]);
     for(const[target,event,handler]of events)target.addEventListener(event,handler);
     function destroy(){disposed=true;sequence++;cancelTimer();if(read)read.controller.abort();for(const[target,event,handler]of events)target.removeEventListener(event,handler);panel.__combinedController=null;}
     const controller={refresh:load,destroy};panel.__combinedController=controller;render();if(active())load();return controller;

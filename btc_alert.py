@@ -37,6 +37,7 @@ WS_URL = "wss://data-stream.binance.vision/stream?" + urlencode(
 )
 DEFAULT_SETTINGS = {
     "enabled": True, "threshold_pct": 2.5,
+    "thresholds_pct": [2.5, 3.5, 5.0],
     "metric": "daily_change", "sound": True,
 }
 
@@ -105,6 +106,21 @@ def _validate_settings(changes):
         if not threshold.is_finite() or not Decimal("0.1") <= threshold <= 50:
             raise ValueError("threshold_pct must be a number from 0.1 to 50")
         result["threshold_pct"] = float(threshold)
+    if 'thresholds_pct' in result:
+        values = result['thresholds_pct']
+        if not isinstance(values, list) or not 1 <= len(values) <= 3:
+            raise ValueError('thresholds_pct must contain one to three increasing thresholds')
+        if any(type(value) not in (int, float) or not math.isfinite(value) or not .1 <= value <= 50 for value in values):
+            raise ValueError('each threshold must be a number from 0.1 to 50')
+        values = [float(value) for value in values]
+        if any(a >= b for a, b in zip(values, values[1:])):
+            raise ValueError('thresholds must be strictly increasing')
+        if 'threshold_pct' in result and result['threshold_pct'] != values[0]:
+            raise ValueError('threshold_pct must match the first threshold')
+        result['thresholds_pct'], result['threshold_pct'] = values, values[0]
+    elif 'threshold_pct' in result:
+        # Existing API clients may continue to configure a single threshold.
+        result['thresholds_pct'] = [result['threshold_pct']]
     return result
 
 
@@ -139,8 +155,11 @@ def play_native_sound(cancel):
         import winsound
     except ImportError:
         return "unsupported"
-    from audio_assets import ensure_alarm_wav
-    path, duration = ensure_alarm_wav()
+    from audio_assets import ensure_alarm_wav, ensure_tier_wav
+    level = getattr(cancel, 'sound_level', 1)
+    if type(level) is not int or level not in (1, 2, 3):
+        level = 1
+    path, duration = ensure_alarm_wav() if level == 1 else ensure_tier_wav(level)
     if cancel.is_set():
         return "silenced"
     flags = winsound.SND_FILENAME | winsound.SND_ASYNC | winsound.SND_NODEFAULT
@@ -452,35 +471,38 @@ class BtcAlertMonitor:
             self._persist_locked()
         return self.read()
 
-    def _rule_key_locked(self, direction):
-        threshold = format(Decimal(str(self._settings["threshold_pct"])).normalize(), "f")
+    def _rule_key_locked(self, direction, threshold=None):
+        threshold = format(Decimal(str(self._settings['threshold_pct'] if threshold is None else threshold)).normalize(), "f")
         return "{}|{}|{}|{}".format(self._day_start_ms, self._settings["metric"], threshold, direction)
 
     def _detect_locked(self, now):
         if (self._closed or not self._settings["enabled"]
                 or self._day_open is None or self._price is None or not self._fresh_locked(now)):
             return
-        threshold = Decimal(str(self._settings["threshold_pct"]))
         change = (self._price - self._day_open) * 100 / self._day_open
         amplitude = (self._day_high - self._day_low) * 100 / self._day_open
         if self._settings["metric"] == "daily_change":
-            if abs(self._price - self._day_open) * 100 < threshold * self._day_open:
-                return
             direction = "up" if self._price >= self._day_open else "down"
+            movement = abs(self._price - self._day_open) * 100
         else:
-            if (self._day_high - self._day_low) * 100 < threshold * self._day_open:
-                return
             direction = "range"
-        key = self._rule_key_locked(direction)
-        if key in self._fired:
-            return
-        self._fired.add(key)
-        self._record_alert_locked("market", direction, now, change, amplitude)
+            movement = (self._day_high - self._day_low) * 100
+        for level, value in enumerate(self._settings.get('thresholds_pct', [self._settings['threshold_pct']]), 1):
+            threshold = Decimal(str(value))
+            if movement < threshold * self._day_open:
+                continue
+            key = self._rule_key_locked(direction, value)
+            if key in self._fired:
+                continue
+            self._fired.add(key)
+            self._record_alert_locked('market', direction, now, change, amplitude,
+                                      threshold=value, sound_level=level)
 
-    def _record_alert_locked(self, kind, direction, now, change=None, amplitude=None):
+    def _record_alert_locked(self, kind, direction, now, change=None, amplitude=None, threshold=None, sound_level=1):
         alert = {
             "id": uuid.uuid4().hex, "kind": kind, "direction": direction,
-            "metric": self._settings["metric"], "threshold_pct": self._settings["threshold_pct"],
+            "metric": self._settings["metric"], "threshold_pct": self._settings['threshold_pct'] if threshold is None else threshold,
+            'sound_level': sound_level,
             "change_pct": float(change) if change is not None else None,
             "range_pct": float(amplitude) if amplitude is not None else None,
             "price": float(self._price) if self._price is not None else None,
@@ -502,11 +524,13 @@ class BtcAlertMonitor:
                 self._persist_locked()
         return alert
 
-    def test_alarm(self):
+    def test_alarm(self, sound_level=1):
+        if type(sound_level) is not int or sound_level not in (1, 2, 3):
+            raise ValueError('sound_level must be 1, 2 or 3')
         with self._lock:
             if self._closed:
                 raise RuntimeError("monitor is stopped")
-            self._record_alert_locked("test", "test", self._now())
+            self._record_alert_locked("test", "test", self._now(), sound_level=sound_level)
         return self.read()
 
     def _set_sound_status_locked(self, alert_id, status, error=None):
@@ -559,6 +583,7 @@ class BtcAlertMonitor:
                     self._sound_queue.task_done()
                     continue
                 self._sound_cancel = cancel
+                cancel.sound_level = next((a.get('sound_level', 1) for a in self._alerts if a['id'] == alert_id), 1)
                 self._set_sound_status_locked(alert_id, "playing")
             error = None
             try:

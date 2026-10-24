@@ -89,6 +89,24 @@ def service(preload=True):
 
 
 class CombinedServiceTests(unittest.TestCase):
+    def test_beijing_rollover_refreshes_both_anchors_before_five_minute_interval(self):
+        result, online, source, now = service()
+        midnight = ((int(now[0]) + 28800) // 86400) * 86400 - 28800
+        now[0] = midnight - 30
+        result.last_address_refresh = result.last_ledger_attempt = now[0]
+        with patch.object(result, '_history_task') as history:
+            result.refresh_once()
+            self.assertEqual(source.calls, 0)
+            self.assertEqual(history.call_count, 0)
+            now[0] = midnight + 1
+            result.refresh_once()
+            result.history_thread.join(1)
+            self.assertEqual(source.calls, 1)
+            self.assertEqual(history.call_count, 1)
+            result.refresh_once()
+            self.assertEqual(source.calls, 1)
+            self.assertEqual(history.call_count, 1)
+
     def test_adapt_view_maps_real_engine_fields_to_browser_contract(self):
         chain, okx, ledger = fixture()
         raw = build_combined(chain, okx, ledger, now_ms=END)

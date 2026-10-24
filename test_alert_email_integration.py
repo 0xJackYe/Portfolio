@@ -32,7 +32,7 @@ class AlertSinkIntegrationTests(unittest.TestCase):
         self.received = []
         self.monitors = []
         self.monitor = self.make_monitor(self.received.append)
-        self.monitor.configure({"sound": False})
+        self.monitor.configure({"sound": False, 'threshold_pct': 2.5})
         self.trade_id = 0
 
     def tearDown(self):

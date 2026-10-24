@@ -45,13 +45,15 @@
         <div class="section-heading"><h2 id="alarmTitle">波动警报</h2><span class="monitor-pill" id="monitorPill">正在读取设置</span></div>
         <form id="alarmForm">
           <div class="setting-row"><label for="metricInput">监测指标</label><select id="metricInput" name="metric"><option value="daily_change">当日涨跌幅</option><option value="day_range">当日振幅</option></select></div>
-          <div class="setting-row"><label for="thresholdInput">触发阈值</label><div class="threshold-field"><input type="number" id="thresholdInput" name="threshold_pct" min="0.1" max="50" step="0.1" value="2.5" required inputmode="decimal"><span>%</span></div></div>
-          <p class="rule-note" id="ruleNote">北京时间 00:00 开盘价 ±2.5%；每方向每日一次。</p>
+          <div class="setting-row"><label for="thresholdInput">第一档</label><div class="threshold-field"><input type="number" id="thresholdInput" name="threshold_pct" min="0.1" max="50" step="0.1" value="2.5" required inputmode="decimal"><span>%</span></div></div>
+          <div class="setting-row"><label for="threshold2Input">第二档</label><div class="threshold-field"><input type="number" id="threshold2Input" min="0.1" max="50" step="0.1" value="3.5" placeholder="3.5" inputmode="decimal"><span>%</span></div></div>
+          <div class="setting-row"><label for="threshold3Input">第三档</label><div class="threshold-field"><input type="number" id="threshold3Input" min="0.1" max="50" step="0.1" value="5" placeholder="5" inputmode="decimal"><span>%</span></div></div>
+          <p class="rule-note" id="ruleNote">北京时间 00:00 开盘价 ±2.5% / ±3.5% / ±5%；每方向每档每日一次。</p>
           <label class="sound-setting"><input type="checkbox" id="soundInput" name="sound" checked><span>本机警报声</span></label>
           <div class="alarm-actions"><button type="button" class="primary-button" id="monitorButton" disabled>读取设置…</button><button type="submit" class="secondary-button" id="saveSettings" disabled>保存设置</button></div>
           <div class="form-status" id="settingsStatus" role="status"></div>
         </form>
-        <div class="notification-actions"><button type="button" id="testAlarm" class="text-button">测试后台警报</button><button type="button" id="previewAlarm" class="text-button">浏览器试听</button><button type="button" id="silenceAlarm" class="text-button">停止响铃</button><button type="button" id="desktopNotifications" class="text-button">开启桌面通知</button></div>
+        <div class="notification-actions"><select id="alarmSoundLevel" aria-label="试听铃声档位"><option value="1">第一档铃声</option><option value="2">第二档铃声</option><option value="3">第三档铃声</option></select><button type="button" id="testAlarm" class="text-button">测试后台警报</button><button type="button" id="previewAlarm" class="text-button">浏览器试听</button><button type="button" id="silenceAlarm" class="text-button">停止响铃</button><button type="button" id="desktopNotifications" class="text-button">开启桌面通知</button></div>
       </section>
     </div>
 

@@ -8,3 +8,5 @@ market_data/
 tmp/
 windows_startup/config.json
 *.log
+# Generated local acceptance results may contain private account screenshots.
+/verification/

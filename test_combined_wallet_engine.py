@@ -194,16 +194,38 @@ class CombinedAccountingTests(unittest.TestCase):
         self.assertTrue(all(row['btc_total'] == '1.1' for row in result['history']))
         self.assertFalse(result['coverage']['internal_transfer_timing_uncertain'])
 
-    def test_unproven_internal_transfer_is_never_paired_just_by_amount(self):
+    def test_closed_internal_transfers_need_no_guessed_bill_pairing_for_period_pnl(self):
         chain, okx, ledger = fixture()
         ledger['events'] = [
             {'id': 'out', 'at_ms': END - 5 * DAY, 'account': 'trading', 'delta_btc': '-.09', 'kind': 'internal_transfer'},
             {'id': 'in', 'at_ms': END - 4 * DAY, 'account': 'funding', 'delta_btc': '.09', 'kind': 'internal_transfer'}]
         result = self.run_engine((chain, okx, ledger))
-        self.assertIsNone(result['pnl']['7']['value_usd'])
-        self.assertIn('划转', result['pnl']['7']['reason'])
+        self.assertEqual(33, result['pnl']['7']['value_usd'])
+        self.assertEqual(0, result['pnl']['7']['flows_usd'])
         self.assertIsNotNone(result['pnl']['today']['value_usd'])
         self.assertTrue(result['coverage']['internal_transfer_timing_uncertain'])
+
+    def test_closed_internal_legs_at_different_prices_never_create_market_pnl(self):
+        chain, okx, ledger = fixture()
+        first, second = END - 5 * DAY, END - 4 * DAY
+        chain['prices'].extend([{'time': first // 1000, 'USD': 105}, {'time': second // 1000, 'USD': 120}])
+        ledger['events'] = [
+            {'id': 'out', 'at_ms': first, 'account': 'trading', 'delta_btc': '-.09', 'kind': 'internal_transfer'},
+            {'id': 'in', 'at_ms': second, 'account': 'funding', 'delta_btc': '.09', 'kind': 'internal_transfer'}]
+        result = self.run_engine((chain, okx, ledger))
+        self.assertEqual(33, result['pnl']['7']['value_usd'])
+        self.assertEqual(0, result['pnl']['7']['flows_usd'])
+        self.assertEqual(231, result['pnl']['7']['value_cny'])
+
+    def test_unsettled_internal_flow_at_period_boundary_remains_unavailable(self):
+        chain, okx, ledger = fixture()
+        ledger['events'] = [
+            {'id': 'out', 'at_ms': END - 8 * DAY, 'account': 'trading', 'delta_btc': '-.09', 'kind': 'internal_transfer'},
+            {'id': 'in', 'at_ms': END - 6 * DAY, 'account': 'funding', 'delta_btc': '.09', 'kind': 'internal_transfer'}]
+        result = self.run_engine((chain, okx, ledger))
+        self.assertIsNone(result['pnl']['7']['value_usd'])
+        self.assertIn('未结清', result['pnl']['7']['reason'])
+        self.assertIsNotNone(result['pnl']['30']['value_usd'])
 
     def test_internal_transfer_id_cannot_hide_wrong_or_same_account_legs(self):
         for second_account, second_amount in [('trading', '.09'), ('funding', '.08')]:

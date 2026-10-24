@@ -67,7 +67,14 @@
     const threshold = Number(values.threshold_pct);
     if (!Number.isFinite(threshold) || threshold < .1 || threshold > 50) throw new Error('阈值请填写 0.1% 到 50% 之间的数字。');
     if (!['daily_change','day_range'].includes(values.metric)) throw new Error('请选择有效的监测指标。');
-    return {threshold_pct:threshold,metric:values.metric,sound:!!values.sound};
+    const result={threshold_pct:threshold,metric:values.metric,sound:!!values.sound};
+    if(values.thresholds_pct!==undefined){
+      if(!Array.isArray(values.thresholds_pct)||values.thresholds_pct.length<1||values.thresholds_pct.length>3)throw new Error('请设置一至三个递增阈值。');
+      const tiers=values.thresholds_pct.map(value=>Number(value));
+      if(tiers.some((value,index)=>!Number.isFinite(value)||value<.1||value>50||index>0&&value<=tiers[index-1])||tiers[0]!==threshold)throw new Error('三个阈值需从小到大，范围为 0.1% 到 50%。');
+      if(tiers.length>1)result.thresholds_pct=tiers;
+    }
+    return result;
   }
   function eligibleNotifications(alerts, seen, nowMs) {
     const result = [];
@@ -133,7 +140,7 @@
       try {audio.pause();} catch (_) {}
       try {audio.currentTime = 0;} catch (_) {}
     }
-    function start() {
+    function start(level=1) {
       stop();
       const token = generation;
       let audio;
@@ -144,7 +151,7 @@
         report('试听失败：请取消静音或允许网页播放声音。',true);
       };
       try {
-        audio = createAudio('/audio/alert.wav');
+        audio = createAudio(level===2?'/audio/alert-2.wav':level===3?'/audio/alert-3.wav':'/audio/alert.wav');
         currentAudio = audio;
         audio.volume = 1;
         audio.addEventListener('ended',()=>{if(!isCurrent())return;currentAudio=null;report('试听已结束。');},{once:true});
@@ -221,15 +228,18 @@
     $('connectionNotice').textContent = notices.join(' ');
   }
   function ruleText() {
-    const threshold = Number($('thresholdInput').value);
-    const label = Number.isFinite(threshold) && threshold >= .1 && threshold <= 50 ? threshold.toLocaleString('zh-CN',{maximumFractionDigits:4}) + '%' : '所设阈值';
-    setText('ruleNote',$('metricInput').value === 'day_range' ? '北京时间当日（最高 − 最低）/ 开盘 ≥' + label + '；每日一次。' : '北京时间 00:00 开盘价 ±' + label + '；每方向每日一次。');
+    const tiers=[$('thresholdInput').value,$('threshold2Input').value,$('threshold3Input').value].filter(value=>value!=='').map(Number);
+    const label=tiers.length&&tiers.every(value=>Number.isFinite(value)&&value>=.1&&value<=50)?tiers.map(value=>value.toLocaleString('zh-CN',{maximumFractionDigits:4})+'%').join(' / '):'所设阈值';
+    setText('ruleNote',$('metricInput').value === 'day_range' ? '北京时间当日（最高 − 最低）/ 开盘 ≥' + label + '；每档每日一次。' : '北京时间 00:00 开盘价 ±' + label + '；每方向每档每日一次。');
   }
   function renderSettings() {
     if (!snapshot || !snapshot.settings) return;
     const settings = snapshot.settings;
     if (!formDirty) {
       $('thresholdInput').value = finite(settings.threshold_pct) ? String(settings.threshold_pct) : '2.5';
+      const tiers=Array.isArray(settings.thresholds_pct)?settings.thresholds_pct:[settings.threshold_pct];
+      $('threshold2Input').value=finite(tiers[1])?String(tiers[1]):'';
+      $('threshold3Input').value=finite(tiers[2])?String(tiers[2]):'';
       $('metricInput').value = ['daily_change','day_range'].includes(settings.metric) ? settings.metric : 'daily_change';
       $('soundInput').checked = !!settings.sound;
     }
@@ -268,7 +278,7 @@
     setText('chartCoverage',beijingTime(g.xStart).slice(0,5) + ' — ' + beijingTime(g.points[g.points.length-1].time_ms).slice(0,5) + (snapshot && snapshot.market.rest_error ? ' · 历史数据暂缺' : ''));
   }
   function queueChart() {if (Date.now()-lastChartAt >= 1000) renderChart(); else pendingChart = true;}
-  function eventName(alert) {if(alert.kind==='test') return '本机测试';return alert.direction==='up' ? '上涨警报' : alert.direction==='down' ? '下跌警报' : '振幅警报';}
+  function eventName(alert) {if(alert.kind==='test') return '本机测试';const name=alert.direction==='up' ? '上涨警报' : alert.direction==='down' ? '下跌警报' : '振幅警报';return name+(finite(alert.threshold_pct)?' · '+alert.threshold_pct+'%档':'');}
   function renderAlerts() {
     const alerts = (snapshot && Array.isArray(snapshot.alerts) ? snapshot.alerts : []).filter(a => a && typeof a.id === 'string').slice().sort((a,b) => (number(b.at_ms)||0)-(number(a.at_ms)||0));
     const signature = JSON.stringify(alerts);
@@ -327,9 +337,9 @@
     try{await action();showStatus(typeof success === 'function' ? success() : success);}catch(error){showStatus(error.message||'操作失败，请重试。',true);}finally{busy=false;renderSettings();$('testAlarm').disabled=false;}
   }
   $('alarmForm').addEventListener('input',()=>{formDirty=true;formRevision++;ruleText();showStatus('设置未保存。');});
-  $('alarmForm').addEventListener('submit',event=>{event.preventDefault();let values;try{values=validateSettings({threshold_pct:$('thresholdInput').value,metric:$('metricInput').value,sound:$('soundInput').checked});}catch(error){showStatus(error.message,true);return;}const submittedRevision=formRevision;formDirty=true;runAction(async()=>{
+  $('alarmForm').addEventListener('submit',event=>{event.preventDefault();let values;try{if($('threshold2Input').value===''&&$('threshold3Input').value!=='')throw new Error('请先填写第二档阈值。');values=validateSettings({threshold_pct:$('thresholdInput').value,thresholds_pct:[$('thresholdInput').value,$('threshold2Input').value,$('threshold3Input').value].filter(value=>value!==''),metric:$('metricInput').value,sound:$('soundInput').checked});}catch(error){showStatus(error.message,true);return;}const submittedRevision=formRevision;formDirty=true;runAction(async()=>{
     await post('/api/terminal/settings',values);
-    if(!snapshot||!Object.entries(values).every(([key,value])=>snapshot.settings[key]===value))throw new Error('后台设置已变化，本次保存尚未确认；已保留当前输入，请检查后重试。');
+    if(!snapshot||!Object.entries(values).every(([key,value])=>JSON.stringify(snapshot.settings[key])===JSON.stringify(value)))throw new Error('后台设置已变化，本次保存尚未确认；已保留当前输入，请检查后重试。');
     if(formRevision===submittedRevision)formDirty=false;
     renderSettings();
   },()=>formDirty?'提交的设置已保存；后续修改仍需保存。':'设置已保存。');});
@@ -337,8 +347,8 @@
     await post('/api/terminal/settings',{enabled:next});
     if(!snapshot||snapshot.settings.enabled!==next)throw new Error('后台监测状态已变化，本次操作尚未确认，请检查后重试。');
   },next?'已启用监测。':'已暂停监测。');});
-  $('testAlarm').addEventListener('click',()=>runAction(()=>post('/api/terminal/test',{}),'测试已发送。'));
-  $('previewAlarm').addEventListener('click',()=>browserPreview.start());
+  $('testAlarm').addEventListener('click',()=>{const level=Number($('alarmSoundLevel').value)||1;runAction(()=>post('/api/terminal/test',level===1?{}:{sound_level:level}),'测试已发送。');});
+  $('previewAlarm').addEventListener('click',()=>browserPreview.start(Number($('alarmSoundLevel').value)||1));
   let silenceBusy = false;
   $('silenceAlarm').addEventListener('click',()=>{
     browserPreview.stop();

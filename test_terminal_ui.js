@@ -104,6 +104,26 @@ test("real settings controller retains unsaved inputs through realtime snapshots
   await view.elements.get("monitorButton").emit("click");assert.equal(view.elements.get("thresholdInput").value,"3.1");assert.equal(view.elements.get("monitorPill").textContent,"监测已暂停");
   assert.deepEqual(JSON.parse(view.requests.at(-1).init.body),{enabled:false});
 });
+
+test("three-tier settings are rendered, saved and confirmed by value through the real controller",async()=>{
+  const tiers=[2.5,3.5,5],settings={...snapshot().settings,thresholds_pct:tiers};
+  const view=mount(snapshot({settings}));await view.ready();
+  assert.equal(view.elements.get("threshold2Input").value,"3.5");assert.equal(view.elements.get("threshold3Input").value,"5");
+  await view.elements.get("alarmForm").emit("input");
+  view.responder(async()=>({ok:true,status:200,json:async()=>snapshot({revision:101,settings})}));
+  await view.elements.get("alarmForm").emit("submit");
+  assert.deepEqual(JSON.parse(view.requests.at(-1).init.body),{threshold_pct:2.5,thresholds_pct:tiers,metric:"daily_change",sound:true});
+  assert.equal(view.elements.get("settingsStatus").textContent,"设置已保存。");
+  const count=view.requests.length;view.elements.get("threshold2Input").value="";
+  await view.elements.get("alarmForm").emit("submit");assert.equal(view.requests.length,count);assert.match(view.elements.get("settingsStatus").textContent,/第二档/);
+});
+
+test("sound selection controls browser and backend previews and records identify their threshold",async()=>{
+  const view=mount();await view.ready();
+  for(const level of [2,3]){view.elements.get("alarmSoundLevel").value=String(level);await view.elements.get("previewAlarm").emit("click");assert.equal(view.audio.at(-1).src,`/audio/alert-${level}.wav`);await view.elements.get("testAlarm").emit("click");assert.deepEqual(JSON.parse(view.requests.at(-1).init.body),{sound_level:level});}
+  view.streams[0].receive(snapshot({revision:101,alerts:[{id:"tier-two",kind:"market",direction:"down",threshold_pct:3.5,at_ms:now,change_pct:-3.6,price:79000}]}));
+  assert.match(view.elements.get("latestAlert").textContent,/3.5%档/);
+});
 test("invalid form submits never write and rejected backend writes leave inputs and buttons recoverable",async()=>{
   const view=mount();await view.ready();const start=view.requests.length;
   view.elements.get("thresholdInput").value="0";await view.elements.get("alarmForm").emit("submit");assert.equal(view.requests.length,start);

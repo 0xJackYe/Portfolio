@@ -118,7 +118,7 @@ class AlertMidnightCombinedTests(unittest.TestCase):
             monitor = BtcAlertMonitor(state_path=Path(directory) / "state.json", clock=clock,
                 notifier=lambda _: "unsupported")
             try:
-                monitor.configure({"sound": False})
+                monitor.configure({"sound": False, "threshold_pct": 2.5})
                 event = daily_event(clock, opening="100", high="110", closing="110")
                 self.assertFalse(monitor.ingest(json.dumps(event).encode("utf-16")))
                 self.assertIsNone(monitor.read()["market"]["day_open"])
@@ -134,7 +134,7 @@ class AlertMidnightCombinedTests(unittest.TestCase):
             path = Path(directory) / "state.json"
             monitor = BtcAlertMonitor(state_path=path, clock=clock, notifier=lambda _: "unsupported")
             try:
-                monitor.configure({"sound": False})
+                monitor.configure({"sound": False, "threshold_pct": 2.5})
                 self.assertTrue(monitor.ingest(daily_event(clock)))
                 trade = {"e": "trade", "s": "BTCUSDT", "E": clock.ms, "T": clock.ms, "t": 1, "p": "103"}
                 self.assertTrue(monitor.ingest(trade))

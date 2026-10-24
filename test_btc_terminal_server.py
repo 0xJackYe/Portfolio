@@ -28,8 +28,9 @@ class FakeMonitor:
             raise ValueError("unknown setting")
         self.settings.update(settings)
 
-    def test_alarm(self):
+    def test_alarm(self, sound_level=1):
         self.test_count += 1
+        self.last_sound_level = sound_level
 
     def silence(self):
         self.silence_count += 1
@@ -139,6 +140,19 @@ class TerminalTests(unittest.TestCase):
         self.assertEqual(self.mutation("/api/terminal/test", {"url": "https://example.com"})[0], 400)
         self.assertEqual(self.mutation("/api/order", {})[0], 405)
         self.assertEqual(self.mutation("/api/terminal/settings", {"threshold_pct": "x" * 5000})[0], 400)
+
+    def test_sound_preview_level_is_bounded_and_audio_files_are_served(self):
+        for level in (1, 2, 3):
+            self.assertEqual(200, self.mutation('/api/terminal/test', {'sound_level': level})[0])
+            self.assertEqual(level, self.monitor.last_sound_level)
+        for level in (True, 0, 4, '2', 1.5):
+            self.assertEqual(400, self.mutation('/api/terminal/test', {'sound_level': level})[0])
+        self.assertEqual(3, self.monitor.test_count)
+        for filename in ('alert.wav', 'alert-2.wav', 'alert-3.wav'):
+            status, headers, data = self.call('/audio/' + filename)
+            self.assertEqual(200, status)
+            self.assertEqual('audio/wav', headers['Content-Type'])
+            self.assertTrue(data.startswith(b'RIFF'))
 
     def test_duplicate_json_and_non_json_numbers_do_not_change_settings(self):
         for body in (b'{"threshold_pct": 3, "threshold_pct": 4}',
