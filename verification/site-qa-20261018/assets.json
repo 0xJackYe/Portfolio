@@ -1,0 +1,200 @@
+{
+  "origin": "http://127.0.0.1:8766",
+  "elapsedSeconds": 0.418,
+  "assetCount": 24,
+  "allPassed": true,
+  "assets": [
+    {
+      "route": "/",
+      "status": 200,
+      "bytes": 7006,
+      "contentType": "text/html; charset=utf-8",
+      "noStore": true,
+      "nosniff": true
+    },
+    {
+      "route": "/anthropic.css",
+      "status": 200,
+      "bytes": 11705,
+      "contentType": "text/css; charset=utf-8",
+      "noStore": true,
+      "nosniff": true
+    },
+    {
+      "route": "/app.js",
+      "status": 200,
+      "bytes": 65462,
+      "contentType": "text/javascript; charset=utf-8",
+      "noStore": true,
+      "nosniff": true
+    },
+    {
+      "route": "/audio/alert.wav",
+      "status": 200,
+      "bytes": 432224,
+      "contentType": "audio/wav",
+      "noStore": true,
+      "nosniff": true
+    },
+    {
+      "route": "/combo.css",
+      "status": 200,
+      "bytes": 2788,
+      "contentType": "text/css; charset=utf-8",
+      "noStore": true,
+      "nosniff": true
+    },
+    {
+      "route": "/index.html",
+      "status": 200,
+      "bytes": 7006,
+      "contentType": "text/html; charset=utf-8",
+      "noStore": true,
+      "nosniff": true
+    },
+    {
+      "route": "/options.html",
+      "status": 200,
+      "bytes": 22783,
+      "contentType": "text/html; charset=utf-8",
+      "noStore": true,
+      "nosniff": true
+    },
+    {
+      "route": "/payoff-ui.js",
+      "status": 200,
+      "bytes": 15944,
+      "contentType": "text/javascript; charset=utf-8",
+      "noStore": true,
+      "nosniff": true
+    },
+    {
+      "route": "/payoff.css",
+      "status": 200,
+      "bytes": 5864,
+      "contentType": "text/css; charset=utf-8",
+      "noStore": true,
+      "nosniff": true
+    },
+    {
+      "route": "/payoff.js",
+      "status": 200,
+      "bytes": 7049,
+      "contentType": "text/javascript; charset=utf-8",
+      "noStore": true,
+      "nosniff": true
+    },
+    {
+      "route": "/portfolio-ui.js",
+      "status": 200,
+      "bytes": 23761,
+      "contentType": "text/javascript; charset=utf-8",
+      "noStore": true,
+      "nosniff": true
+    },
+    {
+      "route": "/portfolio.css",
+      "status": 200,
+      "bytes": 7980,
+      "contentType": "text/css; charset=utf-8",
+      "noStore": true,
+      "nosniff": true
+    },
+    {
+      "route": "/portfolio.js",
+      "status": 200,
+      "bytes": 13899,
+      "contentType": "text/javascript; charset=utf-8",
+      "noStore": true,
+      "nosniff": true
+    },
+    {
+      "route": "/risk-metrics.js",
+      "status": 200,
+      "bytes": 14536,
+      "contentType": "text/javascript; charset=utf-8",
+      "noStore": true,
+      "nosniff": true
+    },
+    {
+      "route": "/risk-ui.js",
+      "status": 200,
+      "bytes": 35914,
+      "contentType": "text/javascript; charset=utf-8",
+      "noStore": true,
+      "nosniff": true
+    },
+    {
+      "route": "/risk.css",
+      "status": 200,
+      "bytes": 4556,
+      "contentType": "text/css; charset=utf-8",
+      "noStore": true,
+      "nosniff": true
+    },
+    {
+      "route": "/sell-put-engine.js",
+      "status": 200,
+      "bytes": 17849,
+      "contentType": "text/javascript; charset=utf-8",
+      "noStore": true,
+      "nosniff": true
+    },
+    {
+      "route": "/sell-put-ui.js",
+      "status": 200,
+      "bytes": 35696,
+      "contentType": "text/javascript; charset=utf-8",
+      "noStore": true,
+      "nosniff": true
+    },
+    {
+      "route": "/sell-put.css",
+      "status": 200,
+      "bytes": 8766,
+      "contentType": "text/css; charset=utf-8",
+      "noStore": true,
+      "nosniff": true
+    },
+    {
+      "route": "/styles.css",
+      "status": 200,
+      "bytes": 18734,
+      "contentType": "text/css; charset=utf-8",
+      "noStore": true,
+      "nosniff": true
+    },
+    {
+      "route": "/terminal-embed.js",
+      "status": 200,
+      "bytes": 2829,
+      "contentType": "text/javascript; charset=utf-8",
+      "noStore": true,
+      "nosniff": true
+    },
+    {
+      "route": "/terminal.css",
+      "status": 200,
+      "bytes": 15009,
+      "contentType": "text/css; charset=utf-8",
+      "noStore": true,
+      "nosniff": true
+    },
+    {
+      "route": "/terminal.js",
+      "status": 200,
+      "bytes": 31136,
+      "contentType": "text/javascript; charset=utf-8",
+      "noStore": true,
+      "nosniff": true
+    },
+    {
+      "route": "/wallet.html",
+      "status": 200,
+      "bytes": 250961,
+      "contentType": "text/html; charset=utf-8",
+      "noStore": true,
+      "nosniff": true
+    }
+  ]
+}

@@ -1,0 +1,218 @@
+﻿{
+    "Version":  2,
+    "OwnerSid":  "S-1-5-21-1647970810-79061874-2918484482-1001",
+    "TaskName":  "WorkStartup - Workspace",
+    "TaskCaptured":  true,
+    "TaskExists":  true,
+    "TaskXml":  "\u003c?xml version=\"1.0\" encoding=\"UTF-16\"?\u003e\r\n\u003cTask version=\"1.3\" xmlns=\"http://schemas.microsoft.com/windows/2004/02/mit/task\"\u003e\r\n  \u003cRegistrationInfo\u003e\r\n    \u003cDescription\u003eWorkStartup.Workspace.v2;OwnerSid=S-1-5-21-1647970810-79061874-2918484482-1001\u003c/Description\u003e\r\n    \u003cURI\u003e\\WorkStartup - Workspace\u003c/URI\u003e\r\n  \u003c/RegistrationInfo\u003e\r\n  \u003cPrincipals\u003e\r\n    \u003cPrincipal id=\"Author\"\u003e\r\n      \u003cUserId\u003eS-1-5-21-1647970810-79061874-2918484482-1001\u003c/UserId\u003e\r\n      \u003cLogonType\u003eInteractiveToken\u003c/LogonType\u003e\r\n    \u003c/Principal\u003e\r\n  \u003c/Principals\u003e\r\n  \u003cSettings\u003e\r\n    \u003cDisallowStartIfOnBatteries\u003efalse\u003c/DisallowStartIfOnBatteries\u003e\r\n    \u003cStopIfGoingOnBatteries\u003efalse\u003c/StopIfGoingOnBatteries\u003e\r\n    \u003cExecutionTimeLimit\u003ePT10M\u003c/ExecutionTimeLimit\u003e\r\n    \u003cMultipleInstancesPolicy\u003eIgnoreNew\u003c/MultipleInstancesPolicy\u003e\r\n    \u003cRestartOnFailure\u003e\r\n      \u003cCount\u003e3\u003c/Count\u003e\r\n      \u003cInterval\u003ePT1M\u003c/Interval\u003e\r\n    \u003c/RestartOnFailure\u003e\r\n    \u003cStartWhenAvailable\u003etrue\u003c/StartWhenAvailable\u003e\r\n    \u003cIdleSettings\u003e\r\n      \u003cDuration\u003ePT10M\u003c/Duration\u003e\r\n      \u003cWaitTimeout\u003ePT1H\u003c/WaitTimeout\u003e\r\n      \u003cStopOnIdleEnd\u003etrue\u003c/StopOnIdleEnd\u003e\r\n      \u003cRestartOnIdle\u003efalse\u003c/RestartOnIdle\u003e\r\n    \u003c/IdleSettings\u003e\r\n    \u003cUseUnifiedSchedulingEngine\u003etrue\u003c/UseUnifiedSchedulingEngine\u003e\r\n  \u003c/Settings\u003e\r\n  \u003cTriggers\u003e\r\n    \u003cLogonTrigger\u003e\r\n      \u003cDelay\u003ePT10S\u003c/Delay\u003e\r\n      \u003cUserId\u003eGFSD\\yxh\u003c/UserId\u003e\r\n    \u003c/LogonTrigger\u003e\r\n  \u003c/Triggers\u003e\r\n  \u003cActions Context=\"Author\"\u003e\r\n    \u003cExec\u003e\r\n      \u003cCommand\u003eC:\\Users\\yxh\\AppData\\Local\\Programs\\Python\\Python39\\pythonw.exe\u003c/Command\u003e\r\n      \u003cArguments\u003e\"C:\\Users\\yxh\\AppData\\Local\\WorkStartup\\start_workspace.py\" --config \"C:\\Users\\yxh\\AppData\\Local\\WorkStartup\\config.json\"\u003c/Arguments\u003e\r\n      \u003cWorkingDirectory\u003eC:\\Users\\yxh\\AppData\\Local\\WorkStartup\u003c/WorkingDirectory\u003e\r\n    \u003c/Exec\u003e\r\n  \u003c/Actions\u003e\r\n\u003c/Task\u003e",
+    "Registry":  [
+                     {
+                         "View":  "Registry64",
+                         "Path":  "Software\\Microsoft\\Windows\\CurrentVersion\\Run",
+                         "Name":  "Steam",
+                         "KeyExists":  true,
+                         "Exists":  false,
+                         "Kind":  null,
+                         "Value":  null
+                     },
+                     {
+                         "View":  "Registry64",
+                         "Path":  "Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\StartupApproved\\Run",
+                         "Name":  "Steam",
+                         "KeyExists":  true,
+                         "Exists":  true,
+                         "Kind":  "Binary",
+                         "Value":  "AwAAAChhA8pBYd0B"
+                     },
+                     {
+                         "View":  "Registry64",
+                         "Path":  "Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\StartupApproved\\Run32",
+                         "Name":  "Steam",
+                         "KeyExists":  false,
+                         "Exists":  false,
+                         "Kind":  null,
+                         "Value":  null
+                     },
+                     {
+                         "View":  "Registry64",
+                         "Path":  "Software\\Microsoft\\Windows\\CurrentVersion\\Run",
+                         "Name":  "Feishu",
+                         "KeyExists":  true,
+                         "Exists":  false,
+                         "Kind":  null,
+                         "Value":  null
+                     },
+                     {
+                         "View":  "Registry64",
+                         "Path":  "Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\StartupApproved\\Run",
+                         "Name":  "Feishu",
+                         "KeyExists":  true,
+                         "Exists":  true,
+                         "Kind":  "Binary",
+                         "Value":  "AwAAAAVCB8pBYd0B"
+                     },
+                     {
+                         "View":  "Registry64",
+                         "Path":  "Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\StartupApproved\\Run32",
+                         "Name":  "Feishu",
+                         "KeyExists":  false,
+                         "Exists":  false,
+                         "Kind":  null,
+                         "Value":  null
+                     },
+                     {
+                         "View":  "Registry64",
+                         "Path":  "Software\\Microsoft\\Windows\\CurrentVersion\\Run",
+                         "Name":  "Teams",
+                         "KeyExists":  true,
+                         "Exists":  true,
+                         "Kind":  "String",
+                         "Value":  "\"C:\\Users\\yxh\\AppData\\Local\\Microsoft\\WindowsApps\\MSTeams_8wekyb3d8bbwe\\ms-teams.exe\" msteams:system-initiated"
+                     },
+                     {
+                         "View":  "Registry64",
+                         "Path":  "Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\StartupApproved\\Run",
+                         "Name":  "Teams",
+                         "KeyExists":  true,
+                         "Exists":  false,
+                         "Kind":  null,
+                         "Value":  null
+                     },
+                     {
+                         "View":  "Registry64",
+                         "Path":  "Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\StartupApproved\\Run32",
+                         "Name":  "Teams",
+                         "KeyExists":  false,
+                         "Exists":  false,
+                         "Kind":  null,
+                         "Value":  null
+                     },
+                     {
+                         "View":  "Registry32",
+                         "Path":  "Software\\Microsoft\\Windows\\CurrentVersion\\Run",
+                         "Name":  "Steam",
+                         "KeyExists":  true,
+                         "Exists":  false,
+                         "Kind":  null,
+                         "Value":  null
+                     },
+                     {
+                         "View":  "Registry32",
+                         "Path":  "Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\StartupApproved\\Run",
+                         "Name":  "Steam",
+                         "KeyExists":  true,
+                         "Exists":  true,
+                         "Kind":  "Binary",
+                         "Value":  "AwAAAChhA8pBYd0B"
+                     },
+                     {
+                         "View":  "Registry32",
+                         "Path":  "Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\StartupApproved\\Run32",
+                         "Name":  "Steam",
+                         "KeyExists":  false,
+                         "Exists":  false,
+                         "Kind":  null,
+                         "Value":  null
+                     },
+                     {
+                         "View":  "Registry32",
+                         "Path":  "Software\\Microsoft\\Windows\\CurrentVersion\\Run",
+                         "Name":  "Feishu",
+                         "KeyExists":  true,
+                         "Exists":  false,
+                         "Kind":  null,
+                         "Value":  null
+                     },
+                     {
+                         "View":  "Registry32",
+                         "Path":  "Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\StartupApproved\\Run",
+                         "Name":  "Feishu",
+                         "KeyExists":  true,
+                         "Exists":  true,
+                         "Kind":  "Binary",
+                         "Value":  "AwAAAAVCB8pBYd0B"
+                     },
+                     {
+                         "View":  "Registry32",
+                         "Path":  "Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\StartupApproved\\Run32",
+                         "Name":  "Feishu",
+                         "KeyExists":  false,
+                         "Exists":  false,
+                         "Kind":  null,
+                         "Value":  null
+                     },
+                     {
+                         "View":  "Registry32",
+                         "Path":  "Software\\Microsoft\\Windows\\CurrentVersion\\Run",
+                         "Name":  "Teams",
+                         "KeyExists":  true,
+                         "Exists":  true,
+                         "Kind":  "String",
+                         "Value":  "\"C:\\Users\\yxh\\AppData\\Local\\Microsoft\\WindowsApps\\MSTeams_8wekyb3d8bbwe\\ms-teams.exe\" msteams:system-initiated"
+                     },
+                     {
+                         "View":  "Registry32",
+                         "Path":  "Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\StartupApproved\\Run",
+                         "Name":  "Teams",
+                         "KeyExists":  true,
+                         "Exists":  false,
+                         "Kind":  null,
+                         "Value":  null
+                     },
+                     {
+                         "View":  "Registry32",
+                         "Path":  "Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\StartupApproved\\Run32",
+                         "Name":  "Teams",
+                         "KeyExists":  false,
+                         "Exists":  false,
+                         "Kind":  null,
+                         "Value":  null
+                     },
+                     {
+                         "View":  "Registry64",
+                         "Path":  "Software\\Microsoft\\Windows\\CurrentVersion\\Run",
+                         "Name":  "WorkStartup Workspace",
+                         "KeyExists":  true,
+                         "Exists":  false,
+                         "Kind":  null,
+                         "Value":  null
+                     },
+                     {
+                         "View":  "Registry64",
+                         "Path":  "Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\StartupApproved\\Run",
+                         "Name":  "WorkStartup Workspace",
+                         "KeyExists":  true,
+                         "Exists":  false,
+                         "Kind":  null,
+                         "Value":  null
+                     },
+                     {
+                         "View":  "Registry64",
+                         "Path":  "Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\StartupApproved\\StartupFolder",
+                         "Name":  "Work Startup.lnk",
+                         "KeyExists":  true,
+                         "Exists":  false,
+                         "Kind":  null,
+                         "Value":  null
+                     },
+                     {
+                         "View":  "Registry64",
+                         "Path":  "Software\\Classes\\Local Settings\\Software\\Microsoft\\Windows\\CurrentVersion\\AppModel\\SystemAppData\\MSTeams_8wekyb3d8bbwe\\TeamsTfwStartupTask",
+                         "Name":  "State",
+                         "KeyExists":  true,
+                         "Exists":  true,
+                         "Kind":  "DWord",
+                         "Value":  2
+                     },
+                     {
+                         "View":  "Registry64",
+                         "Path":  "Software\\Classes\\Local Settings\\Software\\Microsoft\\Windows\\CurrentVersion\\AppModel\\SystemAppData\\MSTeams_8wekyb3d8bbwe\\TeamsTfwStartupTask",
+                         "Name":  "UserEnabledStartupOnce",
+                         "KeyExists":  true,
+                         "Exists":  true,
+                         "Kind":  "DWord",
+                         "Value":  0
+                     }
+                 ],
+    "CreatedUtc":  "2026-10-21T09:51:51.4524167Z"
+}

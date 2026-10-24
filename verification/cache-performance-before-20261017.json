@@ -1,0 +1,94 @@
+{
+  "source": "D:\\Users\\yxh\\Desktop\\options\\verification\\realtime-final-market-snapshot-20261016.json",
+  "contracts": 692,
+  "upstream_connections_opened": 0,
+  "certified_baselines": 692,
+  "read_full": {
+    "count": 8,
+    "mean_ms": 118.204,
+    "p50_ms": 118.739,
+    "p95_ms": 128.427,
+    "max_ms": 128.427
+  },
+  "read_sse": {
+    "count": 12,
+    "mean_ms": 89.221,
+    "p50_ms": 88.778,
+    "p95_ms": 95.999,
+    "max_ms": 95.999
+  },
+  "ticker_coverage": {
+    "count": 30,
+    "mean_ms": 1.212,
+    "p50_ms": 1.163,
+    "p95_ms": 1.512,
+    "max_ms": 1.576
+  },
+  "health": {
+    "count": 20,
+    "mean_ms": 25.871,
+    "p50_ms": 25.211,
+    "p95_ms": 31.506,
+    "max_ms": 31.506
+  },
+  "deepcopy_rows_only": {
+    "count": 12,
+    "mean_ms": 48.174,
+    "p50_ms": 47.921,
+    "p95_ms": 50.903,
+    "max_ms": 50.903
+  },
+  "deepcopy_snapshot_without_endpoints": {
+    "count": 12,
+    "mean_ms": 49.215,
+    "p50_ms": 48.866,
+    "p95_ms": 52.024,
+    "max_ms": 52.024
+  },
+  "deepcopy_endpoints_only": {
+    "count": 12,
+    "mean_ms": 26.433,
+    "p50_ms": 25.806,
+    "p95_ms": 32.046,
+    "max_ms": 32.046
+  },
+  "json_sse": {
+    "count": 12,
+    "mean_ms": 23.578,
+    "p50_ms": 23.365,
+    "p95_ms": 24.503,
+    "max_ms": 24.503
+  },
+  "sse_profile": "         8832065 function calls (7448217 primitive calls) in 1.830 seconds\n\n   Ordered by: cumulative time\n   List reduced from 65 to 30 due to restriction <30>\n\n   ncalls  tottime  percall  cumtime  percall filename:lineno(function)\n        8    0.000    0.000    1.830    0.229 profile_market_cache_20261017.py:67(compact_read)\n        8    0.008    0.001    1.830    0.229 dashboard_server.py:427(_read_locked)\n1353088/40    0.694    0.000    1.279    0.032 copy.py:128(deepcopy)\n 30832/32    0.237    0.000    1.279    0.040 copy.py:226(_deepcopy_dict)\n      240    0.007    0.000    1.271    0.005 copy.py:200(_deepcopy_list)\n        8    0.010    0.001    0.373    0.047 dashboard_server.py:315(_data_health_locked)\n  3302504    0.229    0.000    0.229    0.000 {method 'get' of 'dict' objects}\n       32    0.001    0.000    0.213    0.007 dashboard_server.py:366(_field_health_locked)\n   204848    0.118    0.000    0.140    0.000 realtime_market.py:30(decimal_text)\n      120    0.011    0.000    0.130    0.001 {built-in method builtins.sum}\n       40    0.003    0.000    0.128    0.003 dashboard_server.py:280(_ticker_coverage_locked)\n    11072    0.100    0.000    0.122    0.000 dashboard_server.py:505(_quote_view_locked)\n       40    0.014    0.000    0.111    0.003 dashboard_server.py:294(<setcomp>)\n    60936    0.034    0.000    0.110    0.000 dashboard_server.py:372(<genexpr>)\n       24    0.001    0.000    0.100    0.004 dashboard_server.py:408(_realtime_locked)\n    27744    0.010    0.000    0.094    0.000 {built-in method builtins.all}\n   110720    0.025    0.000    0.084    0.000 dashboard_server.py:295(<genexpr>)\n  1415264    0.080    0.000    0.080    0.000 {built-in method builtins.id}\n       32    0.019    0.001    0.074    0.002 dashboard_server.py:368(<listcomp>)\n        8    0.003    0.000    0.065    0.008 dashboard_server.py:437(<listcomp>)\n  1322016    0.064    0.000    0.064    0.000 copy.py:182(_deepcopy_atomic)\n        8    0.001    0.000    0.061    0.008 dashboard_server.py:321(<listcomp>)\n        8    0.000    0.000    0.059    0.007 dashboard_server.py:310(_refresh_interval_locked)\n       24    0.026    0.001    0.055    0.002 dashboard_server.py:322(<listcomp>)\n    71976    0.034    0.000    0.038    0.000 realtime_market.py:41(event_millis)\n   426312    0.023    0.000    0.023    0.000 {built-in method builtins.isinstance}\n    31072    0.011    0.000    0.016    0.000 copy.py:242(_keep_alive)\n    41960    0.012    0.000    0.012    0.000 {method 'items' of 'dict' objects}\n   204848    0.010    0.000    0.010    0.000 {method 'is_finite' of 'decimal.Decimal' objects}\n       88    0.000    0.000    0.009    0.000 dashboard_server.py:276(_active_rows_locked)\n\n\n",
+  "apply_book_no_readers": {
+    "count": 2500,
+    "mean_ms": 0.024,
+    "p50_ms": 0.021,
+    "p95_ms": 0.026,
+    "max_ms": 1.317
+  },
+  "apply_692_mark_array_no_readers": {
+    "count": 30,
+    "mean_ms": 29.055,
+    "p50_ms": 29.068,
+    "p95_ms": 31.327,
+    "max_ms": 33.448
+  },
+  "mark_profile": "         1013906 function calls in 0.316 seconds\n\n   Ordered by: cumulative time\n   List reduced from 38 to 20 due to restriction <20>\n\n   ncalls  tottime  percall  cumtime  percall filename:lineno(function)\n        5    0.000    0.000    0.320    0.064 profile_market_cache_20261017.py:104(mark_update)\n        5    0.018    0.004    0.305    0.061 dashboard_server.py:570(apply_stream_message)\n     3460    0.045    0.000    0.113    0.000 dashboard_server.py:531(_remember_quote_baseline_locked)\n     6920    0.050    0.000    0.109    0.000 realtime_market.py:67(merge_fields)\n     3460    0.032    0.000    0.055    0.000 realtime_market.py:51(initialize_row)\n    58820    0.036    0.000    0.044    0.000 realtime_market.py:30(decimal_text)\n   328730    0.029    0.000    0.029    0.000 {method 'get' of 'dict' objects}\n   231820    0.022    0.000    0.022    0.000 {method 'setdefault' of 'dict' objects}\n    62280    0.014    0.000    0.018    0.000 realtime_market.py:41(event_millis)\n     3460    0.009    0.000    0.016    0.000 dashboard_server.py:535(<listcomp>)\n     3460    0.005    0.000    0.015    0.000 dashboard_server.py:540(<dictcomp>)\n        5    0.005    0.001    0.014    0.003 profile_market_cache_20261017.py:107(<listcomp>)\n     3460    0.002    0.000    0.014    0.000 {built-in method builtins.any}\n    17300    0.008    0.000    0.012    0.000 dashboard_server.py:563(<genexpr>)\n     3460    0.005    0.000    0.009    0.000 profile_market_cache_20261017.py:109(<dictcomp>)\n   124575    0.008    0.000    0.008    0.000 {built-in method builtins.isinstance}\n     3460    0.002    0.000    0.008    0.000 {built-in method builtins.all}\n     3460    0.003    0.000    0.007    0.000 dashboard_server.py:568(<dictcomp>)\n    17300    0.005    0.000    0.005    0.000 dashboard_server.py:541(<genexpr>)\n    31140    0.004    0.000    0.004    0.000 {method 'startswith' of 'str' objects}\n\n\n",
+  "apply_book_with_1_sse_clients": {
+    "messages": 150,
+    "mean_ms": 5.27,
+    "p95_ms": 74.537,
+    "max_ms": 107.718,
+    "read_count": 9,
+    "read_mean_ms": 87.958
+  },
+  "apply_book_with_3_sse_clients": {
+    "messages": 49,
+    "mean_ms": 41.684,
+    "p95_ms": 107.18,
+    "max_ms": 255.186,
+    "read_count": 24,
+    "read_mean_ms": 105.274
+  }
+}

@@ -1,0 +1,1170 @@
+{
+  "started_at_beijing": "2026-10-22T18:46:13.508907+08:00",
+  "max_concurrency": 2,
+  "http_retries": 0,
+  "max_paid_calls": 12,
+  "records": [
+    {
+      "model": "deepseek-flash",
+      "case_id": "sell_put_days_otm",
+      "status": "complete",
+      "returned_model": "deepseek-flash",
+      "criteria": {
+        "direction": "SELL",
+        "type": "PUT",
+        "expiry": "ALL",
+        "quantity": 0.01,
+        "limit": 5,
+        "sort": "daily_premium_desc",
+        "min_days": 7.0,
+        "max_days": 20.0,
+        "min_otm_pct": 15.0
+      },
+      "answer": "筛选卖出 Put、剩余 7 至 20 天、虚值比例至少 15%；默认全部到期日，模拟 0.01 BTC，最多 5 项，按平均每日权利金从高到低排序。",
+      "clarification": null,
+      "latency_ms": 1218,
+      "usage": {
+        "prompt_tokens": 1364,
+        "completion_tokens": 115,
+        "total_tokens": 1479,
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 1364
+      },
+      "checks": [
+        {
+          "field": "clarification",
+          "expected": false,
+          "actual": false,
+          "pass": true
+        },
+        {
+          "field": "direction",
+          "expected": "SELL",
+          "actual": "SELL",
+          "pass": true
+        },
+        {
+          "field": "type",
+          "expected": "PUT",
+          "actual": "PUT",
+          "pass": true
+        },
+        {
+          "field": "expiry",
+          "expected": "ALL",
+          "actual": "ALL",
+          "pass": true
+        },
+        {
+          "field": "quantity",
+          "expected": 0.01,
+          "actual": 0.01,
+          "pass": true
+        },
+        {
+          "field": "limit",
+          "expected": 5,
+          "actual": 5,
+          "pass": true
+        },
+        {
+          "field": "sort",
+          "expected": "daily_premium_desc",
+          "actual": "daily_premium_desc",
+          "pass": true
+        },
+        {
+          "field": "min_days",
+          "expected": 7,
+          "actual": 7.0,
+          "pass": true
+        },
+        {
+          "field": "max_days",
+          "expected": 20,
+          "actual": 20.0,
+          "pass": true
+        },
+        {
+          "field": "min_otm_pct",
+          "expected": 15,
+          "actual": 15.0,
+          "pass": true
+        },
+        {
+          "field": "no_invented_contract_or_order",
+          "expected": true,
+          "actual": true,
+          "pass": true
+        }
+      ],
+      "passed_fields": 11,
+      "total_fields": 11,
+      "pass": true
+    },
+    {
+      "model": "deepseek-v4-pro",
+      "case_id": "sell_put_days_otm",
+      "status": "complete",
+      "returned_model": "deepseek-v4-pro",
+      "criteria": {
+        "direction": "SELL",
+        "type": "PUT",
+        "expiry": "ALL",
+        "quantity": 0.01,
+        "limit": 5,
+        "sort": "daily_premium_desc",
+        "min_days": 7.0,
+        "max_days": 20.0,
+        "min_otm_pct": 15.0
+      },
+      "answer": "筛选卖 Put、剩余7至20天、虚值比例≥15%；模拟0.01 BTC、最多5项，按平均每日权利金降序排列。",
+      "clarification": null,
+      "latency_ms": 3625,
+      "usage": {
+        "prompt_tokens": 1361,
+        "completion_tokens": 137,
+        "total_tokens": 1498,
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 1361
+      },
+      "checks": [
+        {
+          "field": "clarification",
+          "expected": false,
+          "actual": false,
+          "pass": true
+        },
+        {
+          "field": "direction",
+          "expected": "SELL",
+          "actual": "SELL",
+          "pass": true
+        },
+        {
+          "field": "type",
+          "expected": "PUT",
+          "actual": "PUT",
+          "pass": true
+        },
+        {
+          "field": "expiry",
+          "expected": "ALL",
+          "actual": "ALL",
+          "pass": true
+        },
+        {
+          "field": "quantity",
+          "expected": 0.01,
+          "actual": 0.01,
+          "pass": true
+        },
+        {
+          "field": "limit",
+          "expected": 5,
+          "actual": 5,
+          "pass": true
+        },
+        {
+          "field": "sort",
+          "expected": "daily_premium_desc",
+          "actual": "daily_premium_desc",
+          "pass": true
+        },
+        {
+          "field": "min_days",
+          "expected": 7,
+          "actual": 7.0,
+          "pass": true
+        },
+        {
+          "field": "max_days",
+          "expected": 20,
+          "actual": 20.0,
+          "pass": true
+        },
+        {
+          "field": "min_otm_pct",
+          "expected": 15,
+          "actual": 15.0,
+          "pass": true
+        },
+        {
+          "field": "no_invented_contract_or_order",
+          "expected": true,
+          "actual": true,
+          "pass": true
+        }
+      ],
+      "passed_fields": 11,
+      "total_fields": 11,
+      "pass": true
+    },
+    {
+      "model": "deepseek-flash",
+      "case_id": "sell_call_expiry_strike_delta",
+      "status": "complete",
+      "returned_model": "deepseek-flash",
+      "criteria": {
+        "direction": "SELL",
+        "type": "CALL",
+        "expiry": "2026-10-30",
+        "quantity": 0.02,
+        "limit": 5,
+        "sort": "daily_premium_desc",
+        "max_abs_delta": 0.25,
+        "min_strike": 90000.0
+      },
+      "answer": "筛选卖出 2026-10-30 到期 Call、行权价≥90000 USDT、绝对Delta≤0.25；模拟 0.02 BTC、最多 5 项，按平均每日权利金降序。",
+      "clarification": null,
+      "latency_ms": 1406,
+      "usage": {
+        "prompt_tokens": 1376,
+        "completion_tokens": 117,
+        "total_tokens": 1493,
+        "prompt_cache_hit_tokens": 1152,
+        "prompt_cache_miss_tokens": 224
+      },
+      "checks": [
+        {
+          "field": "clarification",
+          "expected": false,
+          "actual": false,
+          "pass": true
+        },
+        {
+          "field": "direction",
+          "expected": "SELL",
+          "actual": "SELL",
+          "pass": true
+        },
+        {
+          "field": "type",
+          "expected": "CALL",
+          "actual": "CALL",
+          "pass": true
+        },
+        {
+          "field": "expiry",
+          "expected": "2026-10-30",
+          "actual": "2026-10-30",
+          "pass": true
+        },
+        {
+          "field": "quantity",
+          "expected": 0.02,
+          "actual": 0.02,
+          "pass": true
+        },
+        {
+          "field": "limit",
+          "expected": 5,
+          "actual": 5,
+          "pass": true
+        },
+        {
+          "field": "sort",
+          "expected": "daily_premium_desc",
+          "actual": "daily_premium_desc",
+          "pass": true
+        },
+        {
+          "field": "min_strike",
+          "expected": 90000,
+          "actual": 90000.0,
+          "pass": true
+        },
+        {
+          "field": "max_abs_delta",
+          "expected": 0.25,
+          "actual": 0.25,
+          "pass": true
+        },
+        {
+          "field": "no_invented_contract_or_order",
+          "expected": true,
+          "actual": true,
+          "pass": true
+        }
+      ],
+      "passed_fields": 10,
+      "total_fields": 10,
+      "pass": true
+    },
+    {
+      "model": "deepseek-v4-pro",
+      "case_id": "sell_call_expiry_strike_delta",
+      "status": "complete",
+      "returned_model": "deepseek-v4-pro",
+      "criteria": {
+        "direction": "SELL",
+        "type": "CALL",
+        "expiry": "2026-10-30",
+        "quantity": 0.02,
+        "limit": 5,
+        "sort": "daily_premium_desc",
+        "max_abs_delta": 0.25,
+        "min_strike": 90000.0
+      },
+      "answer": "筛选卖出2026-10-30到期的Call，行权价≥90000 USDT，绝对Delta≤0.25，模拟0.02 BTC，最多5项，按平均每日权利金降序。",
+      "clarification": null,
+      "latency_ms": 2031,
+      "usage": {
+        "prompt_tokens": 1373,
+        "completion_tokens": 147,
+        "total_tokens": 1520,
+        "prompt_cache_hit_tokens": 1280,
+        "prompt_cache_miss_tokens": 93
+      },
+      "checks": [
+        {
+          "field": "clarification",
+          "expected": false,
+          "actual": false,
+          "pass": true
+        },
+        {
+          "field": "direction",
+          "expected": "SELL",
+          "actual": "SELL",
+          "pass": true
+        },
+        {
+          "field": "type",
+          "expected": "CALL",
+          "actual": "CALL",
+          "pass": true
+        },
+        {
+          "field": "expiry",
+          "expected": "2026-10-30",
+          "actual": "2026-10-30",
+          "pass": true
+        },
+        {
+          "field": "quantity",
+          "expected": 0.02,
+          "actual": 0.02,
+          "pass": true
+        },
+        {
+          "field": "limit",
+          "expected": 5,
+          "actual": 5,
+          "pass": true
+        },
+        {
+          "field": "sort",
+          "expected": "daily_premium_desc",
+          "actual": "daily_premium_desc",
+          "pass": true
+        },
+        {
+          "field": "min_strike",
+          "expected": 90000,
+          "actual": 90000.0,
+          "pass": true
+        },
+        {
+          "field": "max_abs_delta",
+          "expected": 0.25,
+          "actual": 0.25,
+          "pass": true
+        },
+        {
+          "field": "no_invented_contract_or_order",
+          "expected": true,
+          "actual": true,
+          "pass": true
+        }
+      ],
+      "passed_fields": 10,
+      "total_fields": 10,
+      "pass": true
+    },
+    {
+      "model": "deepseek-flash",
+      "case_id": "buy_put_expiry",
+      "status": "complete",
+      "returned_model": "deepseek-flash",
+      "criteria": {
+        "direction": "BUY",
+        "type": "PUT",
+        "expiry": "2026-10-23",
+        "quantity": 0.01,
+        "limit": 10,
+        "sort": "daily_premium_desc"
+      },
+      "answer": "筛选买入 2026-10-23 到期的 Put，模拟数量 0.01 BTC，最多 10 项，按平均每日权利金降序排列；未指定风险指标门槛，因此不加 Delta、IV、价差等数值过滤。",
+      "clarification": null,
+      "latency_ms": 1391,
+      "usage": {
+        "prompt_tokens": 1353,
+        "completion_tokens": 104,
+        "total_tokens": 1457,
+        "prompt_cache_hit_tokens": 1152,
+        "prompt_cache_miss_tokens": 201
+      },
+      "checks": [
+        {
+          "field": "clarification",
+          "expected": false,
+          "actual": false,
+          "pass": true
+        },
+        {
+          "field": "direction",
+          "expected": "BUY",
+          "actual": "BUY",
+          "pass": true
+        },
+        {
+          "field": "type",
+          "expected": "PUT",
+          "actual": "PUT",
+          "pass": true
+        },
+        {
+          "field": "expiry",
+          "expected": "2026-10-23",
+          "actual": "2026-10-23",
+          "pass": true
+        },
+        {
+          "field": "quantity",
+          "expected": 0.01,
+          "actual": 0.01,
+          "pass": true
+        },
+        {
+          "field": "limit",
+          "expected": 10,
+          "actual": 10,
+          "pass": true
+        },
+        {
+          "field": "sort",
+          "expected": "daily_premium_desc",
+          "actual": "daily_premium_desc",
+          "pass": true
+        },
+        {
+          "field": "no_invented_contract_or_order",
+          "expected": true,
+          "actual": true,
+          "pass": true
+        }
+      ],
+      "passed_fields": 8,
+      "total_fields": 8,
+      "pass": true
+    },
+    {
+      "model": "deepseek-v4-pro",
+      "case_id": "buy_put_expiry",
+      "status": "complete",
+      "returned_model": "deepseek-v4-pro",
+      "criteria": {
+        "direction": "BUY",
+        "type": "PUT",
+        "expiry": "2026-10-23",
+        "quantity": 0.01,
+        "limit": 10,
+        "sort": "daily_premium_desc"
+      },
+      "answer": "筛选买入 Put、到期日 2026-10-23；模拟数量 0.01 BTC，默认最多 10 项，按平均每日权利金降序排序。",
+      "clarification": null,
+      "latency_ms": 2578,
+      "usage": {
+        "prompt_tokens": 1350,
+        "completion_tokens": 115,
+        "total_tokens": 1465,
+        "prompt_cache_hit_tokens": 1280,
+        "prompt_cache_miss_tokens": 70
+      },
+      "checks": [
+        {
+          "field": "clarification",
+          "expected": false,
+          "actual": false,
+          "pass": true
+        },
+        {
+          "field": "direction",
+          "expected": "BUY",
+          "actual": "BUY",
+          "pass": true
+        },
+        {
+          "field": "type",
+          "expected": "PUT",
+          "actual": "PUT",
+          "pass": true
+        },
+        {
+          "field": "expiry",
+          "expected": "2026-10-23",
+          "actual": "2026-10-23",
+          "pass": true
+        },
+        {
+          "field": "quantity",
+          "expected": 0.01,
+          "actual": 0.01,
+          "pass": true
+        },
+        {
+          "field": "limit",
+          "expected": 10,
+          "actual": 10,
+          "pass": true
+        },
+        {
+          "field": "sort",
+          "expected": "daily_premium_desc",
+          "actual": "daily_premium_desc",
+          "pass": true
+        },
+        {
+          "field": "no_invented_contract_or_order",
+          "expected": true,
+          "actual": true,
+          "pass": true
+        }
+      ],
+      "passed_fields": 8,
+      "total_fields": 8,
+      "pass": true
+    },
+    {
+      "model": "deepseek-flash",
+      "case_id": "sell_put_iv_days_spread",
+      "status": "complete",
+      "returned_model": "deepseek-flash",
+      "criteria": {
+        "direction": "SELL",
+        "type": "PUT",
+        "expiry": "ALL",
+        "quantity": 0.01,
+        "limit": 10,
+        "sort": "daily_premium_desc",
+        "min_iv": 0.4,
+        "max_iv": 0.8,
+        "min_days": 30.0,
+        "max_days": 90.0,
+        "max_spread_pct": 15.0
+      },
+      "answer": "筛选卖出 Put、IV 40%–80%、剩余30至90天、买卖价差相对中间价≤15%；默认全部到期日、模拟0.01 BTC、最多10项，按平均每日权利金降序。",
+      "clarification": null,
+      "latency_ms": 1968,
+      "usage": {
+        "prompt_tokens": 1363,
+        "completion_tokens": 129,
+        "total_tokens": 1492,
+        "prompt_cache_hit_tokens": 1152,
+        "prompt_cache_miss_tokens": 211
+      },
+      "checks": [
+        {
+          "field": "clarification",
+          "expected": false,
+          "actual": false,
+          "pass": true
+        },
+        {
+          "field": "direction",
+          "expected": "SELL",
+          "actual": "SELL",
+          "pass": true
+        },
+        {
+          "field": "type",
+          "expected": "PUT",
+          "actual": "PUT",
+          "pass": true
+        },
+        {
+          "field": "expiry",
+          "expected": "ALL",
+          "actual": "ALL",
+          "pass": true
+        },
+        {
+          "field": "quantity",
+          "expected": 0.01,
+          "actual": 0.01,
+          "pass": true
+        },
+        {
+          "field": "limit",
+          "expected": 10,
+          "actual": 10,
+          "pass": true
+        },
+        {
+          "field": "sort",
+          "expected": "daily_premium_desc",
+          "actual": "daily_premium_desc",
+          "pass": true
+        },
+        {
+          "field": "min_iv",
+          "expected": 0.4,
+          "actual": 0.4,
+          "pass": true
+        },
+        {
+          "field": "max_iv",
+          "expected": 0.8,
+          "actual": 0.8,
+          "pass": true
+        },
+        {
+          "field": "min_days",
+          "expected": 30,
+          "actual": 30.0,
+          "pass": true
+        },
+        {
+          "field": "max_days",
+          "expected": 90,
+          "actual": 90.0,
+          "pass": true
+        },
+        {
+          "field": "max_spread_pct",
+          "expected": 15,
+          "actual": 15.0,
+          "pass": true
+        },
+        {
+          "field": "no_invented_contract_or_order",
+          "expected": true,
+          "actual": true,
+          "pass": true
+        }
+      ],
+      "passed_fields": 13,
+      "total_fields": 13,
+      "pass": true
+    },
+    {
+      "model": "deepseek-v4-pro",
+      "case_id": "sell_put_iv_days_spread",
+      "status": "complete",
+      "returned_model": "deepseek-v4-pro",
+      "criteria": {
+        "direction": "SELL",
+        "type": "PUT",
+        "expiry": "ALL",
+        "quantity": 0.01,
+        "limit": 10,
+        "sort": "daily_premium_desc",
+        "min_iv": 0.4,
+        "max_iv": 0.8,
+        "min_days": 30.0,
+        "max_days": 90.0,
+        "max_spread_pct": 15.0
+      },
+      "answer": "筛选卖 Put、隐含波动率40%至80%、剩余30至90天、买卖价差相对中间价≤15%；默认全部到期日、模拟0.01 BTC、最多10项，按平均每日权利金排序。",
+      "clarification": null,
+      "latency_ms": 2733,
+      "usage": {
+        "prompt_tokens": 1360,
+        "completion_tokens": 172,
+        "total_tokens": 1532,
+        "prompt_cache_hit_tokens": 1280,
+        "prompt_cache_miss_tokens": 80
+      },
+      "checks": [
+        {
+          "field": "clarification",
+          "expected": false,
+          "actual": false,
+          "pass": true
+        },
+        {
+          "field": "direction",
+          "expected": "SELL",
+          "actual": "SELL",
+          "pass": true
+        },
+        {
+          "field": "type",
+          "expected": "PUT",
+          "actual": "PUT",
+          "pass": true
+        },
+        {
+          "field": "expiry",
+          "expected": "ALL",
+          "actual": "ALL",
+          "pass": true
+        },
+        {
+          "field": "quantity",
+          "expected": 0.01,
+          "actual": 0.01,
+          "pass": true
+        },
+        {
+          "field": "limit",
+          "expected": 10,
+          "actual": 10,
+          "pass": true
+        },
+        {
+          "field": "sort",
+          "expected": "daily_premium_desc",
+          "actual": "daily_premium_desc",
+          "pass": true
+        },
+        {
+          "field": "min_iv",
+          "expected": 0.4,
+          "actual": 0.4,
+          "pass": true
+        },
+        {
+          "field": "max_iv",
+          "expected": 0.8,
+          "actual": 0.8,
+          "pass": true
+        },
+        {
+          "field": "min_days",
+          "expected": 30,
+          "actual": 30.0,
+          "pass": true
+        },
+        {
+          "field": "max_days",
+          "expected": 90,
+          "actual": 90.0,
+          "pass": true
+        },
+        {
+          "field": "max_spread_pct",
+          "expected": 15,
+          "actual": 15.0,
+          "pass": true
+        },
+        {
+          "field": "no_invented_contract_or_order",
+          "expected": true,
+          "actual": true,
+          "pass": true
+        }
+      ],
+      "passed_fields": 13,
+      "total_fields": 13,
+      "pass": true
+    },
+    {
+      "model": "deepseek-flash",
+      "case_id": "sell_put_daily_premium",
+      "status": "complete",
+      "returned_model": "deepseek-flash",
+      "criteria": {
+        "direction": "SELL",
+        "type": "PUT",
+        "expiry": "ALL",
+        "quantity": 0.1,
+        "limit": 10,
+        "sort": "daily_premium_desc",
+        "min_daily_premium": 1.0
+      },
+      "answer": "筛选卖 Put、全部到期日、模拟 0.1 BTC、平均每日权利金（每 BTC 权利金×0.1÷剩余天数）≥1 USDT；默认最多 10 项，按平均每日权利金降序。",
+      "clarification": null,
+      "latency_ms": 1421,
+      "usage": {
+        "prompt_tokens": 1355,
+        "completion_tokens": 105,
+        "total_tokens": 1460,
+        "prompt_cache_hit_tokens": 1152,
+        "prompt_cache_miss_tokens": 203
+      },
+      "checks": [
+        {
+          "field": "clarification",
+          "expected": false,
+          "actual": false,
+          "pass": true
+        },
+        {
+          "field": "direction",
+          "expected": "SELL",
+          "actual": "SELL",
+          "pass": true
+        },
+        {
+          "field": "type",
+          "expected": "PUT",
+          "actual": "PUT",
+          "pass": true
+        },
+        {
+          "field": "expiry",
+          "expected": "ALL",
+          "actual": "ALL",
+          "pass": true
+        },
+        {
+          "field": "quantity",
+          "expected": 0.1,
+          "actual": 0.1,
+          "pass": true
+        },
+        {
+          "field": "limit",
+          "expected": 10,
+          "actual": 10,
+          "pass": true
+        },
+        {
+          "field": "sort",
+          "expected": "daily_premium_desc",
+          "actual": "daily_premium_desc",
+          "pass": true
+        },
+        {
+          "field": "min_daily_premium",
+          "expected": 1,
+          "actual": 1.0,
+          "pass": true
+        },
+        {
+          "field": "no_invented_contract_or_order",
+          "expected": true,
+          "actual": true,
+          "pass": true
+        }
+      ],
+      "passed_fields": 9,
+      "total_fields": 9,
+      "pass": true
+    },
+    {
+      "model": "deepseek-v4-pro",
+      "case_id": "sell_put_daily_premium",
+      "status": "complete",
+      "returned_model": "deepseek-v4-pro",
+      "criteria": {
+        "direction": "SELL",
+        "type": "PUT",
+        "expiry": "ALL",
+        "quantity": 0.1,
+        "limit": 10,
+        "sort": "daily_premium_desc",
+        "min_daily_premium": 1.0
+      },
+      "answer": "筛选卖出 Put，模拟0.1 BTC，整笔平均每天权利金至少1 USDT；默认全部到期日、最多10项，按平均每日权利金排序。",
+      "clarification": null,
+      "latency_ms": 1671,
+      "usage": {
+        "prompt_tokens": 1352,
+        "completion_tokens": 120,
+        "total_tokens": 1472,
+        "prompt_cache_hit_tokens": 1280,
+        "prompt_cache_miss_tokens": 72
+      },
+      "checks": [
+        {
+          "field": "clarification",
+          "expected": false,
+          "actual": false,
+          "pass": true
+        },
+        {
+          "field": "direction",
+          "expected": "SELL",
+          "actual": "SELL",
+          "pass": true
+        },
+        {
+          "field": "type",
+          "expected": "PUT",
+          "actual": "PUT",
+          "pass": true
+        },
+        {
+          "field": "expiry",
+          "expected": "ALL",
+          "actual": "ALL",
+          "pass": true
+        },
+        {
+          "field": "quantity",
+          "expected": 0.1,
+          "actual": 0.1,
+          "pass": true
+        },
+        {
+          "field": "limit",
+          "expected": 10,
+          "actual": 10,
+          "pass": true
+        },
+        {
+          "field": "sort",
+          "expected": "daily_premium_desc",
+          "actual": "daily_premium_desc",
+          "pass": true
+        },
+        {
+          "field": "min_daily_premium",
+          "expected": 1,
+          "actual": 1.0,
+          "pass": true
+        },
+        {
+          "field": "no_invented_contract_or_order",
+          "expected": true,
+          "actual": true,
+          "pass": true
+        }
+      ],
+      "passed_fields": 9,
+      "total_fields": 9,
+      "pass": true
+    },
+    {
+      "model": "deepseek-flash",
+      "case_id": "qualitative_profit_guarantee",
+      "status": "complete",
+      "returned_model": "deepseek-flash",
+      "criteria": {
+        "direction": "SELL",
+        "type": "PUT",
+        "expiry": "ALL",
+        "quantity": 0.01,
+        "limit": 10,
+        "sort": "daily_premium_desc"
+      },
+      "answer": "该需求只有“安全稳赚、收益最高”等定性表述，没有可量化的筛选条件，无法据此确定 Delta、IV、期限、权利金或日收益门槛。",
+      "clarification": "请给出可量化条件，例如方向（买/卖）、类型（Put/Call）、到期日、剩余天数范围、绝对Delta上限、IV上限、最小日权利金或现金日收益率等。",
+      "latency_ms": 1532,
+      "usage": {
+        "prompt_tokens": 1339,
+        "completion_tokens": 94,
+        "total_tokens": 1433,
+        "prompt_cache_hit_tokens": 1152,
+        "prompt_cache_miss_tokens": 187
+      },
+      "checks": [
+        {
+          "field": "clarification",
+          "expected": true,
+          "actual": true,
+          "pass": true
+        },
+        {
+          "field": "no_invented_contract_or_order",
+          "expected": true,
+          "actual": true,
+          "pass": true
+        }
+      ],
+      "passed_fields": 2,
+      "total_fields": 2,
+      "pass": true
+    },
+    {
+      "model": "deepseek-v4-pro",
+      "case_id": "qualitative_profit_guarantee",
+      "status": "complete",
+      "returned_model": "deepseek-v4-pro",
+      "criteria": {
+        "direction": "SELL",
+        "type": "PUT",
+        "expiry": "ALL",
+        "quantity": 0.01,
+        "limit": 10,
+        "sort": "daily_premium_desc"
+      },
+      "answer": "",
+      "clarification": "请提供可量化的筛选条件，例如方向（买/卖）、类型（Put/Call）、到期日、最大绝对Delta、最低日收益率等，以便筛选。",
+      "latency_ms": 1703,
+      "usage": {
+        "prompt_tokens": 1336,
+        "completion_tokens": 56,
+        "total_tokens": 1392,
+        "prompt_cache_hit_tokens": 1280,
+        "prompt_cache_miss_tokens": 56
+      },
+      "checks": [
+        {
+          "field": "clarification",
+          "expected": true,
+          "actual": true,
+          "pass": true
+        },
+        {
+          "field": "no_invented_contract_or_order",
+          "expected": true,
+          "actual": true,
+          "pass": true
+        }
+      ],
+      "passed_fields": 2,
+      "total_fields": 2,
+      "pass": true
+    }
+  ],
+  "models": [
+    {
+      "id": "deepseek-flash",
+      "label": "V4.1 Flash",
+      "available": true,
+      "name": "DeepSeek-V4.1-Flash",
+      "context_window": 1048576,
+      "max_output_tokens": 393216,
+      "input_modalities": [
+        "text",
+        "image"
+      ],
+      "output_modalities": [
+        "text"
+      ]
+    },
+    {
+      "id": "deepseek-v4-pro",
+      "label": "V4 Pro",
+      "available": true,
+      "name": "DeepSeek-V4-Pro",
+      "context_window": 1048576,
+      "max_output_tokens": 393216,
+      "input_modalities": [
+        "text"
+      ],
+      "output_modalities": [
+        "text"
+      ]
+    }
+  ],
+  "cases": [
+    {
+      "id": "sell_put_days_otm",
+      "question": "卖出 Put，剩余7到20天，虚值比例至少15%，模拟0.01 BTC，最多5张，按平均每日权利金从高到低。",
+      "expected": {
+        "direction": "SELL",
+        "type": "PUT",
+        "expiry": "ALL",
+        "quantity": 0.01,
+        "limit": 5,
+        "sort": "daily_premium_desc",
+        "min_days": 7,
+        "max_days": 20,
+        "min_otm_pct": 15
+      }
+    },
+    {
+      "id": "sell_call_expiry_strike_delta",
+      "question": "卖出2026-10-30到期的 Call，行权价至少90000 USDT，绝对Delta不超过0.25，模拟0.02 BTC，最多5张，按平均每日权利金从高到低。",
+      "expected": {
+        "direction": "SELL",
+        "type": "CALL",
+        "expiry": "2026-10-30",
+        "quantity": 0.02,
+        "limit": 5,
+        "sort": "daily_premium_desc",
+        "min_strike": 90000,
+        "max_abs_delta": 0.25
+      }
+    },
+    {
+      "id": "buy_put_expiry",
+      "question": "买入2026-10-23到期的 Put，模拟数量0.01 BTC，其余使用默认筛选口径。",
+      "expected": {
+        "direction": "BUY",
+        "type": "PUT",
+        "expiry": "2026-10-23",
+        "quantity": 0.01,
+        "limit": 10,
+        "sort": "daily_premium_desc"
+      }
+    },
+    {
+      "id": "sell_put_iv_days_spread",
+      "question": "卖出 Put，隐含波动率40%%到80%%，剩余30到90天，买卖价差相对中间价不超过15%%，其他使用默认筛选口径。",
+      "expected": {
+        "direction": "SELL",
+        "type": "PUT",
+        "expiry": "ALL",
+        "quantity": 0.01,
+        "limit": 10,
+        "sort": "daily_premium_desc",
+        "min_iv": 0.4,
+        "max_iv": 0.8,
+        "min_days": 30,
+        "max_days": 90,
+        "max_spread_pct": 15
+      }
+    },
+    {
+      "id": "sell_put_daily_premium",
+      "question": "卖出 Put，模拟0.1 BTC，整笔平均每天权利金至少1 USDT；其他使用默认筛选口径。",
+      "expected": {
+        "direction": "SELL",
+        "type": "PUT",
+        "expiry": "ALL",
+        "quantity": 0.1,
+        "limit": 10,
+        "sort": "daily_premium_desc",
+        "min_daily_premium": 1
+      }
+    },
+    {
+      "id": "qualitative_profit_guarantee",
+      "question": "帮我找安全稳赚、收益最高的期权。",
+      "expected": {},
+      "requires_clarification": true
+    }
+  ],
+  "context": {
+    "beijing_now": "2026-10-22T18:46:14.485772+08:00",
+    "available_expiries": [
+      "2026-10-23",
+      "2026-10-24",
+      "2026-10-25",
+      "2026-10-30",
+      "2026-11-06",
+      "2026-11-13",
+      "2026-11-27",
+      "2026-12-25",
+      "2027-03-26",
+      "2027-06-25",
+      "2027-09-24"
+    ],
+    "btc_index_price": "82090.18956522",
+    "snapshot_revision": 590411
+  },
+  "public_contracts": 682,
+  "summary": [
+    {
+      "model": "deepseek-flash",
+      "attempted_cases": 6,
+      "completed_cases": 6,
+      "passed_cases": 6,
+      "passed_fields": 53,
+      "total_fields": 53,
+      "median_latency_ms": 1414,
+      "total_tokens": 8814,
+      "errors": []
+    },
+    {
+      "model": "deepseek-v4-pro",
+      "attempted_cases": 6,
+      "completed_cases": 6,
+      "passed_cases": 6,
+      "passed_fields": 53,
+      "total_fields": 53,
+      "median_latency_ms": 2304,
+      "total_tokens": 8879,
+      "errors": []
+    }
+  ],
+  "recommended_default": "deepseek-flash",
+  "http_calls": 13,
+  "finished_at_beijing": "2026-10-22T18:46:28.833437+08:00"
+}

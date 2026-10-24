@@ -1,0 +1,30 @@
+{
+  "mode": "activate",
+  "native_key_readable": true,
+  "ai_status": {
+    "configured": true,
+    "models": [
+      {
+        "id": "deepseek-flash",
+        "label": "V4.1 Flash"
+      },
+      {
+        "id": "deepseek-v4-pro",
+        "label": "V4 Pro"
+      }
+    ],
+    "models_verified": false,
+    "default_model": "deepseek-flash",
+    "active_jobs": 0
+  },
+  "terminal_available": true,
+  "market": {
+    "options": 682,
+    "revision": 63,
+    "instance_id": "5581a1cbe6c54222abde2b71bd7518f6",
+    "fetched_at": "2026-10-23T00:04:19.944+08:00",
+    "status": "SUCCESS",
+    "stale": false
+  },
+  "passed": true
+}

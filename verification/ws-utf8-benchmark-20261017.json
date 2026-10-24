@@ -1,0 +1,51 @@
+{
+  "offline": true,
+  "source": "Saved localhost public market cache, wire-shaped synthetic payload",
+  "contract_count": 700,
+  "mark_frame_bytes": 190551,
+  "quote_frame_bytes": 195,
+  "mark_validate_only": {
+    "median_ms": 39.384,
+    "min_ms": 36.324,
+    "max_ms": 40.711,
+    "iterations": 12
+  },
+  "mark_decode_json": {
+    "median_ms": 1.308,
+    "min_ms": 1.247,
+    "max_ms": 1.875,
+    "iterations": 12
+  },
+  "mark_complete_default": {
+    "median_ms": 41.0,
+    "min_ms": 39.268,
+    "max_ms": 42.577,
+    "iterations": 12
+  },
+  "mark_complete_skip": {
+    "median_ms": 1.376,
+    "min_ms": 1.292,
+    "max_ms": 1.445,
+    "iterations": 12
+  },
+  "quote_validate_only": {
+    "median_ms": 0.044,
+    "min_ms": 0.038,
+    "max_ms": 0.115,
+    "iterations": 300
+  },
+  "quote_complete_default": {
+    "median_ms": 0.048,
+    "min_ms": 0.047,
+    "max_ms": 0.27,
+    "iterations": 300
+  },
+  "quote_complete_skip": {
+    "median_ms": 0.006,
+    "min_ms": 0.005,
+    "max_ms": 0.018,
+    "iterations": 300
+  },
+  "invalid_utf8_still_rejected": true,
+  "valid_utf8_json_parsed_identically": true
+}

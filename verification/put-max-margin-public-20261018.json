@@ -1,0 +1,418 @@
+{
+  "received_local_ms": 1792253430921,
+  "endpoints": {
+    "index": {
+      "url": "https://eapi.binance.com/eapi/v1/index?underlying=BTCUSDT",
+      "ok": true,
+      "network_request_sent": true,
+      "response_complete": true,
+      "http_status": 200,
+      "rate_headers": {
+        "x-mbx-used-weight-1m": "1"
+      },
+      "data": {
+        "indexPrice": "81401.97130435",
+        "time": 1792253428000
+      },
+      "attempts": 1,
+      "attempt_history": [
+        {
+          "attempt": 1,
+          "http_status": 200,
+          "ok": true,
+          "error_type": null,
+          "phase": null,
+          "elapsed_ms": 1407
+        }
+      ],
+      "elapsed_ms": 1407,
+      "received_at_beijing": "2026-10-18T00:10:27+08:00"
+    },
+    "depth_61000": {
+      "url": "https://eapi.binance.com/eapi/v1/depth?symbol=BTC-261030-61000-P&limit=10",
+      "ok": true,
+      "network_request_sent": true,
+      "response_complete": true,
+      "http_status": 200,
+      "rate_headers": {
+        "x-mbx-used-weight-1m": "2"
+      },
+      "data": {
+        "bids": [
+          [
+            "35.000",
+            "59.47"
+          ],
+          [
+            "30.000",
+            "1.59"
+          ],
+          [
+            "25.000",
+            "44.60"
+          ],
+          [
+            "15.000",
+            "7.00"
+          ],
+          [
+            "5.000",
+            "7.00"
+          ]
+        ],
+        "asks": [
+          [
+            "40.000",
+            "57.07"
+          ],
+          [
+            "45.000",
+            "48.59"
+          ],
+          [
+            "85.000",
+            "62.90"
+          ],
+          [
+            "100.000",
+            "0.01"
+          ],
+          [
+            "535.000",
+            "6.16"
+          ],
+          [
+            "8000.000",
+            "6.00"
+          ]
+        ],
+        "T": 1792253419883,
+        "lastUpdateId": 44681190475
+      },
+      "attempts": 1,
+      "attempt_history": [
+        {
+          "attempt": 1,
+          "http_status": 200,
+          "ok": true,
+          "error_type": null,
+          "phase": null,
+          "elapsed_ms": 2594
+        }
+      ],
+      "elapsed_ms": 2594,
+      "received_at_beijing": "2026-10-18T00:10:28+08:00"
+    },
+    "mark_61000": {
+      "url": "https://eapi.binance.com/eapi/v1/mark?symbol=BTC-261030-61000-P",
+      "ok": true,
+      "network_request_sent": true,
+      "response_complete": true,
+      "http_status": 200,
+      "rate_headers": {
+        "x-mbx-used-weight-1m": "5"
+      },
+      "data": [
+        {
+          "symbol": "BTC-261030-61000-P",
+          "markPrice": "37.867",
+          "bidIV": "0.68484008",
+          "askIV": "0.69709122",
+          "markIV": "0.692",
+          "delta": "-0.01020198",
+          "theta": "-11.22067253",
+          "gamma": "0.00000259",
+          "vega": "4.11155289",
+          "highPriceLimit": "750",
+          "lowPriceLimit": "10",
+          "riskFreeInterest": "0.0579"
+        }
+      ],
+      "attempts": 1,
+      "attempt_history": [
+        {
+          "attempt": 1,
+          "http_status": 200,
+          "ok": true,
+          "error_type": null,
+          "phase": null,
+          "elapsed_ms": 2313
+        }
+      ],
+      "elapsed_ms": 2313,
+      "received_at_beijing": "2026-10-18T00:10:28+08:00"
+    },
+    "depth_62000": {
+      "url": "https://eapi.binance.com/eapi/v1/depth?symbol=BTC-261030-62000-P&limit=10",
+      "ok": true,
+      "network_request_sent": true,
+      "response_complete": true,
+      "http_status": 200,
+      "rate_headers": {
+        "x-mbx-used-weight-1m": "2"
+      },
+      "data": {
+        "bids": [
+          [
+            "40.000",
+            "61.97"
+          ],
+          [
+            "35.000",
+            "9.81"
+          ],
+          [
+            "30.000",
+            "38.71"
+          ],
+          [
+            "25.000",
+            "13.00"
+          ],
+          [
+            "20.000",
+            "2.79"
+          ],
+          [
+            "5.000",
+            "69.87"
+          ]
+        ],
+        "asks": [
+          [
+            "45.000",
+            "43.03"
+          ],
+          [
+            "50.000",
+            "46.27"
+          ],
+          [
+            "55.000",
+            "17.97"
+          ],
+          [
+            "90.000",
+            "62.87"
+          ],
+          [
+            "150.000",
+            "0.01"
+          ],
+          [
+            "480.000",
+            "0.20"
+          ],
+          [
+            "555.000",
+            "6.16"
+          ],
+          [
+            "2460.000",
+            "0.05"
+          ],
+          [
+            "3000.000",
+            "0.01"
+          ],
+          [
+            "10000.000",
+            "0.02"
+          ]
+        ],
+        "T": 1792253408744,
+        "lastUpdateId": 44681180078
+      },
+      "attempts": 1,
+      "attempt_history": [
+        {
+          "attempt": 1,
+          "http_status": 200,
+          "ok": true,
+          "error_type": null,
+          "phase": null,
+          "elapsed_ms": 1969
+        }
+      ],
+      "elapsed_ms": 1969,
+      "received_at_beijing": "2026-10-18T00:10:28+08:00"
+    },
+    "mark_62000": {
+      "url": "https://eapi.binance.com/eapi/v1/mark?symbol=BTC-261030-62000-P",
+      "ok": true,
+      "network_request_sent": true,
+      "response_complete": true,
+      "http_status": 200,
+      "rate_headers": {
+        "x-mbx-used-weight-1m": "5"
+      },
+      "data": [
+        {
+          "symbol": "BTC-261030-62000-P",
+          "markPrice": "43.909",
+          "bidIV": "0.66248119",
+          "askIV": "0.67328513",
+          "markIV": "0.671",
+          "delta": "-0.01199336",
+          "theta": "-12.48446611",
+          "gamma": "0.00000308",
+          "vega": "4.7327346",
+          "highPriceLimit": "750",
+          "lowPriceLimit": "10",
+          "riskFreeInterest": "0.058"
+        }
+      ],
+      "attempts": 1,
+      "attempt_history": [
+        {
+          "attempt": 1,
+          "http_status": 200,
+          "ok": true,
+          "error_type": null,
+          "phase": null,
+          "elapsed_ms": 1343
+        }
+      ],
+      "elapsed_ms": 1343,
+      "received_at_beijing": "2026-10-18T00:10:28+08:00"
+    },
+    "depth_65000": {
+      "url": "https://eapi.binance.com/eapi/v1/depth?symbol=BTC-261030-65000-P&limit=10",
+      "ok": true,
+      "network_request_sent": true,
+      "response_complete": true,
+      "http_status": 200,
+      "rate_headers": {
+        "x-mbx-used-weight-1m": "2"
+      },
+      "data": {
+        "bids": [
+          [
+            "65.000",
+            "66.06"
+          ],
+          [
+            "60.000",
+            "27.62"
+          ],
+          [
+            "55.000",
+            "24.93"
+          ],
+          [
+            "40.000",
+            "1.00"
+          ],
+          [
+            "25.000",
+            "62.70"
+          ],
+          [
+            "15.000",
+            "0.50"
+          ],
+          [
+            "5.000",
+            "7.00"
+          ]
+        ],
+        "asks": [
+          [
+            "70.000",
+            "18.45"
+          ],
+          [
+            "75.000",
+            "78.98"
+          ],
+          [
+            "80.000",
+            "26.50"
+          ],
+          [
+            "85.000",
+            "1.00"
+          ],
+          [
+            "115.000",
+            "62.70"
+          ],
+          [
+            "300.000",
+            "0.01"
+          ],
+          [
+            "625.000",
+            "5.81"
+          ],
+          [
+            "700.000",
+            "0.01"
+          ],
+          [
+            "1865.000",
+            "0.02"
+          ],
+          [
+            "2200.000",
+            "0.02"
+          ]
+        ],
+        "T": 1792253391588,
+        "lastUpdateId": 44681159625
+      },
+      "attempts": 1,
+      "attempt_history": [
+        {
+          "attempt": 1,
+          "http_status": 200,
+          "ok": true,
+          "error_type": null,
+          "phase": null,
+          "elapsed_ms": 2843
+        }
+      ],
+      "elapsed_ms": 2843,
+      "received_at_beijing": "2026-10-18T00:10:30+08:00"
+    },
+    "mark_65000": {
+      "url": "https://eapi.binance.com/eapi/v1/mark?symbol=BTC-261030-65000-P",
+      "ok": true,
+      "network_request_sent": true,
+      "response_complete": true,
+      "http_status": 200,
+      "rate_headers": {
+        "x-mbx-used-weight-1m": "5"
+      },
+      "data": [
+        {
+          "symbol": "BTC-261030-65000-P",
+          "markPrice": "69.582",
+          "bidIV": "0.60256183",
+          "askIV": "0.60957372",
+          "markIV": "0.609",
+          "delta": "-0.01977793",
+          "theta": "-17.4047396",
+          "gamma": "0.00000522",
+          "vega": "7.27092797",
+          "highPriceLimit": "750",
+          "lowPriceLimit": "15",
+          "riskFreeInterest": "0.0579"
+        }
+      ],
+      "attempts": 1,
+      "attempt_history": [
+        {
+          "attempt": 1,
+          "http_status": 200,
+          "ok": true,
+          "error_type": null,
+          "phase": null,
+          "elapsed_ms": 859
+        }
+      ],
+      "elapsed_ms": 859,
+      "received_at_beijing": "2026-10-18T00:10:29+08:00"
+    }
+  }
+}

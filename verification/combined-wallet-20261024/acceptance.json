@@ -1,0 +1,17 @@
+{
+  "automated_checks": 1887,
+  "automated_groups": 31,
+  "all_passed": true,
+  "native_readonly_apis_passed": true,
+  "browser": {
+    "combined_fiat_and_btc_visible": true,
+    "currency_and_period_controls_passed": true,
+    "currency_and_location_pies_passed": true,
+    "unsupported_90d_pnl_reason_shown": true,
+    "alerts_live": true,
+    "options_live_contracts": 616,
+    "console_errors": 0,
+    "wallet_tab_left_open": true
+  },
+  "scope": "Local account and address integration. No trading actions performed; native network state may change after this acceptance."
+}

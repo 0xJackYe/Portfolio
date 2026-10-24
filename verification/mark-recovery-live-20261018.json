@@ -1,0 +1,1437 @@
+{
+  "scope": "Bounded public-data live QA; no account or order access",
+  "samples": [
+    {
+      "elapsed": 0.0,
+      "marks": {
+        "BTC-261030-63000-P": {
+          "price": "47.924",
+          "iv": "0.655",
+          "source": "rest",
+          "age_seconds": 8.777,
+          "fresh": true
+        },
+        "BTC-261030-62000-P": {
+          "price": "40.371",
+          "iv": "0.674",
+          "source": "rest",
+          "age_seconds": 8.777,
+          "fresh": true
+        },
+        "BTC-261030-64000-P": {
+          "price": "56.915",
+          "iv": "0.636",
+          "source": "rest",
+          "age_seconds": 8.777,
+          "fresh": true
+        },
+        "BTC-261030-65000-P": {
+          "price": "66.245",
+          "iv": "0.615",
+          "source": "rest",
+          "age_seconds": 8.777,
+          "fresh": true
+        }
+      },
+      "recovery": {
+        "refreshing": false,
+        "contracts": {
+          "BTC-261030-63000-P": {
+            "refreshing": false,
+            "last_attempt_at": 1792270224235,
+            "error": null,
+            "last_success_at": 1792270225366
+          },
+          "BTC-261030-64000-P": {
+            "refreshing": false,
+            "last_attempt_at": 1792270224235,
+            "error": null,
+            "last_success_at": 1792270225240
+          },
+          "BTC-261030-65000-P": {
+            "refreshing": false,
+            "last_attempt_at": 1792270224235,
+            "error": null,
+            "last_success_at": 1792270227284
+          },
+          "BTC-261030-66000-P": {
+            "refreshing": false,
+            "last_attempt_at": 1792270224235,
+            "error": null,
+            "last_success_at": 1792270227350
+          },
+          "BTC-261030-62000-P": {
+            "refreshing": false,
+            "last_attempt_at": 1792270228852,
+            "error": null,
+            "last_success_at": 1792270230205
+          }
+        }
+      }
+    },
+    {
+      "elapsed": 4.42,
+      "marks": {
+        "BTC-261030-63000-P": {
+          "price": "47.924",
+          "iv": "0.655",
+          "source": "rest",
+          "age_seconds": 13.253,
+          "fresh": true
+        },
+        "BTC-261030-62000-P": {
+          "price": "40.371",
+          "iv": "0.674",
+          "source": "rest",
+          "age_seconds": 13.253,
+          "fresh": true
+        },
+        "BTC-261030-64000-P": {
+          "price": "56.915",
+          "iv": "0.636",
+          "source": "rest",
+          "age_seconds": 13.253,
+          "fresh": true
+        },
+        "BTC-261030-65000-P": {
+          "price": "66.245",
+          "iv": "0.615",
+          "source": "rest",
+          "age_seconds": 13.253,
+          "fresh": true
+        }
+      },
+      "recovery": {
+        "refreshing": true,
+        "contracts": {
+          "BTC-261030-63000-P": {
+            "refreshing": true,
+            "last_attempt_at": 1792270242173,
+            "error": null,
+            "last_success_at": 1792270225366
+          },
+          "BTC-261030-64000-P": {
+            "refreshing": true,
+            "last_attempt_at": 1792270242173,
+            "error": null,
+            "last_success_at": 1792270225240
+          },
+          "BTC-261030-65000-P": {
+            "refreshing": true,
+            "last_attempt_at": 1792270242173,
+            "error": null,
+            "last_success_at": 1792270227284
+          },
+          "BTC-261030-66000-P": {
+            "refreshing": false,
+            "last_attempt_at": 1792270224235,
+            "error": null,
+            "last_success_at": 1792270227350
+          },
+          "BTC-261030-62000-P": {
+            "refreshing": true,
+            "last_attempt_at": 1792270242173,
+            "error": null,
+            "last_success_at": 1792270230205
+          }
+        }
+      }
+    },
+    {
+      "elapsed": 8.89,
+      "marks": {
+        "BTC-261030-63000-P": {
+          "price": "47.921",
+          "iv": "0.655",
+          "source": "rest",
+          "age_seconds": 3.167,
+          "fresh": true
+        },
+        "BTC-261030-62000-P": {
+          "price": "40.368",
+          "iv": "0.674",
+          "source": "rest",
+          "age_seconds": 3.15,
+          "fresh": true
+        },
+        "BTC-261030-64000-P": {
+          "price": "56.909",
+          "iv": "0.636",
+          "source": "rest",
+          "age_seconds": 1.636,
+          "fresh": true
+        },
+        "BTC-261030-65000-P": {
+          "price": "66.241",
+          "iv": "0.615",
+          "source": "rest",
+          "age_seconds": 1.644,
+          "fresh": true
+        }
+      },
+      "recovery": {
+        "refreshing": true,
+        "contracts": {
+          "BTC-261030-63000-P": {
+            "refreshing": false,
+            "last_attempt_at": 1792270242173,
+            "error": null,
+            "last_success_at": 1792270245570
+          },
+          "BTC-261030-64000-P": {
+            "refreshing": false,
+            "last_attempt_at": 1792270242173,
+            "error": null,
+            "last_success_at": 1792270247101
+          },
+          "BTC-261030-65000-P": {
+            "refreshing": false,
+            "last_attempt_at": 1792270242173,
+            "error": null,
+            "last_success_at": 1792270247093
+          },
+          "BTC-261030-66000-P": {
+            "refreshing": false,
+            "last_attempt_at": 1792270224235,
+            "error": null,
+            "last_success_at": 1792270227350
+          },
+          "BTC-261030-62000-P": {
+            "refreshing": false,
+            "last_attempt_at": 1792270242173,
+            "error": null,
+            "last_success_at": 1792270245587
+          }
+        }
+      }
+    },
+    {
+      "elapsed": 13.53,
+      "marks": {
+        "BTC-261030-63000-P": {
+          "price": "47.921",
+          "iv": "0.655",
+          "source": "rest",
+          "age_seconds": 4.721,
+          "fresh": true
+        },
+        "BTC-261030-62000-P": {
+          "price": "40.368",
+          "iv": "0.674",
+          "source": "rest",
+          "age_seconds": 4.721,
+          "fresh": true
+        },
+        "BTC-261030-64000-P": {
+          "price": "56.911",
+          "iv": "0.636",
+          "source": "rest",
+          "age_seconds": 4.721,
+          "fresh": true
+        },
+        "BTC-261030-65000-P": {
+          "price": "66.241",
+          "iv": "0.615",
+          "source": "rest",
+          "age_seconds": 4.721,
+          "fresh": true
+        }
+      },
+      "recovery": {
+        "refreshing": false,
+        "contracts": {
+          "BTC-261030-63000-P": {
+            "refreshing": false,
+            "last_attempt_at": 1792270242173,
+            "error": null,
+            "last_success_at": 1792270245570
+          },
+          "BTC-261030-64000-P": {
+            "refreshing": false,
+            "last_attempt_at": 1792270242173,
+            "error": null,
+            "last_success_at": 1792270247101
+          },
+          "BTC-261030-65000-P": {
+            "refreshing": false,
+            "last_attempt_at": 1792270242173,
+            "error": null,
+            "last_success_at": 1792270247093
+          },
+          "BTC-261030-66000-P": {
+            "refreshing": false,
+            "last_attempt_at": 1792270224235,
+            "error": null,
+            "last_success_at": 1792270227350
+          },
+          "BTC-261030-62000-P": {
+            "refreshing": false,
+            "last_attempt_at": 1792270242173,
+            "error": null,
+            "last_success_at": 1792270245587
+          }
+        }
+      }
+    },
+    {
+      "elapsed": 17.53,
+      "marks": {
+        "BTC-261030-63000-P": {
+          "price": "47.921",
+          "iv": "0.655",
+          "source": "websocket",
+          "age_seconds": 2.628,
+          "fresh": true
+        },
+        "BTC-261030-62000-P": {
+          "price": "40.369",
+          "iv": "0.674",
+          "source": "websocket",
+          "age_seconds": 2.628,
+          "fresh": true
+        },
+        "BTC-261030-64000-P": {
+          "price": "56.912",
+          "iv": "0.636",
+          "source": "websocket",
+          "age_seconds": 2.628,
+          "fresh": true
+        },
+        "BTC-261030-65000-P": {
+          "price": "66.242",
+          "iv": "0.615",
+          "source": "websocket",
+          "age_seconds": 2.628,
+          "fresh": true
+        }
+      },
+      "recovery": {
+        "refreshing": false,
+        "contracts": {
+          "BTC-261030-63000-P": {
+            "refreshing": false,
+            "last_attempt_at": 1792270242173,
+            "error": null,
+            "last_success_at": 1792270245570
+          },
+          "BTC-261030-64000-P": {
+            "refreshing": false,
+            "last_attempt_at": 1792270242173,
+            "error": null,
+            "last_success_at": 1792270247101
+          },
+          "BTC-261030-65000-P": {
+            "refreshing": false,
+            "last_attempt_at": 1792270242173,
+            "error": null,
+            "last_success_at": 1792270247093
+          },
+          "BTC-261030-66000-P": {
+            "refreshing": false,
+            "last_attempt_at": 1792270224235,
+            "error": null,
+            "last_success_at": 1792270227350
+          },
+          "BTC-261030-62000-P": {
+            "refreshing": false,
+            "last_attempt_at": 1792270242173,
+            "error": null,
+            "last_success_at": 1792270245587
+          }
+        }
+      }
+    },
+    {
+      "elapsed": 21.52,
+      "marks": {
+        "BTC-261030-63000-P": {
+          "price": "47.921",
+          "iv": "0.655",
+          "source": "websocket",
+          "age_seconds": 7.868,
+          "fresh": true
+        },
+        "BTC-261030-62000-P": {
+          "price": "40.369",
+          "iv": "0.674",
+          "source": "websocket",
+          "age_seconds": 7.868,
+          "fresh": true
+        },
+        "BTC-261030-64000-P": {
+          "price": "56.912",
+          "iv": "0.636",
+          "source": "websocket",
+          "age_seconds": 7.868,
+          "fresh": true
+        },
+        "BTC-261030-65000-P": {
+          "price": "66.242",
+          "iv": "0.615",
+          "source": "websocket",
+          "age_seconds": 7.868,
+          "fresh": true
+        }
+      },
+      "recovery": {
+        "refreshing": false,
+        "contracts": {
+          "BTC-261030-63000-P": {
+            "refreshing": false,
+            "last_attempt_at": 1792270242173,
+            "error": null,
+            "last_success_at": 1792270245570
+          },
+          "BTC-261030-64000-P": {
+            "refreshing": false,
+            "last_attempt_at": 1792270242173,
+            "error": null,
+            "last_success_at": 1792270247101
+          },
+          "BTC-261030-65000-P": {
+            "refreshing": false,
+            "last_attempt_at": 1792270242173,
+            "error": null,
+            "last_success_at": 1792270247093
+          },
+          "BTC-261030-66000-P": {
+            "refreshing": false,
+            "last_attempt_at": 1792270224235,
+            "error": null,
+            "last_success_at": 1792270227350
+          },
+          "BTC-261030-62000-P": {
+            "refreshing": false,
+            "last_attempt_at": 1792270242173,
+            "error": null,
+            "last_success_at": 1792270245587
+          }
+        }
+      }
+    },
+    {
+      "elapsed": 26.77,
+      "marks": {
+        "BTC-261030-63000-P": {
+          "price": "47.923",
+          "iv": "0.655",
+          "source": "rest",
+          "age_seconds": 6.943,
+          "fresh": true
+        },
+        "BTC-261030-62000-P": {
+          "price": "40.37",
+          "iv": "0.674",
+          "source": "rest",
+          "age_seconds": 6.943,
+          "fresh": true
+        },
+        "BTC-261030-64000-P": {
+          "price": "56.914",
+          "iv": "0.636",
+          "source": "rest",
+          "age_seconds": 6.943,
+          "fresh": true
+        },
+        "BTC-261030-65000-P": {
+          "price": "66.245",
+          "iv": "0.615",
+          "source": "rest",
+          "age_seconds": 6.943,
+          "fresh": true
+        }
+      },
+      "recovery": {
+        "refreshing": true,
+        "contracts": {
+          "BTC-261030-63000-P": {
+            "refreshing": true,
+            "last_attempt_at": 1792270264144,
+            "error": null,
+            "last_success_at": 1792270245570
+          },
+          "BTC-261030-64000-P": {
+            "refreshing": true,
+            "last_attempt_at": 1792270264144,
+            "error": null,
+            "last_success_at": 1792270247101
+          },
+          "BTC-261030-65000-P": {
+            "refreshing": true,
+            "last_attempt_at": 1792270264144,
+            "error": null,
+            "last_success_at": 1792270247093
+          },
+          "BTC-261030-66000-P": {
+            "refreshing": false,
+            "last_attempt_at": 1792270224235,
+            "error": null,
+            "last_success_at": 1792270227350
+          },
+          "BTC-261030-62000-P": {
+            "refreshing": true,
+            "last_attempt_at": 1792270264144,
+            "error": null,
+            "last_success_at": 1792270245587
+          }
+        }
+      }
+    },
+    {
+      "elapsed": 33.53,
+      "marks": {
+        "BTC-261030-63000-P": {
+          "price": "47.921",
+          "iv": "0.655",
+          "source": "rest",
+          "age_seconds": 5.477,
+          "fresh": true
+        },
+        "BTC-261030-62000-P": {
+          "price": "40.368",
+          "iv": "0.674",
+          "source": "rest",
+          "age_seconds": 5.358,
+          "fresh": true
+        },
+        "BTC-261030-64000-P": {
+          "price": "56.912",
+          "iv": "0.636",
+          "source": "rest",
+          "age_seconds": 2.493,
+          "fresh": true
+        },
+        "BTC-261030-65000-P": {
+          "price": "66.245",
+          "iv": "0.615",
+          "source": "rest",
+          "age_seconds": 11.912,
+          "fresh": true
+        }
+      },
+      "recovery": {
+        "refreshing": true,
+        "contracts": {
+          "BTC-261030-63000-P": {
+            "refreshing": false,
+            "last_attempt_at": 1792270264144,
+            "error": null,
+            "last_success_at": 1792270268170
+          },
+          "BTC-261030-64000-P": {
+            "refreshing": false,
+            "last_attempt_at": 1792270264144,
+            "error": null,
+            "last_success_at": 1792270271154
+          },
+          "BTC-261030-65000-P": {
+            "refreshing": true,
+            "last_attempt_at": 1792270264144,
+            "error": null,
+            "last_success_at": 1792270247093
+          },
+          "BTC-261030-66000-P": {
+            "refreshing": false,
+            "last_attempt_at": 1792270224235,
+            "error": null,
+            "last_success_at": 1792270227350
+          },
+          "BTC-261030-62000-P": {
+            "refreshing": false,
+            "last_attempt_at": 1792270264144,
+            "error": null,
+            "last_success_at": 1792270268289
+          }
+        }
+      }
+    },
+    {
+      "elapsed": 38.45,
+      "marks": {
+        "BTC-261030-63000-P": {
+          "price": "47.921",
+          "iv": "0.655",
+          "source": "rest",
+          "age_seconds": 12.172,
+          "fresh": true
+        },
+        "BTC-261030-62000-P": {
+          "price": "40.368",
+          "iv": "0.674",
+          "source": "rest",
+          "age_seconds": 12.053,
+          "fresh": true
+        },
+        "BTC-261030-64000-P": {
+          "price": "56.912",
+          "iv": "0.636",
+          "source": "rest",
+          "age_seconds": 9.188,
+          "fresh": true
+        },
+        "BTC-261030-65000-P": {
+          "price": "66.242",
+          "iv": "0.615",
+          "source": "rest",
+          "age_seconds": 9.138,
+          "fresh": true
+        }
+      },
+      "recovery": {
+        "refreshing": false,
+        "contracts": {
+          "BTC-261030-63000-P": {
+            "refreshing": false,
+            "last_attempt_at": 1792270264144,
+            "error": null,
+            "last_success_at": 1792270268170
+          },
+          "BTC-261030-64000-P": {
+            "refreshing": false,
+            "last_attempt_at": 1792270264144,
+            "error": null,
+            "last_success_at": 1792270271154
+          },
+          "BTC-261030-65000-P": {
+            "refreshing": false,
+            "last_attempt_at": 1792270264144,
+            "error": null,
+            "last_success_at": 1792270271204
+          },
+          "BTC-261030-66000-P": {
+            "refreshing": false,
+            "last_attempt_at": 1792270224235,
+            "error": null,
+            "last_success_at": 1792270227350
+          },
+          "BTC-261030-62000-P": {
+            "refreshing": false,
+            "last_attempt_at": 1792270264144,
+            "error": null,
+            "last_success_at": 1792270268289
+          }
+        }
+      }
+    },
+    {
+      "elapsed": 45.16,
+      "marks": {
+        "BTC-261030-63000-P": {
+          "price": "47.921",
+          "iv": "0.655",
+          "source": "rest",
+          "age_seconds": 7.618,
+          "fresh": true
+        },
+        "BTC-261030-62000-P": {
+          "price": "40.368",
+          "iv": "0.674",
+          "source": "rest",
+          "age_seconds": 7.618,
+          "fresh": true
+        },
+        "BTC-261030-64000-P": {
+          "price": "56.912",
+          "iv": "0.636",
+          "source": "rest",
+          "age_seconds": 7.618,
+          "fresh": true
+        },
+        "BTC-261030-65000-P": {
+          "price": "66.242",
+          "iv": "0.615",
+          "source": "rest",
+          "age_seconds": 7.618,
+          "fresh": true
+        }
+      },
+      "recovery": {
+        "refreshing": true,
+        "contracts": {
+          "BTC-261030-63000-P": {
+            "refreshing": true,
+            "last_attempt_at": 1792270282153,
+            "error": null,
+            "last_success_at": 1792270268170
+          },
+          "BTC-261030-64000-P": {
+            "refreshing": true,
+            "last_attempt_at": 1792270282153,
+            "error": null,
+            "last_success_at": 1792270271154
+          },
+          "BTC-261030-65000-P": {
+            "refreshing": true,
+            "last_attempt_at": 1792270282153,
+            "error": null,
+            "last_success_at": 1792270271204
+          },
+          "BTC-261030-66000-P": {
+            "refreshing": false,
+            "last_attempt_at": 1792270224235,
+            "error": null,
+            "last_success_at": 1792270227350
+          },
+          "BTC-261030-62000-P": {
+            "refreshing": true,
+            "last_attempt_at": 1792270282153,
+            "error": null,
+            "last_success_at": 1792270268289
+          }
+        }
+      }
+    },
+    {
+      "elapsed": 50.12,
+      "marks": {
+        "BTC-261030-63000-P": {
+          "price": "47.921",
+          "iv": "0.655",
+          "source": "rest",
+          "age_seconds": 4.767,
+          "fresh": true
+        },
+        "BTC-261030-62000-P": {
+          "price": "40.369",
+          "iv": "0.674",
+          "source": "rest",
+          "age_seconds": 4.342,
+          "fresh": true
+        },
+        "BTC-261030-64000-P": {
+          "price": "56.909",
+          "iv": "0.636",
+          "source": "rest",
+          "age_seconds": 1.767,
+          "fresh": true
+        },
+        "BTC-261030-65000-P": {
+          "price": "66.239",
+          "iv": "0.615",
+          "source": "rest",
+          "age_seconds": 1.785,
+          "fresh": true
+        }
+      },
+      "recovery": {
+        "refreshing": false,
+        "contracts": {
+          "BTC-261030-63000-P": {
+            "refreshing": false,
+            "last_attempt_at": 1792270282153,
+            "error": null,
+            "last_success_at": 1792270284529
+          },
+          "BTC-261030-64000-P": {
+            "refreshing": false,
+            "last_attempt_at": 1792270282153,
+            "error": null,
+            "last_success_at": 1792270287529
+          },
+          "BTC-261030-65000-P": {
+            "refreshing": false,
+            "last_attempt_at": 1792270282153,
+            "error": null,
+            "last_success_at": 1792270287511
+          },
+          "BTC-261030-66000-P": {
+            "refreshing": false,
+            "last_attempt_at": 1792270224235,
+            "error": null,
+            "last_success_at": 1792270227350
+          },
+          "BTC-261030-62000-P": {
+            "refreshing": false,
+            "last_attempt_at": 1792270282153,
+            "error": null,
+            "last_success_at": 1792270284954
+          }
+        }
+      }
+    },
+    {
+      "elapsed": 54.11,
+      "marks": {
+        "BTC-261030-63000-P": {
+          "price": "47.921",
+          "iv": "0.655",
+          "source": "rest",
+          "age_seconds": 9.619,
+          "fresh": true
+        },
+        "BTC-261030-62000-P": {
+          "price": "40.369",
+          "iv": "0.674",
+          "source": "rest",
+          "age_seconds": 9.194,
+          "fresh": true
+        },
+        "BTC-261030-64000-P": {
+          "price": "56.909",
+          "iv": "0.636",
+          "source": "rest",
+          "age_seconds": 6.619,
+          "fresh": true
+        },
+        "BTC-261030-65000-P": {
+          "price": "66.239",
+          "iv": "0.615",
+          "source": "rest",
+          "age_seconds": 6.637,
+          "fresh": true
+        }
+      },
+      "recovery": {
+        "refreshing": false,
+        "contracts": {
+          "BTC-261030-63000-P": {
+            "refreshing": false,
+            "last_attempt_at": 1792270282153,
+            "error": null,
+            "last_success_at": 1792270284529
+          },
+          "BTC-261030-64000-P": {
+            "refreshing": false,
+            "last_attempt_at": 1792270282153,
+            "error": null,
+            "last_success_at": 1792270287529
+          },
+          "BTC-261030-65000-P": {
+            "refreshing": false,
+            "last_attempt_at": 1792270282153,
+            "error": null,
+            "last_success_at": 1792270287511
+          },
+          "BTC-261030-66000-P": {
+            "refreshing": false,
+            "last_attempt_at": 1792270224235,
+            "error": null,
+            "last_success_at": 1792270227350
+          },
+          "BTC-261030-62000-P": {
+            "refreshing": false,
+            "last_attempt_at": 1792270282153,
+            "error": null,
+            "last_success_at": 1792270284954
+          }
+        }
+      }
+    },
+    {
+      "elapsed": 58.94,
+      "marks": {
+        "BTC-261030-63000-P": {
+          "price": "47.918",
+          "iv": "0.655",
+          "source": "rest",
+          "age_seconds": 6.954,
+          "fresh": true
+        },
+        "BTC-261030-62000-P": {
+          "price": "40.366",
+          "iv": "0.674",
+          "source": "rest",
+          "age_seconds": 6.954,
+          "fresh": true
+        },
+        "BTC-261030-64000-P": {
+          "price": "56.909",
+          "iv": "0.636",
+          "source": "rest",
+          "age_seconds": 6.954,
+          "fresh": true
+        },
+        "BTC-261030-65000-P": {
+          "price": "66.239",
+          "iv": "0.615",
+          "source": "rest",
+          "age_seconds": 6.954,
+          "fresh": true
+        }
+      },
+      "recovery": {
+        "refreshing": true,
+        "contracts": {
+          "BTC-261030-63000-P": {
+            "refreshing": true,
+            "last_attempt_at": 1792270295263,
+            "error": null,
+            "last_success_at": 1792270284529
+          },
+          "BTC-261030-64000-P": {
+            "refreshing": false,
+            "last_attempt_at": 1792270282153,
+            "error": null,
+            "last_success_at": 1792270287529
+          },
+          "BTC-261030-65000-P": {
+            "refreshing": false,
+            "last_attempt_at": 1792270282153,
+            "error": null,
+            "last_success_at": 1792270287511
+          },
+          "BTC-261030-66000-P": {
+            "refreshing": false,
+            "last_attempt_at": 1792270224235,
+            "error": null,
+            "last_success_at": 1792270227350
+          },
+          "BTC-261030-62000-P": {
+            "refreshing": true,
+            "last_attempt_at": 1792270295263,
+            "error": null,
+            "last_success_at": 1792270284954
+          }
+        }
+      }
+    },
+    {
+      "elapsed": 64.11,
+      "marks": {
+        "BTC-261030-63000-P": {
+          "price": "47.915",
+          "iv": "0.655",
+          "source": "rest",
+          "age_seconds": 5.404,
+          "fresh": true
+        },
+        "BTC-261030-62000-P": {
+          "price": "40.363",
+          "iv": "0.674",
+          "source": "rest",
+          "age_seconds": 5.389,
+          "fresh": true
+        },
+        "BTC-261030-64000-P": {
+          "price": "56.909",
+          "iv": "0.636",
+          "source": "rest",
+          "age_seconds": 10.769,
+          "fresh": true
+        },
+        "BTC-261030-65000-P": {
+          "price": "66.239",
+          "iv": "0.615",
+          "source": "rest",
+          "age_seconds": 10.769,
+          "fresh": true
+        }
+      },
+      "recovery": {
+        "refreshing": false,
+        "contracts": {
+          "BTC-261030-63000-P": {
+            "refreshing": false,
+            "last_attempt_at": 1792270295263,
+            "error": null,
+            "last_success_at": 1792270297714
+          },
+          "BTC-261030-64000-P": {
+            "refreshing": false,
+            "last_attempt_at": 1792270282153,
+            "error": null,
+            "last_success_at": 1792270287529
+          },
+          "BTC-261030-65000-P": {
+            "refreshing": false,
+            "last_attempt_at": 1792270282153,
+            "error": null,
+            "last_success_at": 1792270287511
+          },
+          "BTC-261030-66000-P": {
+            "refreshing": false,
+            "last_attempt_at": 1792270224235,
+            "error": null,
+            "last_success_at": 1792270227350
+          },
+          "BTC-261030-62000-P": {
+            "refreshing": false,
+            "last_attempt_at": 1792270295263,
+            "error": null,
+            "last_success_at": 1792270297729
+          }
+        }
+      }
+    },
+    {
+      "elapsed": 67.91,
+      "marks": {
+        "BTC-261030-63000-P": {
+          "price": "47.915",
+          "iv": "0.655",
+          "source": "rest",
+          "age_seconds": 10.161,
+          "fresh": true
+        },
+        "BTC-261030-62000-P": {
+          "price": "40.363",
+          "iv": "0.674",
+          "source": "rest",
+          "age_seconds": 10.146,
+          "fresh": true
+        },
+        "BTC-261030-64000-P": {
+          "price": "56.909",
+          "iv": "0.636",
+          "source": "rest",
+          "age_seconds": 15.526,
+          "fresh": true
+        },
+        "BTC-261030-65000-P": {
+          "price": "66.239",
+          "iv": "0.615",
+          "source": "rest",
+          "age_seconds": 15.526,
+          "fresh": true
+        }
+      },
+      "recovery": {
+        "refreshing": true,
+        "contracts": {
+          "BTC-261030-63000-P": {
+            "refreshing": false,
+            "last_attempt_at": 1792270295263,
+            "error": null,
+            "last_success_at": 1792270297714
+          },
+          "BTC-261030-64000-P": {
+            "refreshing": true,
+            "last_attempt_at": 1792270303843,
+            "error": null,
+            "last_success_at": 1792270287529
+          },
+          "BTC-261030-65000-P": {
+            "refreshing": true,
+            "last_attempt_at": 1792270303843,
+            "error": null,
+            "last_success_at": 1792270287511
+          },
+          "BTC-261030-66000-P": {
+            "refreshing": false,
+            "last_attempt_at": 1792270224235,
+            "error": null,
+            "last_success_at": 1792270227350
+          },
+          "BTC-261030-62000-P": {
+            "refreshing": false,
+            "last_attempt_at": 1792270295263,
+            "error": null,
+            "last_success_at": 1792270297729
+          }
+        }
+      }
+    },
+    {
+      "elapsed": 72.67,
+      "marks": {
+        "BTC-261030-63000-P": {
+          "price": "47.915",
+          "iv": "0.655",
+          "source": "rest",
+          "age_seconds": 16.84,
+          "fresh": true
+        },
+        "BTC-261030-62000-P": {
+          "price": "40.363",
+          "iv": "0.674",
+          "source": "rest",
+          "age_seconds": 16.825,
+          "fresh": true
+        },
+        "BTC-261030-64000-P": {
+          "price": "56.904",
+          "iv": "0.636",
+          "source": "rest",
+          "age_seconds": 7.502,
+          "fresh": true
+        },
+        "BTC-261030-65000-P": {
+          "price": "66.232",
+          "iv": "0.615",
+          "source": "rest",
+          "age_seconds": 7.275,
+          "fresh": true
+        }
+      },
+      "recovery": {
+        "refreshing": true,
+        "contracts": {
+          "BTC-261030-63000-P": {
+            "refreshing": true,
+            "last_attempt_at": 1792270308818,
+            "error": null,
+            "last_success_at": 1792270297714
+          },
+          "BTC-261030-64000-P": {
+            "refreshing": false,
+            "last_attempt_at": 1792270303843,
+            "error": null,
+            "last_success_at": 1792270307052
+          },
+          "BTC-261030-65000-P": {
+            "refreshing": false,
+            "last_attempt_at": 1792270303843,
+            "error": null,
+            "last_success_at": 1792270307279
+          },
+          "BTC-261030-66000-P": {
+            "refreshing": false,
+            "last_attempt_at": 1792270224235,
+            "error": null,
+            "last_success_at": 1792270227350
+          },
+          "BTC-261030-62000-P": {
+            "refreshing": true,
+            "last_attempt_at": 1792270308818,
+            "error": null,
+            "last_success_at": 1792270297729
+          }
+        }
+      }
+    },
+    {
+      "elapsed": 79.34,
+      "marks": {
+        "BTC-261030-63000-P": {
+          "price": "47.913",
+          "iv": "0.655",
+          "source": "rest",
+          "age_seconds": 7.144,
+          "fresh": true
+        },
+        "BTC-261030-62000-P": {
+          "price": "40.361",
+          "iv": "0.674",
+          "source": "rest",
+          "age_seconds": 7.407,
+          "fresh": true
+        },
+        "BTC-261030-64000-P": {
+          "price": "56.903",
+          "iv": "0.636",
+          "source": "rest",
+          "age_seconds": 7.505,
+          "fresh": true
+        },
+        "BTC-261030-65000-P": {
+          "price": "66.232",
+          "iv": "0.615",
+          "source": "rest",
+          "age_seconds": 7.505,
+          "fresh": true
+        }
+      },
+      "recovery": {
+        "refreshing": false,
+        "contracts": {
+          "BTC-261030-63000-P": {
+            "refreshing": false,
+            "last_attempt_at": 1792270308818,
+            "error": null,
+            "last_success_at": 1792270311403
+          },
+          "BTC-261030-64000-P": {
+            "refreshing": false,
+            "last_attempt_at": 1792270303843,
+            "error": null,
+            "last_success_at": 1792270307052
+          },
+          "BTC-261030-65000-P": {
+            "refreshing": false,
+            "last_attempt_at": 1792270303843,
+            "error": null,
+            "last_success_at": 1792270307279
+          },
+          "BTC-261030-66000-P": {
+            "refreshing": false,
+            "last_attempt_at": 1792270224235,
+            "error": null,
+            "last_success_at": 1792270227350
+          },
+          "BTC-261030-62000-P": {
+            "refreshing": false,
+            "last_attempt_at": 1792270308818,
+            "error": null,
+            "last_success_at": 1792270311140
+          }
+        }
+      }
+    },
+    {
+      "elapsed": 83.34,
+      "marks": {
+        "BTC-261030-63000-P": {
+          "price": "47.913",
+          "iv": "0.655",
+          "source": "rest",
+          "age_seconds": 11.276,
+          "fresh": true
+        },
+        "BTC-261030-62000-P": {
+          "price": "40.361",
+          "iv": "0.674",
+          "source": "rest",
+          "age_seconds": 11.539,
+          "fresh": true
+        },
+        "BTC-261030-64000-P": {
+          "price": "56.903",
+          "iv": "0.636",
+          "source": "rest",
+          "age_seconds": 11.637,
+          "fresh": true
+        },
+        "BTC-261030-65000-P": {
+          "price": "66.232",
+          "iv": "0.615",
+          "source": "rest",
+          "age_seconds": 11.637,
+          "fresh": true
+        }
+      },
+      "recovery": {
+        "refreshing": true,
+        "contracts": {
+          "BTC-261030-63000-P": {
+            "refreshing": true,
+            "last_attempt_at": 1792270321511,
+            "error": null,
+            "last_success_at": 1792270311403
+          },
+          "BTC-261030-64000-P": {
+            "refreshing": true,
+            "last_attempt_at": 1792270321511,
+            "error": null,
+            "last_success_at": 1792270307052
+          },
+          "BTC-261030-65000-P": {
+            "refreshing": true,
+            "last_attempt_at": 1792270321511,
+            "error": null,
+            "last_success_at": 1792270307279
+          },
+          "BTC-261030-66000-P": {
+            "refreshing": false,
+            "last_attempt_at": 1792270224235,
+            "error": null,
+            "last_success_at": 1792270227350
+          },
+          "BTC-261030-62000-P": {
+            "refreshing": true,
+            "last_attempt_at": 1792270321511,
+            "error": null,
+            "last_success_at": 1792270311140
+          }
+        }
+      }
+    },
+    {
+      "elapsed": 87.47,
+      "marks": {
+        "BTC-261030-63000-P": {
+          "price": "47.911",
+          "iv": "0.655",
+          "source": "rest",
+          "age_seconds": 3.879,
+          "fresh": true
+        },
+        "BTC-261030-62000-P": {
+          "price": "40.359",
+          "iv": "0.674",
+          "source": "rest",
+          "age_seconds": 4.398,
+          "fresh": true
+        },
+        "BTC-261030-64000-P": {
+          "price": "56.903",
+          "iv": "0.636",
+          "source": "rest",
+          "age_seconds": 17.867,
+          "fresh": true
+        },
+        "BTC-261030-65000-P": {
+          "price": "66.232",
+          "iv": "0.615",
+          "source": "rest",
+          "age_seconds": 17.867,
+          "fresh": true
+        }
+      },
+      "recovery": {
+        "refreshing": true,
+        "contracts": {
+          "BTC-261030-63000-P": {
+            "refreshing": false,
+            "last_attempt_at": 1792270321511,
+            "error": null,
+            "last_success_at": 1792270325030
+          },
+          "BTC-261030-64000-P": {
+            "refreshing": true,
+            "last_attempt_at": 1792270321511,
+            "error": null,
+            "last_success_at": 1792270307052
+          },
+          "BTC-261030-65000-P": {
+            "refreshing": true,
+            "last_attempt_at": 1792270321511,
+            "error": null,
+            "last_success_at": 1792270307279
+          },
+          "BTC-261030-66000-P": {
+            "refreshing": false,
+            "last_attempt_at": 1792270224235,
+            "error": null,
+            "last_success_at": 1792270227350
+          },
+          "BTC-261030-62000-P": {
+            "refreshing": false,
+            "last_attempt_at": 1792270321511,
+            "error": null,
+            "last_success_at": 1792270324511
+          }
+        }
+      }
+    },
+    {
+      "elapsed": 93.72,
+      "marks": {
+        "BTC-261030-63000-P": {
+          "price": "47.913",
+          "iv": "0.655",
+          "source": "rest",
+          "age_seconds": 7.654,
+          "fresh": true
+        },
+        "BTC-261030-62000-P": {
+          "price": "40.361",
+          "iv": "0.674",
+          "source": "rest",
+          "age_seconds": 7.654,
+          "fresh": true
+        },
+        "BTC-261030-64000-P": {
+          "price": "56.9",
+          "iv": "0.636",
+          "source": "rest",
+          "age_seconds": 5.919,
+          "fresh": true
+        },
+        "BTC-261030-65000-P": {
+          "price": "66.229",
+          "iv": "0.615",
+          "source": "rest",
+          "age_seconds": 5.835,
+          "fresh": true
+        }
+      },
+      "recovery": {
+        "refreshing": false,
+        "contracts": {
+          "BTC-261030-63000-P": {
+            "refreshing": false,
+            "last_attempt_at": 1792270321511,
+            "error": null,
+            "last_success_at": 1792270325030
+          },
+          "BTC-261030-64000-P": {
+            "refreshing": false,
+            "last_attempt_at": 1792270321511,
+            "error": null,
+            "last_success_at": 1792270326806
+          },
+          "BTC-261030-65000-P": {
+            "refreshing": false,
+            "last_attempt_at": 1792270321511,
+            "error": null,
+            "last_success_at": 1792270326890
+          },
+          "BTC-261030-66000-P": {
+            "refreshing": false,
+            "last_attempt_at": 1792270224235,
+            "error": null,
+            "last_success_at": 1792270227350
+          },
+          "BTC-261030-62000-P": {
+            "refreshing": false,
+            "last_attempt_at": 1792270321511,
+            "error": null,
+            "last_success_at": 1792270324511
+          }
+        }
+      }
+    },
+    {
+      "elapsed": 97.52,
+      "marks": {
+        "BTC-261030-63000-P": {
+          "price": "47.913",
+          "iv": "0.655",
+          "source": "rest",
+          "age_seconds": 12.69,
+          "fresh": true
+        },
+        "BTC-261030-62000-P": {
+          "price": "40.361",
+          "iv": "0.674",
+          "source": "rest",
+          "age_seconds": 12.69,
+          "fresh": true
+        },
+        "BTC-261030-64000-P": {
+          "price": "56.9",
+          "iv": "0.636",
+          "source": "rest",
+          "age_seconds": 10.955,
+          "fresh": true
+        },
+        "BTC-261030-65000-P": {
+          "price": "66.229",
+          "iv": "0.615",
+          "source": "rest",
+          "age_seconds": 10.871,
+          "fresh": true
+        }
+      },
+      "recovery": {
+        "refreshing": true,
+        "contracts": {
+          "BTC-261030-63000-P": {
+            "refreshing": true,
+            "last_attempt_at": 1792270335291,
+            "error": null,
+            "last_success_at": 1792270325030
+          },
+          "BTC-261030-64000-P": {
+            "refreshing": false,
+            "last_attempt_at": 1792270321511,
+            "error": null,
+            "last_success_at": 1792270326806
+          },
+          "BTC-261030-65000-P": {
+            "refreshing": false,
+            "last_attempt_at": 1792270321511,
+            "error": null,
+            "last_success_at": 1792270326890
+          },
+          "BTC-261030-66000-P": {
+            "refreshing": false,
+            "last_attempt_at": 1792270224235,
+            "error": null,
+            "last_success_at": 1792270227350
+          },
+          "BTC-261030-62000-P": {
+            "refreshing": true,
+            "last_attempt_at": 1792270335291,
+            "error": null,
+            "last_success_at": 1792270324511
+          }
+        }
+      }
+    }
+  ],
+  "errors": [],
+  "evaluated_samples": 18,
+  "stale_samples": 0,
+  "all_fresh_after_warmup": true
+}

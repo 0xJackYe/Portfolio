@@ -1,0 +1,21 @@
+{
+  "Software\\Microsoft\\Windows\\CurrentVersion\\Run|GoogleChromeAutoLaunch_16B09CFF9311DB70386A6D419287CE8D": "\"C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe\" --no-startup-window /prefetch:5",
+  "Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\StartupApproved\\Run|WallpaperEngine": "AgAAAAAAAAAAAAAA",
+  "Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\StartupApproved\\Run|MicrosoftEdgeAutoLaunch_03C6746FC767F8AC8F2D8FAD2BB5EAC3": "AgAAAAAAAAAAAAAA",
+  "Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\StartupApproved\\Run|EpicGamesLauncher": "AwAAAOL88WcUSdsB",
+  "Software\\Microsoft\\Windows\\CurrentVersion\\Run|CorpLink": "\"C:\\Program Files\\CorpLink\\current\\Client\\CorpLink.exe\" --hidden",
+  "Software\\Microsoft\\Windows\\CurrentVersion\\Run|AF_counter_windows": "14",
+  "Software\\Microsoft\\Windows\\CurrentVersion\\Run|AF_uuid_windows": "dffaf370-00a9-0000-0000-000000000000",
+  "Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\StartupApproved\\Run|YoudaoDict": "AgAAAAAAAAAAAAAA",
+  "Software\\Microsoft\\Windows\\CurrentVersion\\Run|WallpaperEngine": "\"D:\\SteamLibrary\\steamapps\\common\\wallpaper_engine\\wallpaper32.exe\" -silent",
+  "Software\\Microsoft\\Windows\\CurrentVersion\\Run|MicrosoftEdgeAutoLaunch_03C6746FC767F8AC8F2D8FAD2BB5EAC3": "\"C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe\" --win-session-start",
+  "Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\StartupApproved\\Run|QQMusic": "AgAAAAAAAAAAAAAA",
+  "Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\StartupApproved\\Run|HUAWEI Cloud": "AgAAAAAAAAAAAAAA",
+  "Software\\Microsoft\\Windows\\CurrentVersion\\Run|OneDrive": "\"C:\\Users\\yxh\\AppData\\Local\\Microsoft\\OneDrive\\OneDrive.exe\" /background",
+  "Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\StartupApproved\\Run|NordVPN": "AgAAAAAAAAAAAAAA",
+  "Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\StartupApproved\\Run|Docker Desktop": "AQAAAAAAAAAAAAAA",
+  "Software\\Microsoft\\Windows\\CurrentVersion\\Run|QuarkUpdaterTaskUser1.0.0.21": "\"C:\\Users\\yxh\\AppData\\Local\\QuarkUpdater\\QuarkUpdater\\1.0.0.21\\updater.exe\" --wake --enable-logging --vmodule=*/components/winhttp/*=1,*/components/update_client/*=2,*/chrome/updater/*=2,*/chrome/updater/quark/*=2,*/quark/utils/*=2",
+  "Software\\Microsoft\\Windows\\CurrentVersion\\Run|Typeless.exe": "C:\\Users\\yxh\\AppData\\Local\\Programs\\Typeless\\Typeless.exe --system-startup-silent-launch",
+  "Software\\Microsoft\\Windows\\CurrentVersion\\Run|BaiduYunDetect": "\"D:\\BaiduNetdisk\\YunDetectService.exe\"",
+  "Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\StartupApproved\\StartupFolder|发送至 OneNote.lnk": "AgAAAAAAAAAAAAAA"
+}

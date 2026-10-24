@@ -1,0 +1,405 @@
+{
+  "source": "Existing local public market cache",
+  "samples": [
+    {
+      "received_at_beijing": "2026-10-16T23:07:49.384871+08:00",
+      "latency_seconds": 0.188,
+      "revision": 910,
+      "contracts": 692,
+      "book_subscribed": 692,
+      "verified_quotes": 692,
+      "quiet_verified_quotes": 0,
+      "oct30_verified": 102,
+      "quote_changes_since_previous": 0,
+      "btc_index": "81538.19521739",
+      "index_age_seconds": 0.458,
+      "connections": {
+        "book-0": {
+          "connected": true,
+          "subscription_confirmed": true,
+          "generation": 7,
+          "verified_at": null,
+          "heartbeat_at": 1792163255312,
+          "error_type": null
+        },
+        "index": {
+          "connected": true,
+          "subscription_confirmed": true,
+          "generation": 8,
+          "verified_at": null,
+          "heartbeat_at": 1792163266420,
+          "error_type": null
+        },
+        "market": {
+          "connected": true,
+          "subscription_confirmed": true,
+          "generation": 9,
+          "verified_at": null,
+          "heartbeat_at": 1792163254852,
+          "error_type": null
+        },
+        "book-1": {
+          "connected": true,
+          "subscription_confirmed": true,
+          "generation": 10,
+          "verified_at": null,
+          "heartbeat_at": 1792163255078,
+          "error_type": null
+        },
+        "ticker-0": {
+          "connected": true,
+          "subscription_confirmed": true,
+          "generation": 11,
+          "verified_at": null,
+          "heartbeat_at": 1792163267021,
+          "error_type": null
+        },
+        "book-3": {
+          "connected": true,
+          "subscription_confirmed": true,
+          "generation": 12,
+          "verified_at": null,
+          "heartbeat_at": 1792163266034,
+          "error_type": null
+        },
+        "book-2": {
+          "connected": true,
+          "subscription_confirmed": true,
+          "generation": 13,
+          "verified_at": null,
+          "heartbeat_at": 1792163257297,
+          "error_type": null
+        }
+      },
+      "quiet_example": []
+    },
+    {
+      "received_at_beijing": "2026-10-16T23:07:55.569596+08:00",
+      "latency_seconds": 0.172,
+      "revision": 1609,
+      "contracts": 692,
+      "book_subscribed": 692,
+      "verified_quotes": 332,
+      "quiet_verified_quotes": 0,
+      "oct30_verified": 0,
+      "quote_changes_since_previous": 477,
+      "btc_index": "81551.07652174",
+      "index_age_seconds": 0.641,
+      "connections": {
+        "book-0": {
+          "connected": true,
+          "subscription_confirmed": true,
+          "generation": 7,
+          "verified_at": null,
+          "heartbeat_at": 1792163255312,
+          "error_type": null
+        },
+        "index": {
+          "connected": true,
+          "subscription_confirmed": true,
+          "generation": 8,
+          "verified_at": null,
+          "heartbeat_at": 1792163266420,
+          "error_type": null
+        },
+        "market": {
+          "connected": true,
+          "subscription_confirmed": true,
+          "generation": 9,
+          "verified_at": null,
+          "heartbeat_at": 1792163254852,
+          "error_type": null
+        },
+        "book-1": {
+          "connected": true,
+          "subscription_confirmed": true,
+          "generation": 10,
+          "verified_at": null,
+          "heartbeat_at": 1792163255078,
+          "error_type": null
+        },
+        "ticker-0": {
+          "connected": true,
+          "subscription_confirmed": true,
+          "generation": 11,
+          "verified_at": null,
+          "heartbeat_at": 1792163267021,
+          "error_type": null
+        },
+        "book-3": {
+          "connected": true,
+          "subscription_confirmed": true,
+          "generation": 12,
+          "verified_at": null,
+          "heartbeat_at": 1792163266034,
+          "error_type": null
+        },
+        "book-2": {
+          "connected": true,
+          "subscription_confirmed": true,
+          "generation": 13,
+          "verified_at": null,
+          "heartbeat_at": 1792163257297,
+          "error_type": null
+        }
+      },
+      "quiet_example": []
+    },
+    {
+      "received_at_beijing": "2026-10-16T23:08:01.760369+08:00",
+      "latency_seconds": 0.188,
+      "revision": 2291,
+      "contracts": 692,
+      "book_subscribed": 692,
+      "verified_quotes": 332,
+      "quiet_verified_quotes": 193,
+      "oct30_verified": 0,
+      "quote_changes_since_previous": 113,
+      "btc_index": "81575.37934783",
+      "index_age_seconds": 0.816,
+      "connections": {
+        "book-0": {
+          "connected": true,
+          "subscription_confirmed": true,
+          "generation": 7,
+          "verified_at": null,
+          "heartbeat_at": 1792163255312,
+          "error_type": null
+        },
+        "index": {
+          "connected": true,
+          "subscription_confirmed": true,
+          "generation": 8,
+          "verified_at": null,
+          "heartbeat_at": 1792163277133,
+          "error_type": null
+        },
+        "market": {
+          "connected": false,
+          "subscription_confirmed": null,
+          "generation": null,
+          "verified_at": null,
+          "heartbeat_at": null,
+          "error_type": "MarketStreamSilent"
+        },
+        "book-1": {
+          "connected": true,
+          "subscription_confirmed": true,
+          "generation": 10,
+          "verified_at": null,
+          "heartbeat_at": 1792163255078,
+          "error_type": null
+        },
+        "ticker-0": {
+          "connected": true,
+          "subscription_confirmed": true,
+          "generation": 11,
+          "verified_at": null,
+          "heartbeat_at": 1792163278441,
+          "error_type": null
+        },
+        "book-3": {
+          "connected": true,
+          "subscription_confirmed": true,
+          "generation": 12,
+          "verified_at": null,
+          "heartbeat_at": 1792163266034,
+          "error_type": null
+        },
+        "book-2": {
+          "connected": true,
+          "subscription_confirmed": true,
+          "generation": 13,
+          "verified_at": null,
+          "heartbeat_at": 1792163279064,
+          "error_type": null
+        }
+      },
+      "quiet_example": [
+        {
+          "symbol": "BTC-261127-60000-C",
+          "quote_updated_at": 1792163260325,
+          "verification": {
+            "verified": true,
+            "kind": "bookTicker",
+            "connection": "book-2",
+            "generation": 13,
+            "verified_at": 1792163279064,
+            "baseline_at": 1792163260325,
+            "baseline_source": "markPrice",
+            "values": {
+              "bid_price": "22010.000",
+              "ask_price": "22525.000",
+              "bid_quantity": "20.20",
+              "ask_quantity": "1.50"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "received_at_beijing": "2026-10-16T23:08:07.958171+08:00",
+      "latency_seconds": 0.203,
+      "revision": 2633,
+      "contracts": 692,
+      "book_subscribed": 692,
+      "verified_quotes": 332,
+      "quiet_verified_quotes": 192,
+      "oct30_verified": 0,
+      "quote_changes_since_previous": 163,
+      "btc_index": "81604.76891304",
+      "index_age_seconds": 1.03,
+      "connections": {
+        "book-0": {
+          "connected": false,
+          "subscription_confirmed": null,
+          "generation": null,
+          "verified_at": null,
+          "heartbeat_at": null,
+          "error_type": "ConnectionResetError"
+        },
+        "index": {
+          "connected": true,
+          "subscription_confirmed": true,
+          "generation": 8,
+          "verified_at": null,
+          "heartbeat_at": 1792163277133,
+          "error_type": null
+        },
+        "market": {
+          "connected": false,
+          "subscription_confirmed": null,
+          "generation": 14,
+          "verified_at": null,
+          "heartbeat_at": null,
+          "error_type": null
+        },
+        "book-1": {
+          "connected": false,
+          "subscription_confirmed": null,
+          "generation": null,
+          "verified_at": null,
+          "heartbeat_at": null,
+          "error_type": "ConnectionResetError"
+        },
+        "ticker-0": {
+          "connected": true,
+          "subscription_confirmed": true,
+          "generation": 11,
+          "verified_at": null,
+          "heartbeat_at": 1792163278441,
+          "error_type": null
+        },
+        "book-3": {
+          "connected": true,
+          "subscription_confirmed": true,
+          "generation": 12,
+          "verified_at": null,
+          "heartbeat_at": 1792163283379,
+          "error_type": null
+        },
+        "book-2": {
+          "connected": true,
+          "subscription_confirmed": true,
+          "generation": 13,
+          "verified_at": null,
+          "heartbeat_at": 1792163279064,
+          "error_type": null
+        }
+      },
+      "quiet_example": [
+        {
+          "symbol": "BTC-261127-60000-C",
+          "quote_updated_at": 1792163260325,
+          "verification": {
+            "verified": true,
+            "kind": "bookTicker",
+            "connection": "book-2",
+            "generation": 13,
+            "verified_at": 1792163279064,
+            "baseline_at": 1792163260325,
+            "baseline_source": "markPrice",
+            "values": {
+              "bid_price": "22010.000",
+              "ask_price": "22525.000",
+              "bid_quantity": "20.20",
+              "ask_quantity": "1.50"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "received_at_beijing": "2026-10-16T23:08:14.154856+08:00",
+      "latency_seconds": 0.172,
+      "revision": 3170,
+      "contracts": 692,
+      "book_subscribed": 692,
+      "verified_quotes": 570,
+      "quiet_verified_quotes": 0,
+      "oct30_verified": 23,
+      "quote_changes_since_previous": 514,
+      "btc_index": "81581.43152174",
+      "index_age_seconds": 0.227,
+      "connections": {
+        "book-0": {
+          "connected": true,
+          "subscription_confirmed": true,
+          "generation": 16,
+          "verified_at": null,
+          "heartbeat_at": 1792163289157,
+          "error_type": null
+        },
+        "index": {
+          "connected": true,
+          "subscription_confirmed": true,
+          "generation": 8,
+          "verified_at": null,
+          "heartbeat_at": 1792163288145,
+          "error_type": null
+        },
+        "market": {
+          "connected": true,
+          "subscription_confirmed": true,
+          "generation": 14,
+          "verified_at": null,
+          "heartbeat_at": 1792163288442,
+          "error_type": null
+        },
+        "book-1": {
+          "connected": true,
+          "subscription_confirmed": true,
+          "generation": 15,
+          "verified_at": null,
+          "heartbeat_at": 1792163290439,
+          "error_type": null
+        },
+        "ticker-0": {
+          "connected": true,
+          "subscription_confirmed": true,
+          "generation": 11,
+          "verified_at": null,
+          "heartbeat_at": 1792163291748,
+          "error_type": null
+        },
+        "book-3": {
+          "connected": true,
+          "subscription_confirmed": true,
+          "generation": 12,
+          "verified_at": null,
+          "heartbeat_at": 1792163283379,
+          "error_type": null
+        },
+        "book-2": {
+          "connected": true,
+          "subscription_confirmed": true,
+          "generation": 13,
+          "verified_at": null,
+          "heartbeat_at": 1792163279064,
+          "error_type": null
+        }
+      },
+      "quiet_example": []
+    }
+  ]
+}

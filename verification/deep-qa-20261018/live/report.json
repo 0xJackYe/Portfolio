@@ -1,0 +1,280 @@
+{
+  "startedAtBeijing": "2026-10-18T21:23:55.017232+08:00",
+  "finishedAtBeijing": "2026-10-18T21:25:55.194189+08:00",
+  "requestedSeconds": 120.0,
+  "observedSeconds": 120.0,
+  "warmupSeconds": 30,
+  "intervalSeconds": 2,
+  "watchIntervalSeconds": 10,
+  "localOrigin": "http://127.0.0.1:8766",
+  "symbols": [
+    "BTC-261030-62000-P",
+    "BTC-261030-63000-P",
+    "BTC-261030-64000-P",
+    "BTC-261030-65000-P"
+  ],
+  "gates": {
+    "durationCompleted": true,
+    "hasPostWarmupSamples": true,
+    "actualUiAndEngineAnalysisAvailable": true,
+    "localTelemetryRequestsSucceeded": true,
+    "watchRenewalsSucceeded": true,
+    "allCriticalMarketFieldsFresh": true,
+    "allRequestedContractsEngineCalculable": true
+  },
+  "allGatesPassed": true,
+  "dataRecoveryPassed": true,
+  "counts": {
+    "all": {
+      "watchSamples": 11,
+      "samples": 60,
+      "freshnessFailedSamples": 1,
+      "contractSamples": 240,
+      "freshnessFailedContracts": 3,
+      "engineFailedContracts": 3
+    },
+    "afterWarmup": {
+      "samples": 45,
+      "contractSamples": 180,
+      "watchSamples": 8
+    }
+  },
+  "postWarmupEngineCategories": {
+    "calculable": 180
+  },
+  "postWarmupFreshnessReasons": {},
+  "maximumRawFieldAgeMsIncludingWarmup": {
+    "index": 738,
+    "catalog": 18901,
+    "BTC-261030-62000-P:bid_price": 437535225,
+    "BTC-261030-62000-P:ask_price": 437535225,
+    "BTC-261030-62000-P:bid_quantity": 437535225,
+    "BTC-261030-62000-P:ask_quantity": 437535225,
+    "BTC-261030-62000-P:mark_price": 437535225,
+    "BTC-261030-62000-P:mark_iv": 437535225,
+    "BTC-261030-62000-P:delta": 437535225,
+    "BTC-261030-62000-P:gamma": 437535225,
+    "BTC-261030-62000-P:theta": 437535225,
+    "BTC-261030-62000-P:vega": 437535225,
+    "BTC-261030-62000-P:bid_iv": 437535225,
+    "BTC-261030-62000-P:ask_iv": 437535225,
+    "BTC-261030-63000-P:bid_price": 1404,
+    "BTC-261030-63000-P:ask_price": 1404,
+    "BTC-261030-63000-P:bid_quantity": 1404,
+    "BTC-261030-63000-P:ask_quantity": 1404,
+    "BTC-261030-63000-P:mark_price": 2804,
+    "BTC-261030-63000-P:mark_iv": 2804,
+    "BTC-261030-63000-P:delta": 2804,
+    "BTC-261030-63000-P:gamma": 2804,
+    "BTC-261030-63000-P:theta": 2804,
+    "BTC-261030-63000-P:vega": 2804,
+    "BTC-261030-63000-P:bid_iv": 2804,
+    "BTC-261030-63000-P:ask_iv": 2804,
+    "BTC-261030-64000-P:bid_price": 437535225,
+    "BTC-261030-64000-P:ask_price": 437535225,
+    "BTC-261030-64000-P:bid_quantity": 437535225,
+    "BTC-261030-64000-P:ask_quantity": 437535225,
+    "BTC-261030-64000-P:mark_price": 2502,
+    "BTC-261030-64000-P:mark_iv": 2502,
+    "BTC-261030-64000-P:delta": 2502,
+    "BTC-261030-64000-P:gamma": 2502,
+    "BTC-261030-64000-P:theta": 2502,
+    "BTC-261030-64000-P:vega": 2502,
+    "BTC-261030-64000-P:bid_iv": 2502,
+    "BTC-261030-64000-P:ask_iv": 2502,
+    "BTC-261030-65000-P:bid_price": 437535225,
+    "BTC-261030-65000-P:ask_price": 437535225,
+    "BTC-261030-65000-P:bid_quantity": 437535225,
+    "BTC-261030-65000-P:ask_quantity": 437535225,
+    "BTC-261030-65000-P:mark_price": 437535225,
+    "BTC-261030-65000-P:mark_iv": 437535225,
+    "BTC-261030-65000-P:delta": 437535225,
+    "BTC-261030-65000-P:gamma": 437535225,
+    "BTC-261030-65000-P:theta": 437535225,
+    "BTC-261030-65000-P:vega": 437535225,
+    "BTC-261030-65000-P:bid_iv": 437535225,
+    "BTC-261030-65000-P:ask_iv": 437535225
+  },
+  "firstPostWarmupFailures": [],
+  "watchEvents": [
+    {
+      "elapsedSeconds": 0.016,
+      "transport": {
+        "ok": true,
+        "status": 200,
+        "latencyMs": 16.0,
+        "bytes": 102
+      },
+      "accepted": [
+        "BTC-261030-62000-P",
+        "BTC-261030-63000-P",
+        "BTC-261030-64000-P",
+        "BTC-261030-65000-P"
+      ],
+      "ok": true
+    },
+    {
+      "elapsedSeconds": 12.016,
+      "transport": {
+        "ok": true,
+        "status": 200,
+        "latencyMs": 16.0,
+        "bytes": 102
+      },
+      "accepted": [
+        "BTC-261030-62000-P",
+        "BTC-261030-63000-P",
+        "BTC-261030-64000-P",
+        "BTC-261030-65000-P"
+      ],
+      "ok": true
+    },
+    {
+      "elapsedSeconds": 24.0,
+      "transport": {
+        "ok": true,
+        "status": 200,
+        "latencyMs": 0.0,
+        "bytes": 102
+      },
+      "accepted": [
+        "BTC-261030-62000-P",
+        "BTC-261030-63000-P",
+        "BTC-261030-64000-P",
+        "BTC-261030-65000-P"
+      ],
+      "ok": true
+    },
+    {
+      "elapsedSeconds": 34.016,
+      "transport": {
+        "ok": true,
+        "status": 200,
+        "latencyMs": 0.0,
+        "bytes": 102
+      },
+      "accepted": [
+        "BTC-261030-62000-P",
+        "BTC-261030-63000-P",
+        "BTC-261030-64000-P",
+        "BTC-261030-65000-P"
+      ],
+      "ok": true
+    },
+    {
+      "elapsedSeconds": 44.047,
+      "transport": {
+        "ok": true,
+        "status": 200,
+        "latencyMs": 31.0,
+        "bytes": 102
+      },
+      "accepted": [
+        "BTC-261030-62000-P",
+        "BTC-261030-63000-P",
+        "BTC-261030-64000-P",
+        "BTC-261030-65000-P"
+      ],
+      "ok": true
+    },
+    {
+      "elapsedSeconds": 56.016,
+      "transport": {
+        "ok": true,
+        "status": 200,
+        "latencyMs": 16.0,
+        "bytes": 102
+      },
+      "accepted": [
+        "BTC-261030-62000-P",
+        "BTC-261030-63000-P",
+        "BTC-261030-64000-P",
+        "BTC-261030-65000-P"
+      ],
+      "ok": true
+    },
+    {
+      "elapsedSeconds": 68.016,
+      "transport": {
+        "ok": true,
+        "status": 200,
+        "latencyMs": 0.0,
+        "bytes": 102
+      },
+      "accepted": [
+        "BTC-261030-62000-P",
+        "BTC-261030-63000-P",
+        "BTC-261030-64000-P",
+        "BTC-261030-65000-P"
+      ],
+      "ok": true
+    },
+    {
+      "elapsedSeconds": 80.016,
+      "transport": {
+        "ok": true,
+        "status": 200,
+        "latencyMs": 16.0,
+        "bytes": 102
+      },
+      "accepted": [
+        "BTC-261030-62000-P",
+        "BTC-261030-63000-P",
+        "BTC-261030-64000-P",
+        "BTC-261030-65000-P"
+      ],
+      "ok": true
+    },
+    {
+      "elapsedSeconds": 90.016,
+      "transport": {
+        "ok": true,
+        "status": 200,
+        "latencyMs": 0.0,
+        "bytes": 102
+      },
+      "accepted": [
+        "BTC-261030-62000-P",
+        "BTC-261030-63000-P",
+        "BTC-261030-64000-P",
+        "BTC-261030-65000-P"
+      ],
+      "ok": true
+    },
+    {
+      "elapsedSeconds": 102.063,
+      "transport": {
+        "ok": true,
+        "status": 200,
+        "latencyMs": 63.0,
+        "bytes": 102
+      },
+      "accepted": [
+        "BTC-261030-62000-P",
+        "BTC-261030-63000-P",
+        "BTC-261030-64000-P",
+        "BTC-261030-65000-P"
+      ],
+      "ok": true
+    },
+    {
+      "elapsedSeconds": 114.031,
+      "transport": {
+        "ok": true,
+        "status": 200,
+        "latencyMs": 15.0,
+        "bytes": 102
+      },
+      "accepted": [
+        "BTC-261030-62000-P",
+        "BTC-261030-63000-P",
+        "BTC-261030-64000-P",
+        "BTC-261030-65000-P"
+      ],
+      "ok": true
+    }
+  ],
+  "analysisSetupFailureType": null,
+  "frames": "D:\\Users\\yxh\\Desktop\\options\\verification\\deep-qa-20261018\\live\\frames.jsonl",
+  "scope": "Public local telemetry only; no credentials, accounts or order endpoints. No direct upstream requests. Watch renewals use the existing bounded local public-data recovery. Fresh book change-only fields may have old change times only with the real current UI-validated WS certificate. Mandatory fields: all four top-book fields, mark price, IV, BTC index and catalog time. Optional Greek/IV fields retain independent raw ages. Strategy-filter exclusions are recorded, and each requested contract is separately checked using the actual engine with default account settings."
+}

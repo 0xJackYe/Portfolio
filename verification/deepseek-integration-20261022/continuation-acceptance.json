@@ -1,0 +1,138 @@
+{
+  "records": [
+    {
+      "model": "deepseek-flash",
+      "question": "再加上绝对 Delta 不超过 0.25，其他条件保持不变。",
+      "status": "complete",
+      "criteria": {
+        "direction": "SELL",
+        "type": "PUT",
+        "expiry": "2026-10-30",
+        "quantity": 0.03,
+        "limit": 5,
+        "sort": "daily_premium_desc",
+        "min_otm_pct": 0.0,
+        "max_otm_pct": 20.0,
+        "max_abs_delta": 0.25
+      },
+      "expected": {
+        "direction": "SELL",
+        "type": "PUT",
+        "expiry": "2026-10-30",
+        "quantity": 0.03,
+        "limit": 5,
+        "sort": "daily_premium_desc",
+        "min_otm_pct": 0.0,
+        "max_otm_pct": 20.0,
+        "max_abs_delta": 0.25
+      },
+      "passed": true,
+      "latency_ms": 3892,
+      "usage": {
+        "prompt_tokens": 1452,
+        "completion_tokens": 138,
+        "total_tokens": 1590,
+        "prompt_cache_hit_tokens": 896,
+        "prompt_cache_miss_tokens": 556
+      }
+    },
+    {
+      "model": "deepseek-v4-pro",
+      "question": "再加上绝对 Delta 不超过 0.25，其他条件保持不变。",
+      "status": "complete",
+      "criteria": {
+        "direction": "SELL",
+        "type": "PUT",
+        "expiry": "2026-10-30",
+        "quantity": 0.03,
+        "limit": 5,
+        "sort": "daily_premium_desc",
+        "min_otm_pct": 0.0,
+        "max_otm_pct": 20.0,
+        "max_abs_delta": 0.25
+      },
+      "expected": {
+        "direction": "SELL",
+        "type": "PUT",
+        "expiry": "2026-10-30",
+        "quantity": 0.03,
+        "limit": 5,
+        "sort": "daily_premium_desc",
+        "min_otm_pct": 0.0,
+        "max_otm_pct": 20.0,
+        "max_abs_delta": 0.25
+      },
+      "passed": true,
+      "latency_ms": 4095,
+      "usage": {
+        "prompt_tokens": 1449,
+        "completion_tokens": 174,
+        "total_tokens": 1623,
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 1449
+      }
+    },
+    {
+      "model": "deepseek-flash",
+      "question": "重新开始，清除之前全部筛选条件。买入2026年10月30日到期的 Call，数量0.01 BTC，其余全部使用默认条件。",
+      "status": "complete",
+      "criteria": {
+        "direction": "BUY",
+        "type": "CALL",
+        "expiry": "2026-10-30",
+        "quantity": 0.01,
+        "limit": 10,
+        "sort": "daily_premium_desc"
+      },
+      "expected": {
+        "direction": "BUY",
+        "type": "CALL",
+        "expiry": "2026-10-30",
+        "quantity": 0.01,
+        "limit": 10,
+        "sort": "daily_premium_desc"
+      },
+      "passed": true,
+      "latency_ms": 2001,
+      "usage": {
+        "prompt_tokens": 1471,
+        "completion_tokens": 97,
+        "total_tokens": 1568,
+        "prompt_cache_hit_tokens": 1024,
+        "prompt_cache_miss_tokens": 447
+      }
+    },
+    {
+      "model": "deepseek-v4-pro",
+      "question": "重新开始，清除之前全部筛选条件。买入2026年10月30日到期的 Call，数量0.01 BTC，其余全部使用默认条件。",
+      "status": "complete",
+      "criteria": {
+        "direction": "BUY",
+        "type": "CALL",
+        "expiry": "2026-10-30",
+        "quantity": 0.01,
+        "limit": 10,
+        "sort": "daily_premium_desc"
+      },
+      "expected": {
+        "direction": "BUY",
+        "type": "CALL",
+        "expiry": "2026-10-30",
+        "quantity": 0.01,
+        "limit": 10,
+        "sort": "daily_premium_desc"
+      },
+      "passed": true,
+      "latency_ms": 5490,
+      "usage": {
+        "prompt_tokens": 1468,
+        "completion_tokens": 134,
+        "total_tokens": 1602,
+        "prompt_cache_hit_tokens": 1024,
+        "prompt_cache_miss_tokens": 444
+      }
+    }
+  ],
+  "paid_requests": 4,
+  "passed": true
+}

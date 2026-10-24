@@ -1,0 +1,90 @@
+{
+  "received_local_ms": 1792251989358,
+  "endpoints": {
+    "index": {
+      "url": "https://eapi.binance.com/eapi/v1/index?underlying=BTCUSDT",
+      "ok": true,
+      "network_request_sent": true,
+      "response_complete": true,
+      "http_status": 200,
+      "rate_headers": {
+        "x-mbx-used-weight-1m": "1"
+      },
+      "data": {
+        "indexPrice": "81438.92434783",
+        "time": 1792251989000
+      },
+      "attempts": 1,
+      "attempt_history": [
+        {
+          "attempt": 1,
+          "http_status": 200,
+          "ok": true,
+          "error_type": null,
+          "phase": null,
+          "elapsed_ms": 1844
+        }
+      ],
+      "elapsed_ms": 1844,
+      "received_at_beijing": "2026-10-17T23:46:29+08:00"
+    },
+    "depth_62000": {
+      "url": "https://eapi.binance.com/eapi/v1/depth?symbol=BTC-261030-62000-P&limit=5",
+      "ok": false,
+      "network_request_sent": true,
+      "response_complete": false,
+      "http_status": 400,
+      "rate_headers": {
+        "x-mbx-used-weight-1m": "2"
+      },
+      "error": {
+        "type": "HTTP_ERROR",
+        "phase": "http",
+        "retryable": false,
+        "message": "公开行情接口返回 HTTP 400。"
+      },
+      "attempts": 1,
+      "attempt_history": [
+        {
+          "attempt": 1,
+          "http_status": 400,
+          "ok": false,
+          "error_type": "HTTP_ERROR",
+          "phase": "http",
+          "elapsed_ms": 1328
+        }
+      ],
+      "elapsed_ms": 1328,
+      "received_at_beijing": "2026-10-17T23:46:28+08:00"
+    },
+    "depth_65000": {
+      "url": "https://eapi.binance.com/eapi/v1/depth?symbol=BTC-261030-65000-P&limit=5",
+      "ok": false,
+      "network_request_sent": true,
+      "response_complete": false,
+      "http_status": 400,
+      "rate_headers": {
+        "x-mbx-used-weight-1m": "2"
+      },
+      "error": {
+        "type": "HTTP_ERROR",
+        "phase": "http",
+        "retryable": false,
+        "message": "公开行情接口返回 HTTP 400。"
+      },
+      "attempts": 1,
+      "attempt_history": [
+        {
+          "attempt": 1,
+          "http_status": 400,
+          "ok": false,
+          "error_type": "HTTP_ERROR",
+          "phase": "http",
+          "elapsed_ms": 1546
+        }
+      ],
+      "elapsed_ms": 1546,
+      "received_at_beijing": "2026-10-17T23:46:29+08:00"
+    }
+  }
+}

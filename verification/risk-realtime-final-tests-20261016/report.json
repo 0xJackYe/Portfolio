@@ -1,0 +1,106 @@
+{
+  "generated_at_beijing": "2026-10-16T23:20:49.387349+08:00",
+  "all_passed": true,
+  "checks": 622,
+  "groups": [
+    {
+      "group": "python",
+      "passed": true,
+      "checks": 235,
+      "exit_code": 0,
+      "log": "D:\\Users\\yxh\\Desktop\\options\\verification\\risk-realtime-final-tests-20261016\\python.log"
+    },
+    {
+      "group": "test_frontend_data",
+      "passed": true,
+      "checks": 36,
+      "exit_code": 0,
+      "log": "D:\\Users\\yxh\\Desktop\\options\\verification\\risk-realtime-final-tests-20261016\\test_frontend_data.log"
+    },
+    {
+      "group": "test_option_payoff",
+      "passed": true,
+      "checks": 18,
+      "exit_code": 0,
+      "log": "D:\\Users\\yxh\\Desktop\\options\\verification\\risk-realtime-final-tests-20261016\\test_option_payoff.log"
+    },
+    {
+      "group": "test_option_portfolio",
+      "passed": true,
+      "checks": 32,
+      "exit_code": 0,
+      "log": "D:\\Users\\yxh\\Desktop\\options\\verification\\risk-realtime-final-tests-20261016\\test_option_portfolio.log"
+    },
+    {
+      "group": "test_option_preview_ui",
+      "passed": true,
+      "checks": 10,
+      "exit_code": 0,
+      "log": "D:\\Users\\yxh\\Desktop\\options\\verification\\risk-realtime-final-tests-20261016\\test_option_preview_ui.log"
+    },
+    {
+      "group": "test_option_risk",
+      "passed": true,
+      "checks": 31,
+      "exit_code": 0,
+      "log": "D:\\Users\\yxh\\Desktop\\options\\verification\\risk-realtime-final-tests-20261016\\test_option_risk.log"
+    },
+    {
+      "group": "test_option_risk_cli",
+      "passed": true,
+      "checks": 9,
+      "exit_code": 0,
+      "log": "D:\\Users\\yxh\\Desktop\\options\\verification\\risk-realtime-final-tests-20261016\\test_option_risk_cli.log"
+    },
+    {
+      "group": "test_option_risk_controller",
+      "passed": true,
+      "checks": 81,
+      "exit_code": 0,
+      "log": "D:\\Users\\yxh\\Desktop\\options\\verification\\risk-realtime-final-tests-20261016\\test_option_risk_controller.log"
+    },
+    {
+      "group": "test_option_risk_independent",
+      "passed": true,
+      "checks": 23,
+      "exit_code": 0,
+      "log": "D:\\Users\\yxh\\Desktop\\options\\verification\\risk-realtime-final-tests-20261016\\test_option_risk_independent.log"
+    },
+    {
+      "group": "test_options_embed",
+      "passed": true,
+      "checks": 8,
+      "exit_code": 0,
+      "log": "D:\\Users\\yxh\\Desktop\\options\\verification\\risk-realtime-final-tests-20261016\\test_options_embed.log"
+    },
+    {
+      "group": "test_risk_comparison_ui",
+      "passed": true,
+      "checks": 41,
+      "exit_code": 0,
+      "log": "D:\\Users\\yxh\\Desktop\\options\\verification\\risk-realtime-final-tests-20261016\\test_risk_comparison_ui.log"
+    },
+    {
+      "group": "test_terminal_frontend",
+      "passed": true,
+      "checks": 51,
+      "exit_code": 0,
+      "log": "D:\\Users\\yxh\\Desktop\\options\\verification\\risk-realtime-final-tests-20261016\\test_terminal_frontend.log"
+    },
+    {
+      "group": "test_terminal_ui",
+      "passed": true,
+      "checks": 12,
+      "exit_code": 0,
+      "log": "D:\\Users\\yxh\\Desktop\\options\\verification\\risk-realtime-final-tests-20261016\\test_terminal_ui.log"
+    },
+    {
+      "group": "wallet",
+      "passed": true,
+      "checks": 35,
+      "exit_code": 0,
+      "log": "D:\\Users\\yxh\\Desktop\\options\\verification\\risk-realtime-final-tests-20261016\\wallet.log"
+    }
+  ],
+  "scope": "Offline automated regressions. Actual Windows reboot and manual browser checks are separate."
+}

@@ -1,0 +1,86 @@
+{
+  "status": "all passed",
+  "checks": 1798,
+  "contracts": 51,
+  "quadrature": "Independent scipy quad over normal z in [-12,12], split at strike, fee crossover and breakeven; no imports from analysis implementation.",
+  "max_absolute_error": {
+    "breakeven": 1.9063008949160576e-09,
+    "max_profit": 0.0,
+    "max_loss": 0.0,
+    "expected_payout": 7.958078640513122e-13,
+    "expected_fee": 2.8047009159593017e-14,
+    "ev": 8.109068971862143e-13,
+    "loss_probability": 1.1091128016005314e-13,
+    "positive_loss_var": 0.0,
+    "positive_loss_es": 4.0749625895841746e-12,
+    "historical16d_return": 0.0,
+    "realized_volatility": 0.0,
+    "historical_ev": 1.794120407794253e-13
+  },
+  "candidates": [
+    {
+      "strike": 60000.0,
+      "sigma": 0.4,
+      "ev": 0.448767969814358,
+      "expected_exercise_fee": 8.904689053779682e-06,
+      "breakeven": 59959.09090909091
+    },
+    {
+      "strike": 60000.0,
+      "sigma": 0.6,
+      "ev": 0.2750942934474696,
+      "expected_exercise_fee": 0.0006288316986472724,
+      "breakeven": 59959.09090909091
+    },
+    {
+      "strike": 60000.0,
+      "sigma": 0.8,
+      "ev": -0.9178022506350553,
+      "expected_exercise_fee": 0.0030555487620110484,
+      "breakeven": 59959.09090909091
+    },
+    {
+      "strike": 64000.0,
+      "sigma": 0.4,
+      "ev": 0.8293092141652875,
+      "expected_exercise_fee": 0.00015571841428448755,
+      "breakeven": 63922.27272727273
+    },
+    {
+      "strike": 64000.0,
+      "sigma": 0.6,
+      "ev": 0.047593401055860074,
+      "expected_exercise_fee": 0.002494638184573624,
+      "breakeven": 63922.27272727273
+    },
+    {
+      "strike": 64000.0,
+      "sigma": 0.8,
+      "ev": -2.7784012228581907,
+      "expected_exercise_fee": 0.0071223068066743524,
+      "breakeven": 63922.27272727273
+    },
+    {
+      "strike": 70000.0,
+      "sigma": 0.4,
+      "ev": 1.481179020442702,
+      "expected_exercise_fee": 0.0032506231906135985,
+      "breakeven": 69790.10174562706
+    },
+    {
+      "strike": 70000.0,
+      "sigma": 0.6,
+      "ev": -2.4859761010731307,
+      "expected_exercise_fee": 0.011370913390531175,
+      "breakeven": 69790.10174562706
+    },
+    {
+      "strike": 70000.0,
+      "sigma": 0.8,
+      "ev": -9.413034241924104,
+      "expected_exercise_fee": 0.018603425773407598,
+      "breakeven": 69790.10174562706
+    }
+  ],
+  "method_note": "Stored ES/VaR use nonnegative loss (profit clamped to zero), not signed-loss ES. This matters when loss probability is smaller than the tail fraction. Same standard ES if the full worst tail loses."
+}

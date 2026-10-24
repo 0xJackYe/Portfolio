@@ -1,0 +1,10 @@
+{
+  "all_passed": true,
+  "checks": 1583,
+  "full_regression_checks": 1568,
+  "additional_http_checks": 15,
+  "live_private_balance_verified": false,
+  "pending": "API Passphrase required; Key and Secret staged in DPAPI vault",
+  "public_okx_connectivity_verified": true,
+  "plaintext_secret_scan_passed": true
+}

@@ -1,0 +1,19 @@
+{
+  "service_available": true,
+  "okx": {
+    "configured": false,
+    "pending_credentials": true,
+    "missing_fields": [
+      "passphrase"
+    ],
+    "status": "needs_credentials",
+    "error_code": null
+  },
+  "terminal_available": true,
+  "ai_configured": true,
+  "market": {
+    "contracts": 616,
+    "status": "SUCCESS",
+    "stale": false
+  }
+}

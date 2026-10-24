@@ -1,0 +1,27 @@
+{
+  "cold_start_pid": 23308,
+  "first_command_exit": 0,
+  "repeated_command_exit": 0,
+  "duplicate_service": false,
+  "default_browser_open_confirmed_by_user": true,
+  "before_restart": {
+    "instance_id": "ba10b07e66da431c80b387e5b02579d9",
+    "revision": 24075,
+    "price": 83843.06,
+    "event_ms": 1791980918484
+  },
+  "after_restart": {
+    "instance_id": "616f88c1d47648e3892a45e6a173bce1",
+    "revision": 745,
+    "price": 83816.01,
+    "event_ms": 1791980972296
+  },
+  "new_instance": true,
+  "revision_reset": true,
+  "restart_pid": 17740,
+  "browser_auto_reconnect_verified": true,
+  "wallet_final_check_beijing": "2026-10-15 00:30",
+  "wallet_manual_refresh_success": true,
+  "wallet_day_rollover_verified": true,
+  "physical_reboot_performed": false
+}

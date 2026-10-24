@@ -1,0 +1,8 @@
+{
+  "dashboard/dist/index.html": "500de22bc9e0b75e75a909cb09bbcb1e61da1718b6b6ecd52d37e1c60891d356",
+  "dashboard/dist/app.js": "8378b632bcc71f92d08f29c959b7e84a1932ccbfc1e723dbf8c82a1da633883f",
+  "dashboard/dist/seller-screen-engine.js": "52fb577bbddc072d1721fcb20c165f94cda5b33b0cc672a6fa7dadf7d8273ee0",
+  "dashboard/dist/seller-screen-ui.js": "a7eaac68bc6d08718202c8a17d27c87eeedd46c62ff4d8f0dbcf4191880a3744",
+  "dashboard/dist/seller-screen.css": "f515a5217e5c779bb031f115132776b8d89a0b71932fe6af5ed59f58f85c7382",
+  "btc_terminal_server.py": "65e8a3d4522381a4aec84fad3a297405969c489675cc5fb3a0319c7bf87a51cf"
+}

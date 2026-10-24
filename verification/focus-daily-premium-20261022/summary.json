@@ -1,0 +1,13 @@
+{
+  "date_beijing": "2026-10-22",
+  "all_passed": true,
+  "automated_checks": 1238,
+  "preview_checks": 23,
+  "default_direct_quote_rows": 34,
+  "removed_controls_absent": true,
+  "seller_assets_unloaded": true,
+  "real_browser_sell_put_and_call_checked": true,
+  "buy_income_hidden": true,
+  "daily_basis": "gross premium total / exact calibrated remaining days",
+  "open_popup_quote_is_fixed_until_explicit_refresh": true
+}

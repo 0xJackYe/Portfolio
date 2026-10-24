@@ -1,0 +1,18 @@
+{
+  "source": "Six read-only requests to the existing local /api/market cache; no additional Binance connections",
+  "quantity": 0.01,
+  "scope": "2026-10-30",
+  "snapshot_count": 6,
+  "interval_seconds": 6,
+  "observations": [
+    {"at_beijing":"2026-10-16T19:16:12.217+08:00","revision":156404,"contracts":692,"fetched_at":"2026-10-16T19:16:05.613+08:00","buy_put_valid":51,"sell_put_valid":47,"sell_put_zero_bid":4,"buy_call_valid":51,"sell_call_valid":47,"sell_call_zero_bid":4},
+    {"at_beijing":"2026-10-16T19:16:18.523+08:00","revision":156405,"contracts":692,"fetched_at":"2026-10-16T19:16:05.613+08:00","buy_put_valid":51,"sell_put_valid":47,"sell_put_zero_bid":4,"buy_call_valid":51,"sell_call_valid":47,"sell_call_zero_bid":4},
+    {"at_beijing":"2026-10-16T19:16:25.242+08:00","revision":156409,"contracts":692,"fetched_at":"2026-10-16T19:16:21.919+08:00","newly_missing_depth_fields":1384,"missing_examples":["BTC-261017-76000-C.bid_quantity","BTC-261017-76000-C.ask_quantity","BTC-261017-76000-P.bid_quantity","BTC-261017-76000-P.ask_quantity"],"buy_put_depth_unknown":51,"sell_put_depth_unknown":47,"sell_put_zero_bid":4,"buy_call_depth_unknown":51,"sell_call_depth_unknown":47,"sell_call_zero_bid":4,"buy_awaiting_every":true,"sell_awaiting_every":false},
+    {"at_beijing":"2026-10-16T19:16:32.133+08:00","revision":156517,"contracts":692,"all_expiries_buy_put_valid":11,"all_expiries_buy_call_valid":9,"buy_put_depth_unknown":51,"sell_put_depth_unknown":47,"sell_put_zero_bid":4,"buy_call_depth_unknown":51,"sell_call_depth_unknown":47,"sell_call_zero_bid":4},
+    {"at_beijing":"2026-10-16T19:16:38.476+08:00","revision":156649,"contracts":692,"last_partial_refresh_at":"2026-10-16T19:16:37.445+08:00","all_expiries_buy_put_valid":12,"all_expiries_buy_call_valid":11,"buy_put_depth_unknown":51,"sell_put_depth_unknown":47,"sell_put_zero_bid":4,"buy_call_depth_unknown":51,"sell_call_depth_unknown":47,"sell_call_zero_bid":4},
+    {"at_beijing":"2026-10-16T19:16:44.884+08:00","revision":156862,"contracts":692,"all_expiries_buy_put_valid":12,"all_expiries_buy_call_valid":15,"buy_put_depth_unknown":51,"sell_put_depth_unknown":47,"sell_put_zero_bid":4,"buy_call_depth_unknown":51,"sell_call_depth_unknown":47,"sell_call_zero_bid":4}
+  ],
+  "receipt_regressions": 0,
+  "positive_to_zero_transitions": 0,
+  "conclusion": "A successful full REST snapshot omitted both depth quantity fields. preserve_concurrent_updates retained only WS updates received during the request, discarding older observed depth values. In SELL scopes, real zero bids then caused awaitingData.every() to return false, so the UI replaced the prior usable snapshot and hid all rows."
+}

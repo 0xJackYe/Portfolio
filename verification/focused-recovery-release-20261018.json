@@ -1,0 +1,15 @@
+{
+  "all_passed": true,
+  "checks": 939,
+  "source_sha256": {
+    "dashboard_server.py": "956bb275eff216c2df5859a8674265f4fb9a44a1ea8fb602e2f27fd85dfabbee",
+    "btc_terminal_server.py": "6e350cbb03589c00331390e7e744817e5d4be9d0fc989907fb169b1618356fd3",
+    "focused_market_recovery.py": "70c0e3b9ffb8c5ec6d04c48a91715e6c1e7faeea275291a8cef5edea0ddec730",
+    "realtime_market.py": "93bd8c4a31afcea1870257c0ea465ef187b643e4c85d50be0c063ae6aee4ed16",
+    "dashboard/dist/risk-ui.js": "4d418f05c6fc7f04f8bee6a0f89324bae384bd4e4ce4b3850a768d1136d45973",
+    "dashboard/dist/sell-put-ui.js": "9563082d648b78e05dd2bdb11c797c534fba538f16c000ae850376623cde994e",
+    "dashboard/dist/sell-put.css": "c3981c4fd044d7adba233ec620f4ea3261f4f5e7013c60ea8eb2441d6903359a"
+  },
+  "browser_screenshot": "verification/focused-recovery-live-page-20261018.png",
+  "live_report": "verification/focused-recovery-live-20261018/report.json"
+}

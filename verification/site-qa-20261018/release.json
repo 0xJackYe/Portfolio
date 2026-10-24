@@ -1,0 +1,18 @@
+{
+  "verified_at_beijing": "2026-10-18T19:11:39.866724+08:00",
+  "tests": 973,
+  "source_sha256": {
+    "dashboard_server.py": "190c7f47aac894b33bb5c670e0d488e7b5bfc83ecd34469130bcb394cdb5d733",
+    "realtime_market.py": "2ace26882abeaa6f32be5ab1c89233ca479f092bc03944f8a7d66dbafb5502e8",
+    "focused_market_recovery.py": "7433548ad2581d1dbd3a0b63e682a9b77afd5f531e89cda2c494235912124f5e",
+    "dashboard/dist/app.js": "e11401d621798eccad4a45e6a6bf13916699f03755302bf8c88a07f22e577659",
+    "dashboard/dist/risk-ui.js": "fbf4789555c7bbb0af08a48576c19a0e7da53e116d44f265e6e558b3681158c7",
+    "dashboard/dist/sell-put-ui.js": "5d3ce7a1e63786edb92c5b397811f1b1bf186298324c8e3ef91f0913e5bfc042",
+    "terminal/dist/terminal.js": "2ff2fa1e4477ae1551080f957c31af0f2ed80801514db0288bdf189668af3922",
+    "terminal/wallet/core.mjs": "b6a293f2585bace5ce7b022e06205d92f08e23c783e3b6e188879312f8c319c0",
+    "terminal/wallet/wallet.template.html": "afca14df6ee1f3352accefc26189bc7bc6bb9c93416f33d56ac66220f64d9f26",
+    "terminal/wallet/wallet.html": "ce4e0935d2c8471dbbcfa9f78eedc274bec455ce2fc7f910d3a1f5ac9df253ca"
+  },
+  "live": "live/report.json",
+  "assets": "assets.json"
+}

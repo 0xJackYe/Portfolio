@@ -1,0 +1,783 @@
+{
+  "generated_utc": "2026-10-21T09:54:59.774090+00:00",
+  "read_only": true,
+  "user_profile": "C:\\Users\\yxh",
+  "python": "C:\\Users\\yxh\\AppData\\Local\\Programs\\Python\\Python39\\pythonw.exe",
+  "runtime_path": "C:\\Users\\yxh\\AppData\\Local\\WorkStartup",
+  "runtime_exists": true,
+  "config": {
+    "chrome_path": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
+    "vpn_exe_path": "C:\\ProgramData\\Skyline\\skyline.exe",
+    "vpn_task_name": "WorkStartup - Skyline VPN",
+    "project_root": "D:\\Users\\yxh\\Desktop\\options",
+    "terminal_port": 8766
+  },
+  "status": {
+    "status.json": {
+      "Success": true,
+      "State": "Installed",
+      "DisabledRunNames": [
+        "Steam",
+        "Feishu",
+        "Teams"
+      ],
+      "UpdatedUtc": "2026-10-21T09:51:55.1641952Z"
+    },
+    "startup-policy-status.json": {
+      "Success": true,
+      "State": "Installed",
+      "WorkspaceTaskInstalled": true,
+      "WorkspaceTaskEnabled": true,
+      "WorkspaceTaskError": null,
+      "UpdatedUtc": "2026-10-21T09:51:55.0893467Z"
+    },
+    "last-run.json": {
+      "phase": "complete",
+      "success": true,
+      "terminal_ready": true,
+      "terminal_open_requested": false,
+      "terminal_already_opened": true,
+      "chatgpt_open_requested": false,
+      "chatgpt_already_opened": true,
+      "vpn_available_or_requested": true,
+      "network_reachable": null,
+      "exit_code": 0,
+      "started_utc": "2026-10-21T09:54:38.651065+00:00",
+      "finished_utc": "2026-10-21T09:54:38.880156+00:00"
+    }
+  },
+  "registry": [
+    {
+      "view": "Registry64",
+      "path": "Software\\Microsoft\\Windows\\CurrentVersion\\Run",
+      "name": "Feishu",
+      "expected": "absent",
+      "key_exists": true,
+      "exists": false,
+      "passed": true
+    },
+    {
+      "view": "Registry64",
+      "path": "Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\StartupApproved\\Run",
+      "name": "Feishu",
+      "expected": "disabled",
+      "key_exists": true,
+      "exists": true,
+      "kind": 3,
+      "approval_state": 3,
+      "value_sha256": "6e9962e821b790d063bb1112c8ff37f7e4060b4e0e0c86bdb40dd9b6e3deda9d",
+      "passed": true
+    },
+    {
+      "view": "Registry64",
+      "path": "Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\StartupApproved\\Run32",
+      "name": "Feishu",
+      "expected": "disabled",
+      "key_exists": true,
+      "exists": true,
+      "kind": 3,
+      "approval_state": 3,
+      "value_sha256": "6e9962e821b790d063bb1112c8ff37f7e4060b4e0e0c86bdb40dd9b6e3deda9d",
+      "passed": true
+    },
+    {
+      "view": "Registry64",
+      "path": "Software\\Microsoft\\Windows\\CurrentVersion\\Run",
+      "name": "Steam",
+      "expected": "absent",
+      "key_exists": true,
+      "exists": false,
+      "passed": true
+    },
+    {
+      "view": "Registry64",
+      "path": "Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\StartupApproved\\Run",
+      "name": "Steam",
+      "expected": "disabled",
+      "key_exists": true,
+      "exists": true,
+      "kind": 3,
+      "approval_state": 3,
+      "value_sha256": "6e9962e821b790d063bb1112c8ff37f7e4060b4e0e0c86bdb40dd9b6e3deda9d",
+      "passed": true
+    },
+    {
+      "view": "Registry64",
+      "path": "Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\StartupApproved\\Run32",
+      "name": "Steam",
+      "expected": "disabled",
+      "key_exists": true,
+      "exists": true,
+      "kind": 3,
+      "approval_state": 3,
+      "value_sha256": "6e9962e821b790d063bb1112c8ff37f7e4060b4e0e0c86bdb40dd9b6e3deda9d",
+      "passed": true
+    },
+    {
+      "view": "Registry64",
+      "path": "Software\\Microsoft\\Windows\\CurrentVersion\\Run",
+      "name": "Teams",
+      "expected": "absent",
+      "key_exists": true,
+      "exists": false,
+      "passed": true
+    },
+    {
+      "view": "Registry64",
+      "path": "Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\StartupApproved\\Run",
+      "name": "Teams",
+      "expected": "disabled",
+      "key_exists": true,
+      "exists": true,
+      "kind": 3,
+      "approval_state": 3,
+      "value_sha256": "6e9962e821b790d063bb1112c8ff37f7e4060b4e0e0c86bdb40dd9b6e3deda9d",
+      "passed": true
+    },
+    {
+      "view": "Registry64",
+      "path": "Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\StartupApproved\\Run32",
+      "name": "Teams",
+      "expected": "disabled",
+      "key_exists": true,
+      "exists": true,
+      "kind": 3,
+      "approval_state": 3,
+      "value_sha256": "6e9962e821b790d063bb1112c8ff37f7e4060b4e0e0c86bdb40dd9b6e3deda9d",
+      "passed": true
+    },
+    {
+      "view": "Registry32",
+      "path": "Software\\Microsoft\\Windows\\CurrentVersion\\Run",
+      "name": "Feishu",
+      "expected": "absent",
+      "key_exists": true,
+      "exists": false,
+      "passed": true
+    },
+    {
+      "view": "Registry32",
+      "path": "Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\StartupApproved\\Run",
+      "name": "Feishu",
+      "expected": "disabled",
+      "key_exists": true,
+      "exists": true,
+      "kind": 3,
+      "approval_state": 3,
+      "value_sha256": "6e9962e821b790d063bb1112c8ff37f7e4060b4e0e0c86bdb40dd9b6e3deda9d",
+      "passed": true
+    },
+    {
+      "view": "Registry32",
+      "path": "Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\StartupApproved\\Run32",
+      "name": "Feishu",
+      "expected": "disabled",
+      "key_exists": true,
+      "exists": true,
+      "kind": 3,
+      "approval_state": 3,
+      "value_sha256": "6e9962e821b790d063bb1112c8ff37f7e4060b4e0e0c86bdb40dd9b6e3deda9d",
+      "passed": true
+    },
+    {
+      "view": "Registry32",
+      "path": "Software\\Microsoft\\Windows\\CurrentVersion\\Run",
+      "name": "Steam",
+      "expected": "absent",
+      "key_exists": true,
+      "exists": false,
+      "passed": true
+    },
+    {
+      "view": "Registry32",
+      "path": "Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\StartupApproved\\Run",
+      "name": "Steam",
+      "expected": "disabled",
+      "key_exists": true,
+      "exists": true,
+      "kind": 3,
+      "approval_state": 3,
+      "value_sha256": "6e9962e821b790d063bb1112c8ff37f7e4060b4e0e0c86bdb40dd9b6e3deda9d",
+      "passed": true
+    },
+    {
+      "view": "Registry32",
+      "path": "Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\StartupApproved\\Run32",
+      "name": "Steam",
+      "expected": "disabled",
+      "key_exists": true,
+      "exists": true,
+      "kind": 3,
+      "approval_state": 3,
+      "value_sha256": "6e9962e821b790d063bb1112c8ff37f7e4060b4e0e0c86bdb40dd9b6e3deda9d",
+      "passed": true
+    },
+    {
+      "view": "Registry32",
+      "path": "Software\\Microsoft\\Windows\\CurrentVersion\\Run",
+      "name": "Teams",
+      "expected": "absent",
+      "key_exists": true,
+      "exists": false,
+      "passed": true
+    },
+    {
+      "view": "Registry32",
+      "path": "Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\StartupApproved\\Run",
+      "name": "Teams",
+      "expected": "disabled",
+      "key_exists": true,
+      "exists": true,
+      "kind": 3,
+      "approval_state": 3,
+      "value_sha256": "6e9962e821b790d063bb1112c8ff37f7e4060b4e0e0c86bdb40dd9b6e3deda9d",
+      "passed": true
+    },
+    {
+      "view": "Registry32",
+      "path": "Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\StartupApproved\\Run32",
+      "name": "Teams",
+      "expected": "disabled",
+      "key_exists": true,
+      "exists": true,
+      "kind": 3,
+      "approval_state": 3,
+      "value_sha256": "6e9962e821b790d063bb1112c8ff37f7e4060b4e0e0c86bdb40dd9b6e3deda9d",
+      "passed": true
+    },
+    {
+      "view": "Registry64",
+      "path": "Software\\Microsoft\\Windows\\CurrentVersion\\Run",
+      "name": "WorkStartup Workspace",
+      "expected": "command",
+      "key_exists": true,
+      "exists": true,
+      "kind": 1,
+      "value_sha256": "f418f0857e27a123f5ef13768bcd5fd362846c901e950e1e3f5c646da3f9b75f",
+      "passed": true
+    },
+    {
+      "view": "Registry64",
+      "path": "Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\StartupApproved\\Run",
+      "name": "WorkStartup Workspace",
+      "expected": "enabled",
+      "key_exists": true,
+      "exists": true,
+      "kind": 3,
+      "approval_state": 2,
+      "value_sha256": "b76875c50ef704dbbf7f02c982445971d1bbd61aebe2e4b28ddc58a1d66317d5",
+      "passed": true
+    },
+    {
+      "view": "Registry64",
+      "path": "Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\StartupApproved\\StartupFolder",
+      "name": "Work Startup.lnk",
+      "expected": "enabled",
+      "key_exists": true,
+      "exists": true,
+      "kind": 3,
+      "approval_state": 2,
+      "value_sha256": "b76875c50ef704dbbf7f02c982445971d1bbd61aebe2e4b28ddc58a1d66317d5",
+      "passed": true
+    },
+    {
+      "view": "Registry64",
+      "path": "Software\\Classes\\Local Settings\\Software\\Microsoft\\Windows\\CurrentVersion\\AppModel\\SystemAppData\\MSTeams_8wekyb3d8bbwe\\TeamsTfwStartupTask",
+      "name": "State",
+      "expected": "package",
+      "key_exists": true,
+      "exists": true,
+      "kind": 4,
+      "state": 1,
+      "applicable": true,
+      "passed": true
+    },
+    {
+      "view": "Registry64",
+      "path": "Software\\Classes\\Local Settings\\Software\\Microsoft\\Windows\\CurrentVersion\\AppModel\\SystemAppData\\MSTeams_8wekyb3d8bbwe\\TeamsTfwStartupTask",
+      "name": "UserEnabledStartupOnce",
+      "expected": "package",
+      "key_exists": true,
+      "exists": true,
+      "kind": 4,
+      "state": 0,
+      "applicable": true,
+      "passed": true
+    }
+  ],
+  "registry_passed": true,
+  "unrelated_startup": {
+    "entries": [
+      {
+        "view": "Registry32",
+        "path": "Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\StartupApproved\\Run",
+        "name": "Docker Desktop",
+        "kind": 3,
+        "value_sha256": "ca888f40c3caca805b37a5434c75de5550616e0795e7602fb91156f22dd90851"
+      },
+      {
+        "view": "Registry32",
+        "path": "Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\StartupApproved\\Run",
+        "name": "EpicGamesLauncher",
+        "kind": 3,
+        "value_sha256": "8c029076dcf3c9b5218513b9d3c4197832849c3177099c89273570ffa354f733"
+      },
+      {
+        "view": "Registry32",
+        "path": "Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\StartupApproved\\Run",
+        "name": "HUAWEI Cloud",
+        "kind": 3,
+        "value_sha256": "b76875c50ef704dbbf7f02c982445971d1bbd61aebe2e4b28ddc58a1d66317d5"
+      },
+      {
+        "view": "Registry32",
+        "path": "Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\StartupApproved\\Run",
+        "name": "MicrosoftEdgeAutoLaunch_03C6746FC767F8AC8F2D8FAD2BB5EAC3",
+        "kind": 3,
+        "value_sha256": "b76875c50ef704dbbf7f02c982445971d1bbd61aebe2e4b28ddc58a1d66317d5"
+      },
+      {
+        "view": "Registry32",
+        "path": "Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\StartupApproved\\Run",
+        "name": "NordVPN",
+        "kind": 3,
+        "value_sha256": "b76875c50ef704dbbf7f02c982445971d1bbd61aebe2e4b28ddc58a1d66317d5"
+      },
+      {
+        "view": "Registry32",
+        "path": "Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\StartupApproved\\Run",
+        "name": "QQMusic",
+        "kind": 3,
+        "value_sha256": "b76875c50ef704dbbf7f02c982445971d1bbd61aebe2e4b28ddc58a1d66317d5"
+      },
+      {
+        "view": "Registry32",
+        "path": "Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\StartupApproved\\Run",
+        "name": "WallpaperEngine",
+        "kind": 3,
+        "value_sha256": "b76875c50ef704dbbf7f02c982445971d1bbd61aebe2e4b28ddc58a1d66317d5"
+      },
+      {
+        "view": "Registry32",
+        "path": "Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\StartupApproved\\Run",
+        "name": "YoudaoDict",
+        "kind": 3,
+        "value_sha256": "b76875c50ef704dbbf7f02c982445971d1bbd61aebe2e4b28ddc58a1d66317d5"
+      },
+      {
+        "view": "Registry32",
+        "path": "Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\StartupApproved\\StartupFolder",
+        "name": "发送至 OneNote.lnk",
+        "kind": 3,
+        "value_sha256": "b76875c50ef704dbbf7f02c982445971d1bbd61aebe2e4b28ddc58a1d66317d5"
+      },
+      {
+        "view": "Registry32",
+        "path": "Software\\Microsoft\\Windows\\CurrentVersion\\Run",
+        "name": "AF_counter_windows",
+        "kind": 1,
+        "value_sha256": "789d9e7dc67f986660d9b28f5946cce995f9b145e4c2ef61828679cee07bb316"
+      },
+      {
+        "view": "Registry32",
+        "path": "Software\\Microsoft\\Windows\\CurrentVersion\\Run",
+        "name": "AF_uuid_windows",
+        "kind": 1,
+        "value_sha256": "da1ed5c8ae51efb1173fa188ba15252d3b1911ee55600225902fe6759a4dd4a7"
+      },
+      {
+        "view": "Registry32",
+        "path": "Software\\Microsoft\\Windows\\CurrentVersion\\Run",
+        "name": "BaiduYunDetect",
+        "kind": 1,
+        "value_sha256": "dec46d09cab4208bbd64667a1ee4268d798b9b113dfdb25270c90896ce919e19"
+      },
+      {
+        "view": "Registry32",
+        "path": "Software\\Microsoft\\Windows\\CurrentVersion\\Run",
+        "name": "CorpLink",
+        "kind": 1,
+        "value_sha256": "aa67a4327c026b58e3b42c30b30bb2ecb3c948affa560f24672b3a612dd88e4e"
+      },
+      {
+        "view": "Registry32",
+        "path": "Software\\Microsoft\\Windows\\CurrentVersion\\Run",
+        "name": "GoogleChromeAutoLaunch_16B09CFF9311DB70386A6D419287CE8D",
+        "kind": 1,
+        "value_sha256": "6d5e8112e7e0a3e79754c75437925482deea1c01fc8b34d572c3f86c4f379806"
+      },
+      {
+        "view": "Registry32",
+        "path": "Software\\Microsoft\\Windows\\CurrentVersion\\Run",
+        "name": "MicrosoftEdgeAutoLaunch_03C6746FC767F8AC8F2D8FAD2BB5EAC3",
+        "kind": 1,
+        "value_sha256": "5b11795768e06ec0c70bd61de09434e5836157d9952dee67e82102630a5d1700"
+      },
+      {
+        "view": "Registry32",
+        "path": "Software\\Microsoft\\Windows\\CurrentVersion\\Run",
+        "name": "OneDrive",
+        "kind": 1,
+        "value_sha256": "a34f335b2813c1fca64aed80f9f43febac1f432baeaa318369722c53d138704a"
+      },
+      {
+        "view": "Registry32",
+        "path": "Software\\Microsoft\\Windows\\CurrentVersion\\Run",
+        "name": "QuarkUpdaterTaskUser1.0.0.21",
+        "kind": 1,
+        "value_sha256": "de48aac584a22de97d6a68257520e832938497ea8daa293dff53029395f12981"
+      },
+      {
+        "view": "Registry32",
+        "path": "Software\\Microsoft\\Windows\\CurrentVersion\\Run",
+        "name": "Typeless.exe",
+        "kind": 1,
+        "value_sha256": "b6c6e36cda58f0e5bca341a26c5b119bea2cbc0425d0723c3073b8471ee59dd8"
+      },
+      {
+        "view": "Registry32",
+        "path": "Software\\Microsoft\\Windows\\CurrentVersion\\Run",
+        "name": "WallpaperEngine",
+        "kind": 1,
+        "value_sha256": "1bab6df2c48ce46af3ea282181d688d5ea61ac7ff23dcf54d175992b48646d03"
+      },
+      {
+        "view": "Registry64",
+        "path": "Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\StartupApproved\\Run",
+        "name": "Docker Desktop",
+        "kind": 3,
+        "value_sha256": "ca888f40c3caca805b37a5434c75de5550616e0795e7602fb91156f22dd90851"
+      },
+      {
+        "view": "Registry64",
+        "path": "Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\StartupApproved\\Run",
+        "name": "EpicGamesLauncher",
+        "kind": 3,
+        "value_sha256": "8c029076dcf3c9b5218513b9d3c4197832849c3177099c89273570ffa354f733"
+      },
+      {
+        "view": "Registry64",
+        "path": "Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\StartupApproved\\Run",
+        "name": "HUAWEI Cloud",
+        "kind": 3,
+        "value_sha256": "b76875c50ef704dbbf7f02c982445971d1bbd61aebe2e4b28ddc58a1d66317d5"
+      },
+      {
+        "view": "Registry64",
+        "path": "Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\StartupApproved\\Run",
+        "name": "MicrosoftEdgeAutoLaunch_03C6746FC767F8AC8F2D8FAD2BB5EAC3",
+        "kind": 3,
+        "value_sha256": "b76875c50ef704dbbf7f02c982445971d1bbd61aebe2e4b28ddc58a1d66317d5"
+      },
+      {
+        "view": "Registry64",
+        "path": "Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\StartupApproved\\Run",
+        "name": "NordVPN",
+        "kind": 3,
+        "value_sha256": "b76875c50ef704dbbf7f02c982445971d1bbd61aebe2e4b28ddc58a1d66317d5"
+      },
+      {
+        "view": "Registry64",
+        "path": "Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\StartupApproved\\Run",
+        "name": "QQMusic",
+        "kind": 3,
+        "value_sha256": "b76875c50ef704dbbf7f02c982445971d1bbd61aebe2e4b28ddc58a1d66317d5"
+      },
+      {
+        "view": "Registry64",
+        "path": "Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\StartupApproved\\Run",
+        "name": "WallpaperEngine",
+        "kind": 3,
+        "value_sha256": "b76875c50ef704dbbf7f02c982445971d1bbd61aebe2e4b28ddc58a1d66317d5"
+      },
+      {
+        "view": "Registry64",
+        "path": "Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\StartupApproved\\Run",
+        "name": "YoudaoDict",
+        "kind": 3,
+        "value_sha256": "b76875c50ef704dbbf7f02c982445971d1bbd61aebe2e4b28ddc58a1d66317d5"
+      },
+      {
+        "view": "Registry64",
+        "path": "Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\StartupApproved\\StartupFolder",
+        "name": "发送至 OneNote.lnk",
+        "kind": 3,
+        "value_sha256": "b76875c50ef704dbbf7f02c982445971d1bbd61aebe2e4b28ddc58a1d66317d5"
+      },
+      {
+        "view": "Registry64",
+        "path": "Software\\Microsoft\\Windows\\CurrentVersion\\Run",
+        "name": "AF_counter_windows",
+        "kind": 1,
+        "value_sha256": "789d9e7dc67f986660d9b28f5946cce995f9b145e4c2ef61828679cee07bb316"
+      },
+      {
+        "view": "Registry64",
+        "path": "Software\\Microsoft\\Windows\\CurrentVersion\\Run",
+        "name": "AF_uuid_windows",
+        "kind": 1,
+        "value_sha256": "da1ed5c8ae51efb1173fa188ba15252d3b1911ee55600225902fe6759a4dd4a7"
+      },
+      {
+        "view": "Registry64",
+        "path": "Software\\Microsoft\\Windows\\CurrentVersion\\Run",
+        "name": "BaiduYunDetect",
+        "kind": 1,
+        "value_sha256": "dec46d09cab4208bbd64667a1ee4268d798b9b113dfdb25270c90896ce919e19"
+      },
+      {
+        "view": "Registry64",
+        "path": "Software\\Microsoft\\Windows\\CurrentVersion\\Run",
+        "name": "CorpLink",
+        "kind": 1,
+        "value_sha256": "aa67a4327c026b58e3b42c30b30bb2ecb3c948affa560f24672b3a612dd88e4e"
+      },
+      {
+        "view": "Registry64",
+        "path": "Software\\Microsoft\\Windows\\CurrentVersion\\Run",
+        "name": "GoogleChromeAutoLaunch_16B09CFF9311DB70386A6D419287CE8D",
+        "kind": 1,
+        "value_sha256": "6d5e8112e7e0a3e79754c75437925482deea1c01fc8b34d572c3f86c4f379806"
+      },
+      {
+        "view": "Registry64",
+        "path": "Software\\Microsoft\\Windows\\CurrentVersion\\Run",
+        "name": "MicrosoftEdgeAutoLaunch_03C6746FC767F8AC8F2D8FAD2BB5EAC3",
+        "kind": 1,
+        "value_sha256": "5b11795768e06ec0c70bd61de09434e5836157d9952dee67e82102630a5d1700"
+      },
+      {
+        "view": "Registry64",
+        "path": "Software\\Microsoft\\Windows\\CurrentVersion\\Run",
+        "name": "OneDrive",
+        "kind": 1,
+        "value_sha256": "a34f335b2813c1fca64aed80f9f43febac1f432baeaa318369722c53d138704a"
+      },
+      {
+        "view": "Registry64",
+        "path": "Software\\Microsoft\\Windows\\CurrentVersion\\Run",
+        "name": "QuarkUpdaterTaskUser1.0.0.21",
+        "kind": 1,
+        "value_sha256": "de48aac584a22de97d6a68257520e832938497ea8daa293dff53029395f12981"
+      },
+      {
+        "view": "Registry64",
+        "path": "Software\\Microsoft\\Windows\\CurrentVersion\\Run",
+        "name": "Typeless.exe",
+        "kind": 1,
+        "value_sha256": "b6c6e36cda58f0e5bca341a26c5b119bea2cbc0425d0723c3073b8471ee59dd8"
+      },
+      {
+        "view": "Registry64",
+        "path": "Software\\Microsoft\\Windows\\CurrentVersion\\Run",
+        "name": "WallpaperEngine",
+        "kind": 1,
+        "value_sha256": "1bab6df2c48ce46af3ea282181d688d5ea61ac7ff23dcf54d175992b48646d03"
+      }
+    ],
+    "sha256": "18f668bfcbb1aa5e3f16b1438d4e19efeb94f5705c558eeb76fb57cb0c79d6b0"
+  },
+  "startup_folder": {
+    "path": "C:\\Users\\yxh\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Startup",
+    "exists": true,
+    "files": [
+      {
+        "name": "desktop.ini",
+        "bytes": 174,
+        "sha256": "cdb11958506a5ba5478e22ed472fa3ae422fe9916d674f290207e1fc29ae5a76"
+      },
+      {
+        "name": "Work Startup.lnk",
+        "bytes": 1734,
+        "sha256": "6d2b3a54d45d1509305bebcb3e1365ebec801865001f8b90659ea91c1c0331c6"
+      }
+    ],
+    "workspace_shortcut_exists": true
+  },
+  "tasks": [
+    {
+      "name": "WorkStartup - Workspace",
+      "exists": true,
+      "enabled": true,
+      "state": "Ready",
+      "run_level": "Limited",
+      "user": "yxh",
+      "logon_type": "Interactive",
+      "description": "WorkStartup.Workspace.v2;OwnerSid=S-1-5-21-1647970810-79061874-2918484482-1001",
+      "last_result": 0,
+      "last_run": "2026-10-21T09:54:37.0000000Z",
+      "triggers": [
+        {
+          "Enabled": true,
+          "Delay": "PT10S",
+          "UserId": "GFSD\\yxh"
+        }
+      ],
+      "xml_sha256": "3b586b0506daaf5a53abd5df0569944af06ba51ae875af219b2e48375b94a75c"
+    },
+    {
+      "name": "WorkStartup - Skyline VPN",
+      "exists": true,
+      "enabled": true,
+      "state": "Running",
+      "run_level": "Highest",
+      "user": "yxh",
+      "logon_type": "Interactive",
+      "description": "WorkStartup.Managed.v1;OwnerSid=S-1-5-21-1647970810-79061874-2918484482-1001",
+      "last_result": 267009,
+      "last_run": "2026-10-21T09:30:35.0000000Z",
+      "triggers": [
+        {
+          "Enabled": true,
+          "Delay": "PT5S",
+          "UserId": "GFSD\\yxh"
+        }
+      ],
+      "xml_sha256": "85f36d5b18caffc83f3c2f62d48d0e600787fe64071634baf9f18bedc2ceffbd"
+    }
+  ],
+  "processes": [
+    {
+      "name": "skyline.exe",
+      "pid": 6940
+    },
+    {
+      "name": "Feishu.exe",
+      "pid": 20016
+    },
+    {
+      "name": "Feishu.exe",
+      "pid": 5448
+    },
+    {
+      "name": "Feishu.exe",
+      "pid": 15972
+    },
+    {
+      "name": "Feishu.exe",
+      "pid": 14612
+    },
+    {
+      "name": "Feishu.exe",
+      "pid": 20424
+    },
+    {
+      "name": "Feishu.exe",
+      "pid": 18324
+    },
+    {
+      "name": "Feishu.exe",
+      "pid": 5036
+    },
+    {
+      "name": "Feishu.exe",
+      "pid": 20940
+    },
+    {
+      "name": "ms-teams.exe",
+      "pid": 9500
+    },
+    {
+      "name": "chrome.exe",
+      "pid": 18816
+    },
+    {
+      "name": "chrome.exe",
+      "pid": 7516
+    },
+    {
+      "name": "chrome.exe",
+      "pid": 9036
+    },
+    {
+      "name": "chrome.exe",
+      "pid": 20024
+    },
+    {
+      "name": "chrome.exe",
+      "pid": 20616
+    },
+    {
+      "name": "chrome.exe",
+      "pid": 2368
+    },
+    {
+      "name": "skyline-core.exe",
+      "pid": 16048
+    },
+    {
+      "name": "chrome.exe",
+      "pid": 5980
+    },
+    {
+      "name": "chrome.exe",
+      "pid": 20804
+    },
+    {
+      "name": "chrome.exe",
+      "pid": 21672
+    },
+    {
+      "name": "chrome.exe",
+      "pid": 24504
+    },
+    {
+      "name": "chrome.exe",
+      "pid": 24152
+    },
+    {
+      "name": "chrome.exe",
+      "pid": 12472
+    },
+    {
+      "name": "pythonw.exe",
+      "pid": 4696
+    },
+    {
+      "name": "chrome.exe",
+      "pid": 6244
+    },
+    {
+      "name": "chrome.exe",
+      "pid": 14012
+    },
+    {
+      "name": "chrome.exe",
+      "pid": 2112
+    },
+    {
+      "name": "chrome.exe",
+      "pid": 15756
+    },
+    {
+      "name": "chrome.exe",
+      "pid": 24928
+    },
+    {
+      "name": "pythonw.exe",
+      "pid": 18780
+    }
+  ],
+  "api_health": {
+    "http_status": 404,
+    "error": "HTTP 404"
+  },
+  "api_terminal": {
+    "http_status": 200,
+    "server": "BitcoinTerminal/2.0 Python/3.9.13",
+    "json_object": true,
+    "settings_present": true
+  },
+  "api_market": {
+    "http_status": 200,
+    "server": "BitcoinTerminal/2.0 Python/3.9.13",
+    "json_object": true,
+    "option_count": 678,
+    "verified_book_count": 0,
+    "btc_index_available": true,
+    "stale": false,
+    "realtime_connected": true
+  },
+  "dashboard_ready": true,
+  "vpn_task_baseline_matches": true
+}

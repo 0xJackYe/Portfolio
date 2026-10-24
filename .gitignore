@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+.env
+.env.*
+terminal/data/
+terminal/logs/
+market_data/
+tmp/
+windows_startup/config.json
+*.log

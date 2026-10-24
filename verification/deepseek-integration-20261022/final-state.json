@@ -1,0 +1,22 @@
+{
+  "configured": true,
+  "models_verified": true,
+  "models": [
+    {
+      "id": "deepseek-flash",
+      "label": "V4.1 Flash",
+      "available": true
+    },
+    {
+      "id": "deepseek-v4-pro",
+      "label": "V4 Pro",
+      "available": true
+    }
+  ],
+  "default_model": "deepseek-flash",
+  "contracts": 682,
+  "fetched_at": "2026-10-22T23:42:38.707+08:00",
+  "stale": false,
+  "revision": 2954,
+  "instance_id": "169174871d3d447bad0d2e8fab910acc"
+}

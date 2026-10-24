@@ -1,0 +1,71 @@
+{
+  "generated_at_beijing": "2026-10-14T20:35:10.492115+08:00",
+  "all_passed": true,
+  "checks": 399,
+  "groups": [
+    {
+      "group": "python",
+      "passed": true,
+      "checks": 201,
+      "exit_code": 0,
+      "log": "D:\\Users\\yxh\\Desktop\\options\\verification\\site-test-results\\python.log"
+    },
+    {
+      "group": "test_frontend_data",
+      "passed": true,
+      "checks": 32,
+      "exit_code": 0,
+      "log": "D:\\Users\\yxh\\Desktop\\options\\verification\\site-test-results\\test_frontend_data.log"
+    },
+    {
+      "group": "test_option_payoff",
+      "passed": true,
+      "checks": 18,
+      "exit_code": 0,
+      "log": "D:\\Users\\yxh\\Desktop\\options\\verification\\site-test-results\\test_option_payoff.log"
+    },
+    {
+      "group": "test_option_portfolio",
+      "passed": true,
+      "checks": 32,
+      "exit_code": 0,
+      "log": "D:\\Users\\yxh\\Desktop\\options\\verification\\site-test-results\\test_option_portfolio.log"
+    },
+    {
+      "group": "test_option_preview_ui",
+      "passed": true,
+      "checks": 10,
+      "exit_code": 0,
+      "log": "D:\\Users\\yxh\\Desktop\\options\\verification\\site-test-results\\test_option_preview_ui.log"
+    },
+    {
+      "group": "test_options_embed",
+      "passed": true,
+      "checks": 8,
+      "exit_code": 0,
+      "log": "D:\\Users\\yxh\\Desktop\\options\\verification\\site-test-results\\test_options_embed.log"
+    },
+    {
+      "group": "test_terminal_frontend",
+      "passed": true,
+      "checks": 51,
+      "exit_code": 0,
+      "log": "D:\\Users\\yxh\\Desktop\\options\\verification\\site-test-results\\test_terminal_frontend.log"
+    },
+    {
+      "group": "test_terminal_ui",
+      "passed": true,
+      "checks": 12,
+      "exit_code": 0,
+      "log": "D:\\Users\\yxh\\Desktop\\options\\verification\\site-test-results\\test_terminal_ui.log"
+    },
+    {
+      "group": "wallet",
+      "passed": true,
+      "checks": 35,
+      "exit_code": 0,
+      "log": "D:\\Users\\yxh\\Desktop\\options\\verification\\site-test-results\\wallet.log"
+    }
+  ],
+  "scope": "Offline automated regressions. Actual Windows reboot and manual browser checks are separate."
+}
