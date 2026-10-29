@@ -1,2 +1,2 @@
-# Public read-only Binance Options real-time market streams.
+# Live Binance options stream. Without it the dashboard still runs, refreshing over REST every 15 seconds.
 websocket-client>=1.8.0,<2

@@ -1,4 +1,4 @@
 @echo off
 cd /d "%~dp0"
-python launch_dashboard.py
+python server.py %*
 if errorlevel 1 pause

@@ -2,14 +2,13 @@ __pycache__/
 *.pyc
 .env
 .env.*
-terminal/data/
-terminal/logs/
-market_data/
-tmp/
-windows_startup/config.json
 *.log
-# Generated local acceptance results may contain private account screenshots.
-/verification/
-# Generated wallet exports embed private addresses and transaction history.
-/terminal/wallet/wallet.html
+
+# Local data from earlier versions (wallet snapshots, cost ledger, logs, settings).
+# It can hold private account details, so it must never be committed.
+terminal/
+windows_startup/
+market_data/
+verification/
+tmp/
 *.protected.json
