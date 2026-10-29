@@ -4,10 +4,34 @@ import { readFileSync } from 'node:fs';
 import vm from 'node:vm';
 import { validateSnapshot, buildHistory } from './core.mjs';
 
-const html = readFileSync(new URL('./wallet.html', import.meta.url), 'utf8');
-const snapshot = JSON.parse(/<script id="snapshot" type="application\/json">([\s\S]*?)<\/script>/.exec(html)[1]);
-const script = [...html.matchAll(/<script[^>]*>([\s\S]*?)<\/script>/g)]
-  .find(match => !match[0].includes('application/json'))[1];
+// The generated wallet.html contains a user's private snapshot. Build the real
+// page source in memory using synthetic data, so a clean checkout needs neither
+// that generated file nor a configured account, network connection or data dir.
+const asOf = Date.parse('2031-06-18T12:00:00Z') / 1000;
+const address = 'synthetic-wallet-page-address';
+const transaction = (number, daysAgo, received, spent = 0) => ({
+  txid:number.toString(16).padStart(64,'0'), time:asOf-daysAgo*86400,
+  height:number, received, spent, delta:received-spent, fee:100,
+});
+const transactions = [transaction(1,100,200_000_000),
+  transaction(2,30,0,50_000_000),transaction(3,1,25_000_000)];
+const snapshot = {
+  version:1,address,fetchedAt:new Date(asOf*1000).toISOString(),
+  summary:{address,chain_stats:{tx_count:transactions.length,
+    funded_txo_sum:transactions.reduce((sum,row)=>sum+row.received,0),
+    spent_txo_sum:transactions.reduce((sum,row)=>sum+row.spent,0)},
+    mempool_stats:{tx_count:0,funded_txo_sum:0,spent_txo_sum:0}},
+  transactions,pending:[],
+  prices:Array.from({length:111},(_,index)=>({time:asOf-(110-index)*86400-3600,USD:30000+index*100})),
+  quote:{time:asOf-30,USD:42000},fx:{rates:[{date:'2031-01-01',rate:7}]},
+  sources:{fixture:'synthetic wallet page test; no account data'},
+};
+validateSnapshot(snapshot,address);
+const template = readFileSync(new URL('./wallet.template.html', import.meta.url), 'utf8');
+const core = readFileSync(new URL('./core.mjs', import.meta.url), 'utf8').replace(/^export\s+/gm,'');
+const html = template.replace('/* __BALANCE_CORE__ */',()=>core)
+  .replace('__SNAPSHOT_JSON__',()=>JSON.stringify(snapshot).replace(/</g,'\\u003c'));
+assert.ok(!html.includes('/* __BALANCE_CORE__ */')&&!html.includes('__SNAPSHOT_JSON__'));
 
 class Element {
   constructor(dataset = {}) {
@@ -24,10 +48,10 @@ class Element {
 }
 
 function mount(protocol = 'http:', options = {}) {
-  const html=options.sourceHtml??readFileSync(new URL('./wallet.html',import.meta.url),'utf8');
-  const script=[...html.matchAll(/<script[^>]*>([\s\S]*?)<\/script>/g)].find(match=>!match[0].includes('application/json'))[1];
-  const embeddedSnapshot=JSON.parse(/<script id="snapshot" type="application\/json">([\s\S]*?)<\/script>/.exec(html)[1]);
-  const elements = new Map([...html.matchAll(/id="([^"]+)"/g)].map(match => [match[1], new Element()]));
+  const sourceHtml=options.sourceHtml??html;
+  const script=[...sourceHtml.matchAll(/<script[^>]*>([\s\S]*?)<\/script>/g)].find(match=>!match[0].includes('application/json'))[1];
+  const embeddedSnapshot=JSON.parse(/<script id="snapshot" type="application\/json">([\s\S]*?)<\/script>/.exec(sourceHtml)[1]);
+  const elements = new Map([...sourceHtml.matchAll(/id="([^"]+)"/g)].map(match => [match[1], new Element()]));
   for (const id of ['crosshair', 'cross-line', 'cross-dot']) elements.set(id, new Element());
   elements.get('snapshot').textContent = JSON.stringify(embeddedSnapshot);
   const modes = ['cny', 'usd', 'btc'].map(mode => new Element({ mode }));
@@ -53,7 +77,7 @@ function mount(protocol = 'http:', options = {}) {
       return cloned.get(id);
     };
     Object.defineProperty(clone, 'outerHTML', {get() {
-      let output = html.replace(/<html\b[^>]*>/, original => {
+      let output = sourceHtml.replace(/<html\b[^>]*>/, original => {
         const attributes = [...Object.entries(clone.attributes),...Object.entries(clone.dataset).map(([key,value]) => ['data-' + key.replace(/[A-Z]/g, c => '-' + c.toLowerCase()),value])];
         return original.slice(0,-1) + attributes.map(([key,value]) => ' ' + key + '="' + String(value).replace(/&/g,'&amp;').replace(/"/g,'&quot;') + '"').join('') + '>';
       }).replace(/(<script id="snapshot" type="application\/json">)[\s\S]*?(<\/script>)/, (_,start,end) => start + cloned.get('snapshot').textContent + end);
@@ -143,7 +167,7 @@ function mount(protocol = 'http:', options = {}) {
   };
 }
 
-test('wallet renders real confirmed holdings and switches currency, period and curve without losing amounts', async () => {
+test('wallet renders confirmed fixture holdings and switches currency, period and curve without losing amounts', async () => {
   const view = mount();
   const balance = (snapshot.summary.chain_stats.funded_txo_sum - snapshot.summary.chain_stats.spent_txo_sum) / 1e8;
   assert.match(view.elements.get('total-btc').innerHTML, new RegExp(balance.toFixed(8).replace('.', '\\.')));

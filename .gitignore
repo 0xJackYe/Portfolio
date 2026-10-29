@@ -10,3 +10,6 @@ windows_startup/config.json
 *.log
 # Generated local acceptance results may contain private account screenshots.
 /verification/
+# Generated wallet exports embed private addresses and transaction history.
+/terminal/wallet/wallet.html
+*.protected.json

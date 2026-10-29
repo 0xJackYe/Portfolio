@@ -1,9 +1,0 @@
-{
-  "configured": true,
-  "models_verified": true,
-  "default_model": "deepseek-flash",
-  "contracts": 682,
-  "fetched_at": "2026-10-23T00:13:31.317+08:00",
-  "revision": 15846,
-  "stale": false
-}

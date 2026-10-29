@@ -1,9 +1,0 @@
-{
-  "market_contracts": 682,
-  "runs": 10,
-  "three_profiles_combined_median_ms": 12.277,
-  "three_profiles_combined_max_ms": 14.926,
-  "market_http_median_ms": 448.805,
-  "market_http_max_ms": 653.317,
-  "max_active_ai_jobs_observed": 0
-}

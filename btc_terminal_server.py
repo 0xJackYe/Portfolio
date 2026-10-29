@@ -32,6 +32,8 @@ ROUTES = {
     "/okx-wallet.css": STATIC / "okx-wallet.css",
     "/combined-wallet.js": STATIC / "combined-wallet.js",
     "/combined-wallet.css": STATIC / "combined-wallet.css",
+    "/btc-cost.js": STATIC / "btc-cost.js",
+    "/btc-cost.css": STATIC / "btc-cost.css",
     "/crypto-portfolio.js": STATIC / "crypto-portfolio.js",
     "/crypto-portfolio.css": STATIC / "crypto-portfolio.css",
     "/wallet.html": WALLET / "wallet.html",
@@ -215,13 +217,15 @@ class TerminalServer(ThreadingHTTPServer):
     daemon_threads = True
     allow_reuse_address = True
 
-    def __init__(self, address, monitor, wallet_proxy, options_cache=None, email_service=None, ai_service=None, okx_service=None, combined_service=None):
+    def __init__(self, address, monitor, wallet_proxy, options_cache=None, email_service=None, ai_service=None, okx_service=None, combined_service=None, cost_service=None):
         self.monitor, self.wallet_proxy = monitor, wallet_proxy
         self.cache = options_cache
         self.email_service = email_service
         self.ai_service = ai_service
         self.okx_service = okx_service
         self.combined_service = combined_service
+        self.cost_service = cost_service
+        self.pnl_service = None
         self.portfolio_service = None
         self.stopping = threading.Event()
         super().__init__(address, TerminalHandler)
@@ -317,6 +321,12 @@ class TerminalHandler(BaseHTTPRequestHandler):
         from crypto_portfolio_http import handle_portfolio
         if handle_portfolio(self):
             return
+        from btc_cost_http import handle_btc_cost
+        if handle_btc_cost(self):
+            return
+        from btc_pnl_service import handle_btc_pnl
+        if handle_btc_pnl(self):
+            return
         url = urllib.parse.urlsplit(self.path)
         if url.path == "/api/terminal":
             self.json(200, self.server.monitor.read())
@@ -385,7 +395,17 @@ class TerminalHandler(BaseHTTPRequestHandler):
             elif url.query:
                 self.json(400, {"error": "合计钱包不接受查询参数。"})
             else:
-                self.json(200, self.server.combined_service.read_public())
+                # Select both caches under one active account context. Reads
+                # never trigger exchange requests or accounting in HTTP threads.
+                okx = self.server.okx_service
+                if okx is not None:
+                    with okx.lock:
+                        view = self.server.combined_service.read_public()
+                        if self.server.pnl_service is not None:
+                            view['lifetime_pnl'] = self.server.pnl_service.read_public()
+                else:
+                    view = self.server.combined_service.read_public()
+                self.json(200, view)
         elif url.path == "/api/wallet/proxy":
             try:
                 params = urllib.parse.parse_qs(url.query, keep_blank_values=True)
@@ -606,11 +626,24 @@ def main():
     if okx_service is not None:
         okx_service.start()
         try:
+            from btc_cost_tracker import BTCCostTracker
+            server.cost_service = BTCCostTracker(okx_service)
+            server.cost_service.start()
+        except Exception:
+            server.cost_service = None
+        try:
             from combined_wallet_service import CombinedWalletService
             server.combined_service = CombinedWalletService(okx_service, server.wallet_proxy)
             server.combined_service.start()
         except Exception:
             server.combined_service = None
+        if server.cost_service is not None and server.combined_service is not None:
+            try:
+                from btc_pnl_service import BTCPnLService
+                server.pnl_service = BTCPnLService(server.cost_service, server.combined_service)
+                server.pnl_service.start()
+            except Exception:
+                server.pnl_service = None
         try:
             from crypto_portfolio_service import CryptoPortfolioService
             server.portfolio_service = CryptoPortfolioService(okx_service, server.combined_service)
@@ -628,6 +661,10 @@ def main():
         print("\n已关闭比特币监控。")
     finally:
         server.stopping.set()
+        if server.pnl_service is not None:
+            server.pnl_service.stop()
+        if server.cost_service is not None:
+            server.cost_service.stop()
         if server.portfolio_service is not None:
             server.portfolio_service.stop()
         if server.combined_service is not None:
